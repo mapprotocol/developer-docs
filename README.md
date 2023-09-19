@@ -53,10 +53,10 @@
 
 + [堆栈](docs/mapo-stack/stack/index.md) - mapo/全链web3堆栈介绍
 + [EVM兼容](docs/mapo-stack/compatible-evm/index.md) - mapo跨链验证智能合约
-  + 智能合约语言
+  + [智能合约语言](docs/mapo-stack/compatible-evm/solidity.md)
   + 智能合约结构
   + 智能合约库
-  + 编译智能合约
+  + [编译智能合约](docs/mapo-stack/compatible-evm/compile.md)
   + 测试智能合约
   + 部署智能合约
   + 验证智能合约
