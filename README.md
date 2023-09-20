@@ -57,11 +57,11 @@
   + [智能合约结构](docs/mapo-stack/compatible-evm/anatomy.md)
   + [智能合约库](docs/mapo-stack/compatible-evm/libraries.md)
   + [编译智能合约](docs/mapo-stack/compatible-evm/compile.md)
-  + 测试智能合约
+  + [测试智能合约](docs/mapo-stack/compatible-evm/testing.md)
   + 部署智能合约
   + 验证智能合约
   + 升级智能合约
-  + 智能合约安全性
+  + [智能合约安全性](docs/mapo-stack/compatible-evm/security.md)
   + 智能合约形式化验证
   + 开发架构 - 支持mapo智能合约开发的工具
   + 开发网络 - 用于智能合约部署前测试互操作性的本地区块链环境

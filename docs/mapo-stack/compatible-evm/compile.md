@@ -9,7 +9,7 @@ incomplete: true
 
 ## 前提条件 {#prerequisites}
 
-在阅读关于编译的文档之前，请阅读我们的[智能合约](/docs/mapo-stack/compatible-evm/index.md#智能合约smart-contracts)和[以太坊虚拟机](/docs/mapo-stack/compatible-evm/index.md)可能会有帮助。
+在阅读关于编译的文档之前，请阅读我们的[智能合约](/docs/mapo-stack/compatible-evm/index.md#智能合约smart-contracts)和[EVM虚拟机](/docs/mapo-stack/compatible-evm/index.md)可能会有帮助。
 
 ## EVM虚拟机 {#the-evm}
 
