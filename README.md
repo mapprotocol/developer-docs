@@ -42,7 +42,7 @@
       + 引导节点（中继链）
       + 验证节点 （中继链）
       + RPC节点（中继链）
-    + 公共网络 - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
+    + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
     + 搭建私有网络 
 + [Compass(maintainer，messenger)](docs/base/Compass/index.md) - 消息跨链的重要组件，用于更新轻客户端状态及消息路由
     + Compass - 架构及模块说明
@@ -59,7 +59,7 @@
   + [智能合约库](docs/mapo-stack/compatible-evm/libraries.md)
   + [编译智能合约](docs/mapo-stack/compatible-evm/compile.md)
   + [测试智能合约](docs/mapo-stack/compatible-evm/testing.md)
-  + 部署智能合约
+  + [部署智能合约](docs/mapo-stack/compatible-evm/deploying.md)
   + 验证智能合约
   + 升级智能合约
   + [智能合约安全性](docs/mapo-stack/compatible-evm/security.md)
