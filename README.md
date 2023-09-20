@@ -54,8 +54,8 @@
 + [堆栈](docs/mapo-stack/stack/index.md) - mapo/全链web3堆栈介绍
 + [EVM兼容](docs/mapo-stack/compatible-evm/index.md) - mapo跨链验证智能合约
   + [智能合约语言](docs/mapo-stack/compatible-evm/solidity.md)
-  + 智能合约结构
-  + 智能合约库
+  + [智能合约结构](docs/mapo-stack/compatible-evm/anatomy.md)
+  + [智能合约库](docs/mapo-stack/compatible-evm/libraries.md)
   + [编译智能合约](docs/mapo-stack/compatible-evm/compile.md)
   + 测试智能合约
   + 部署智能合约
@@ -83,11 +83,11 @@
       + mapo端的MOS层  - mapo端的mos层的部署与升级
 + 如何开发跨链应用 - 如何开发一个基于mapo跨链网络的全链dapp
 + SDK/API - mapo支持的API
-  +  MOS接口
+  +  [MOS接口](docs/sdk/mos/index.md)
   +  轻客户端接口
   +  中继链RPC
      +  json-rpc
-     +  javaScript sdk
+     +  [javaScript sdk](docs/sdk/mapo-relay-chain/javaScript.md)
      +  go-sdk
      +  公共RPC服务
   + 后端API
