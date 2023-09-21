@@ -43,7 +43,7 @@
       + 验证节点 （中继链）
       + RPC节点（中继链）
     + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
-    + 搭建私有网络 
+    + [搭建私有网络](docs/base/mapo-relay-chain/make-private-network.md) 
 + [Compass(maintainer，messenger)](docs/base/Compass/index.md) - 消息跨链的重要组件，用于更新轻客户端状态及消息路由
     + Compass - 架构及模块说明
     + Compass配置参数
@@ -64,7 +64,7 @@
   + [智能合约安全性](docs/mapo-stack/compatible-evm/security.md)
   + [智能合约形式化验证](docs/mapo-stack/compatible-evm/formal-verification.md)
   + 开发架构 - 支持mapo智能合约开发的工具
-  + 开发网络 - 用于智能合约部署前测试互操作性的本地区块链环境
+  + [开发网络](docs/mapo-stack/compatible-evm/dev-network.md) - 用于智能合约部署前测试互操作性的本地区块链环境
 + 实现跨链互通 - 一个第三方区块链网络如何实现接入mapo的跨链网络
   + EVM兼容链的跨链互通 - 两条链互通的基本架构及流程
     + 轻客户端验证 - 基于solidity智能合约的轻客户端部署，升级及验证,
