@@ -60,8 +60,7 @@
   + [编译智能合约](docs/mapo-stack/compatible-evm/compile.md)
   + [测试智能合约](docs/mapo-stack/compatible-evm/testing.md)
   + [部署智能合约](docs/mapo-stack/compatible-evm/deploying.md)
-  + 验证智能合约
-  + 升级智能合约
+  + [可组合性](docs/mapo-stack/compatible-evm/composability.md)
   + [智能合约安全性](docs/mapo-stack/compatible-evm/security.md)
   + [智能合约形式化验证](docs/mapo-stack/compatible-evm/formal-verification.md)
   + 开发架构 - 支持mapo智能合约开发的工具
