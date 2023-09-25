@@ -86,12 +86,13 @@
   +  [MOS接口](docs/sdk/mos/index.md)
   +  轻客户端接口
   +  中继链RPC
-     +  json-rpc
+     +  [json-rpc](docs/sdk/mapo-relay-chain/json-rpc/index.md)
+        +  [atlas json rpc](docs/sdk/mapo-relay-chain/json-rpc/atlas-json-rpc.md)
+        +  [atlas consensus rpc](docs/sdk/mapo-relay-chain/json-rpc/atlas-consensus-rpc.md)
      +  [javaScript sdk](docs/sdk/mapo-relay-chain/javaScript.md)
      +  go-sdk
-     +  公共RPC服务
   + 后端API
-    + 浏览器API
+    + [浏览器API](docs/sdk/backend/index.md)
     + 数据统计与分析API
 
 
