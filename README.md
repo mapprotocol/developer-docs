@@ -26,8 +26,9 @@
   + 什么是轻客户端  -- spv
   + 典型的轻客户端 -- 一些链的轻客户端(eth,btc)
   + MAPO轻客户端   -- 状态同步，交易验证等
-+ [全链开发组件层MOS](docs/base/mos/index.md) - MOS层处理MAPO跨链网络上的所有计算操作
-    + Vault - Vault合约基本功能
++ [全链开发组件层MOS](docs/base/mos/index.md) - MOS层基本概念和流程简述
+    + MOS接口和功能 - 区分relay-chain和其他链的区别
+    + MOS的部署 - 在不同链上部署mos
     + Messenger - 跨链消息的监控与路由
 + [中继链(atlas)](docs/base/mapo-relay-chain/index.md) - 基于POS共识的EVM兼容区块链网络
     + 节点即服务
@@ -84,7 +85,7 @@
 + [如何开发跨链应用](docs/mapo-stack/omni-dapp/index.md) - 如何开发一个基于mapo跨链网络的全链dapp
 + SDK/API - mapo支持的API
   +  [MOS接口](docs/sdk/mos/index.md)
-  +  轻客户端接口
+  +  [轻客户端接口](docs/sdk/light-client/index.md)
   +  中继链RPC
      +  [json-rpc](docs/sdk/mapo-relay-chain/json-rpc/index.md)
         +  [atlas json rpc](docs/sdk/mapo-relay-chain/json-rpc/atlas-json-rpc.md)
