@@ -21,7 +21,6 @@
 + [RLP编码](docs/base/rlp/index.md) - 递归长度前缀编码
 + [Gas费用](docs/base/gas/index.md) – 交易处理所需的算力，由交易汇款人使用 MAPO 支付
 + [消息跨链](docs/base/cross-chain-message/index.md) - 介绍跨链消息的基本原理
-    + 资产跨链 - 介绍资产跨链的流程
 + [轻客户端](docs/base/light-client/index.md) - 轻客户端的功能介绍及在MAPO跨链中的作用
   + 什么是轻客户端  -- spv
   + 典型的轻客户端 -- 一些链的轻客户端(eth,btc)
