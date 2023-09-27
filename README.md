@@ -45,10 +45,10 @@
     + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
     + [搭建私有网络](docs/base/mapo-relay-chain/make-private-network.md) 
 + [Compass(maintainer，messenger)](docs/base/Compass/index.md) - 消息跨链的重要组件，用于更新轻客户端状态及消息路由
-    + Compass - 架构及模块说明
-    + Compass配置参数
-    + Compass环境与部署
-    + Compass二次开发 - 基于compass定义自己的路由服务
+    + [Compass - 架构及模块说明](docs/base/Compass/index.md#compass---架构及模块说明)
+    + [Compass配置参数](docs/base/Compass/index.md#compass环境与部署)
+    + [Compass环境与部署](docs/base/Compass/index.md#compass环境与部署)
+    + [Compass二次开发 - 基于compass定义自己的路由服务](docs/base/Compass/index.md#compass二次开发---基于compass定义自己的路由服务)
 
 ## MAPO技術堆棧
 
