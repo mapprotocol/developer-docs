@@ -34,23 +34,41 @@
     + 节点架构
         + 中继链（atlas）架构 - 区块和交易结构
         + 创世配置 - 介绍创世配置文件
-        + 共识机制 - 中继链各节点如何就当前状态达成共识
         + 预编译合约 - 支持的预编译合约
-        + Marker工具 - atlas的简易客户端工具
     + 部署节点  - 包括公共RPC节点
+      + 运行节点（中继链）
       + 归档节点（中继链）
       + 引导节点（中继链）
       + 验证节点 （中继链）
       + RPC节点（中继链）
-    + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
-    + [搭建私有网络](docs/base/mapo-relay-chain/make-private-network.md) 
+    + Validators
+      + [概述]() 
+      + [运行 Validator]() 
+      + [节点和服务]()
+      + [监控]()
+    + [协议]()
+      + [概述]()
+      + [Proof of Stake]()
+      + [共识]()
+      + [治理]()
+    + [Genesis 合约]()
+      + [ABI]()
+      + [Address]()
+    + Marker工具 - atlas的简易客户端工具
+      + [Genesis]() 
+      + [Validator]() 
+      + [Vote]() 
+      + [Common]()
+    + [搭建私有网络](docs/base/mapo-relay-chain/make-private-network.md)
+    + 公共网络服务信息    
+      + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
 + [Compass(maintainer，messenger)](docs/base/Compass/index.md) - 消息跨链的重要组件，用于更新轻客户端状态及消息路由
     + [Compass - 架构及模块说明](docs/base/Compass/index.md#compass---架构及模块说明)
     + [Compass配置参数](docs/base/Compass/index.md#compass环境与部署)
     + [Compass环境与部署](docs/base/Compass/index.md#compass环境与部署)
     + [Compass二次开发 - 基于compass定义自己的路由服务](docs/base/Compass/index.md#compass二次开发---基于compass定义自己的路由服务)
 
-## MAPO技術堆棧
+## MAPO技术堆栈
 
 + [堆栈](docs/mapo-stack/stack/index.md) - mapo/全链web3堆栈介绍
 + [EVM兼容](docs/mapo-stack/compatible-evm/index.md) - mapo跨链验证智能合约
