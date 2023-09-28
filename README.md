@@ -22,8 +22,6 @@
 + [Gas费用](docs/base/gas/index.md) – 交易处理所需的算力，由交易汇款人使用 MAPO 支付
 + [消息跨链](docs/base/cross-chain-message/index.md) - 介绍跨链消息的基本原理
 + [轻客户端](docs/base/light-client/index.md) - 轻客户端的功能介绍及在MAPO跨链中的作用
-  + 什么是轻客户端  -- spv
-  + 典型的轻客户端 -- 一些链的轻客户端(eth,btc)
   + MAPO轻客户端   -- 状态同步，交易验证等
 + [全链开发组件层MOS](docs/base/mos/index.md) - MOS层基本概念和流程简述
     + MOS接口和功能 - 区分relay-chain和其他链的区别
@@ -46,7 +44,7 @@
       + [运行 Validator]() 
       + [节点和服务]()
       + [监控]()
-    + [协议]()
+    + [协议](docs/base/mapo-relay-chain/consensus/index.md)
       + [概述]()
       + [Proof of Stake]()
       + [共识]()
