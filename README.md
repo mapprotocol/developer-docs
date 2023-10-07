@@ -28,7 +28,6 @@
     + MOS的部署 - 在不同链上部署mos
     + Messenger - 跨链消息的监控与路由
 + [中继链(atlas)](docs/base/mapo-relay-chain/index.md) - 基于POS共识的EVM兼容区块链网络
-    + 节点即服务
     + 节点架构
         + 中继链（atlas）架构 - 区块和交易结构
         + 创世配置 - 介绍创世配置文件
