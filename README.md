@@ -83,19 +83,19 @@
 + [实现跨链互通](docs/mapo-stack/chains-connect/index.md) - 一个第三方区块链网络如何实现接入mapo的跨链网络
   + [EVM兼容链的跨链互通](docs/mapo-stack/chains-connect/evm-chain/index.md) - 两条链互通的基本架构及流程
     + [轻客户端验证](docs/mapo-stack/chains-connect/evm-chain/index.md#light-client层) - 基于solidity智能合约的轻客户端部署，升级及验证,
-    + [轻客户端状态更新](docs/mapo-stack/chains-connect/evm-chain/index.md#light-client合约开发) - 使用maintainer来维护轻客户端的状态
+    + [轻客户端状态更新](docs/mapo-stack/chains-connect/evm-chain/index.md#maintainer开发) - 使用maintainer来维护轻客户端的状态
       + [maintainer增加对新区块链支持](docs/mapo-stack/chains-connect/evm-chain/index.md#maintainer开发) - 二次开发增加对新链支持
       + [部署maintainer](docs/base/Compass/index.md#compass环境与部署) 
     + [MOS层](docs/mapo-stack/chains-connect/evm-chain/index.md#mos层) - 支持全链应用开发的基础服务层
       + MOS结构与接口
-      + 全链应用调用过程 - 一个消息跨链(资产跨链)调用的完整流程
       + [MOS层的部署与升级](docs/mapo-stack/chains-connect/evm-chain/index.md#mos合约部署)
+      + [全链应用调用过程](docs/mapo-stack/omni-dapp/index.md) - 一个消息跨链(资产跨链)调用的完整流程
   + [非EVM兼容链的跨链互通](docs/mapo-stack/chains-connect/non-evm-chain/index.md)
-    + mapo端轻客户端验证 - 根据目标链共识机制实现一个轻客户端并部署到mapo中继链
-    + 目标链端轻客户端验证 - 根据mapo中继链的共识机制实现基于目标链的轻客户端
-    + MOS层 
-      + 目标链端MOS结构与接口 - 定义及实现基于目标链平台的MOS结构与接口
-      + mapo端的MOS层  - mapo端的mos层的部署与升级
+    + [轻客户端验证](docs/mapo-stack/chains-connect/non-evm-chain/index.md#light-client层) - 根据源链和目标链共识机制实现轻客户端功能
+    + [轻客户端状态更新](docs/mapo-stack/chains-connect/non-evm-chain/index.md#maintainer开发) - 使用链下服务程序实现源链和目标链上的轻客户端状态更新
+    + [MOS层](docs/mapo-stack/chains-connect/non-evm-chain/index.md#mos层) 
+      + [MOS结构与接口](docs/mapo-stack/chains-connect/non-evm-chain/index.md#mos层) - 定义及实现基于目标链平台的MOS结构与接口
+      + [MOS层的Messenger](docs/mapo-stack/chains-connect/non-evm-chain/index.md#messeager程序开发)  - mapo端的mos层的部署与升级
 + [如何开发跨链应用](docs/mapo-stack/omni-dapp/index.md) - 如何开发一个基于mapo跨链网络的全链dapp
 + SDK/API - mapo支持的API
   +  [MOS接口](docs/sdk/mos/index.md)
