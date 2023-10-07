@@ -33,11 +33,11 @@
         + 创世配置 - 介绍创世配置文件
         + 预编译合约 - 支持的预编译合约
     + 部署节点  - 包括公共RPC节点
-      + 运行节点（中继链）
-      + 归档节点（中继链）
-      + 引导节点（中继链）
-      + 验证节点 （中继链）
-      + RPC节点（中继链）
+      + [运行节点（中继链）](docs/base/mapo-relay-chain/run-a-node.md)
+      + [归档节点（中继链）](docs/base/mapo-relay-chain/archive-nodes.md)
+      + [引导节点（中继链）](docs/base/mapo-relay-chain/bootnodes.md)
+      + [验证节点 （中继链）](docs/base/mapo-relay-chain/validator-nodes.md)
+      + [RPC节点（中继链）](docs/base/mapo-relay-chain/rpc-nodes.md)
     + Validators
       + [概述]() 
       + [运行 Validator]() 
