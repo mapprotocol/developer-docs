@@ -33,24 +33,28 @@
         + 创世配置 - 介绍创世配置文件
         + 预编译合约 - 支持的预编译合约
     + 部署节点  - 包括公共RPC节点
-      + [运行节点（中继链）](docs/base/mapo-relay-chain/run-a-node.md)
-      + [归档节点（中继链）](docs/base/mapo-relay-chain/archive-nodes.md)
-      + [引导节点（中继链）](docs/base/mapo-relay-chain/bootnodes.md)
-      + [验证节点 （中继链）](docs/base/mapo-relay-chain/validator-nodes.md)
-      + [RPC节点（中继链）](docs/base/mapo-relay-chain/rpc-nodes.md)
+      + [运行节点（中继链）](docs/base/mapo-relay-chain/nodes/run-a-node.md)
+      + [归档节点（中继链）](docs/base/mapo-relay-chain/nodes/archive-nodes.md)
+      + [引导节点（中继链）](docs/base/mapo-relay-chain/nodes/bootnodes.md)
+      + [验证节点 （中继链）](docs/base/mapo-relay-chain/nodes/validator-nodes.md)
+      + [RPC节点（中继链）](docs/base/mapo-relay-chain/nodes/rpc-nodes.md)
     + Validators
-      + [概述]() 
       + [运行 Validator]() 
       + [节点和服务]()
       + [监控]()
-    + [协议](docs/base/mapo-relay-chain/consensus/index.md)
-      + [概述]()
-      + [Proof of Stake]()
-      + [共识]()
-      + [治理]()
-    + [Genesis 合约]()
-      + [ABI]()
-      + [Address]()
+    + 协议
+      + [Proof of Stake](docs/base/mapo-relay-chain/protocol/pos.md)
+      + [共识](docs/base/mapo-relay-chain/protocol/consensus.md)
+      + [治理](docs/base/mapo-relay-chain/protocol/.md)
+    + Genesis 合约
+      + ABI
+        + [Accounts](docs/base/mapo-relay-chain/genesis-contract/accounts.md)
+        + [Election](docs/base/mapo-relay-chain/genesis-contract/election.md)
+        + [EpochRewards](docs/base/mapo-relay-chain/genesis-contract/epoch-rewards.md)
+        + [LockedGold](docs/base/mapo-relay-chain/genesis-contract/locked-gold.md)
+        + [Validators](docs/base/mapo-relay-chain/genesis-contract/validators.md)
+      + [地址](docs/base/mapo-relay-chain/genesis-contract/address.md)
+      + [部署](docs/base/mapo-relay-chain/genesis-contract/deploy.md)
     + Marker工具 - atlas的简易客户端工具
       + [Genesis]() 
       + [Validator]() 
