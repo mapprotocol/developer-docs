@@ -55,10 +55,10 @@
       + [验证节点 （中继链）](docs/base/mapo-relay-chain/nodes/validator-nodes.md)
       + [RPC节点（中继链）](docs/base/mapo-relay-chain/nodes/rpc-nodes.md)
     + Marker工具 - atlas的简易客户端工具
-      + [Genesis]() 
-      + [Validator]() 
-      + [Vote]() 
-      + [Common]()
+      + [Genesis](docs/base/mapo-relay-chain/marker/genesis.md) 
+      + [Validator](docs/base/mapo-relay-chain/marker/validator.md) 
+      + [Vote](docs/base/mapo-relay-chain/marker/vote.md) 
+      + [Common](docs/base/mapo-relay-chain/marker/common.md)
     + [搭建私有网络](docs/base/mapo-relay-chain/make-private-network.md)
     + 公共网络服务信息    
       + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
