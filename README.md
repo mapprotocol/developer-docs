@@ -29,10 +29,10 @@
     + Messenger - 跨链消息的监控与路由
 + [中继链(atlas)](docs/base/mapo-relay-chain/index.md) - 基于POS共识的EVM兼容区块链网络
     + 节点架构
-        + 中继链（atlas）架构 - 区块和交易结构
-        + 创世配置 - 介绍创世配置文件
-          + 配置
-          + genesis
+        + [中继链（atlas）架构 - 区块和交易结构](docs/base/mapo-relay-chain/nodes/architecture.md)
+        + 创世
+          + [创世配置 - 介绍创世配置文件](docs/base/mapo-relay-chain/nodes/genesis-config.md)
+          + 创世合约
             + ABI
               + [Accounts](docs/base/mapo-relay-chain/genesis-contract/accounts.md)
               + [Election](docs/base/mapo-relay-chain/genesis-contract/election.md)
@@ -41,15 +41,13 @@
               + [Validators](docs/base/mapo-relay-chain/genesis-contract/validators.md)
             + [地址](docs/base/mapo-relay-chain/genesis-contract/address.md)
             + [部署](docs/base/mapo-relay-chain/genesis-contract/deploy.md)
-        + 预编译合约 - 支持的预编译合约
+        + [预编译合约 - 支持的预编译合约](docs/base/mapo-relay-chain/genesis-contract/)
         + 协议
-          + [Proof of Stake与奖励](docs/base/mapo-relay-chain/protocol/pos.md)
+          + [Proof of Stake](docs/base/mapo-relay-chain/protocol/pos.md)
           + [共识](docs/base/mapo-relay-chain/protocol/consensus.md)
-          + [治理](docs/base/mapo-relay-chain/protocol/.md)
-        + Validators
-          + [运行 Validator]() 
-          + [节点和服务]()
-          + [监控]()
+          + [选举](docs/base/mapo-relay-chain/protocol/election.md)
+          + [奖励](docs/base/mapo-relay-chain/protocol/rewards.md)
+          + [治理](docs/base/mapo-relay-chain/protocol/governance.md)
     + 部署节点  - 包括公共RPC节点
       + [运行节点（中继链）](docs/base/mapo-relay-chain/nodes/run-a-node.md)
       + [归档节点（中继链）](docs/base/mapo-relay-chain/nodes/archive-nodes.md)
@@ -64,6 +62,9 @@
     + [搭建私有网络](docs/base/mapo-relay-chain/make-private-network.md)
     + 公共网络服务信息    
       + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
+    + 示例
+      + [如何成为一个 Validator 并加入到 Atlas 网络中]()
+      + [如何成为一个 Validator 并加入到 Atlas 网络中[高级]]()
 + [Compass(maintainer，messenger)](docs/base/Compass/index.md) - 消息跨链的重要组件，用于更新轻客户端状态及消息路由
     + [Compass - 架构及模块说明](docs/base/Compass/index.md#compass---架构及模块说明)
     + [Compass配置参数](docs/base/Compass/index.md#compass环境与部署)
