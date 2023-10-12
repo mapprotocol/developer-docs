@@ -63,8 +63,8 @@
     + 公共网络服务信息    
       + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
     + 示例
-      + [如何成为一个 Validator 并加入到 Atlas 网络中]()
-      + [如何成为一个 Validator 并加入到 Atlas 网络中[高级]]()
+      + [如何成为一个 Validator 并加入到 Atlas 网络中](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator.md)
+      + [如何成为一个 Validator 并加入到 Atlas 网络中[高级]](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator-advanced.md)
 + [Compass(maintainer，messenger)](docs/base/Compass/index.md) - 消息跨链的重要组件，用于更新轻客户端状态及消息路由
     + [Compass - 架构及模块说明](docs/base/Compass/index.md#compass---架构及模块说明)
     + [Compass配置参数](docs/base/Compass/index.md#compass环境与部署)

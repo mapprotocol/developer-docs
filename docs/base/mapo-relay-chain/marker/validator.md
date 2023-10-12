@@ -312,7 +312,7 @@ INFO [05-30|13:56:05.126] signerToAccount                          authorizingAc
 
 ## generateSignerProof
 
-为 signer 账号生成证明。
+使用 signer 私钥生成证明。
 
 参数说明:
 

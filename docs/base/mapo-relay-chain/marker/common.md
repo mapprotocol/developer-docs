@@ -12,86 +12,46 @@
 - `name`：账号名称
 
 ```shell
-USAGE
-  $ ./marker createAccount
-
-OPTIONS
-  --keystore                                                   Keystore file path
-  
-  --rpcaddr                                                    HTTP-RPC server address 
-
-  --name                                                you can marker your account
-                                                              like "validator" or "voter"
-                                                              and so on that you want 
-
-EXAMPLES:
 ./marker createAccount
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --name "validator"
-
-RESPONSE:
-success
-or
-Failed
 ```
 
 ## lockedMAP
 
 锁定用于投票或注册 validator 的 MAPO。
 
+参数说明:
+
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+  也可以是你自己的 RPC服务地址。
+- `keystore`: keystore 文件的路径。
+-  `lockedNum`: 要锁定的 MAPO 的数量``
+
 ```shell
-USAGE
-  $ ./marker lockedMAP
-
-OPTIONS
-  --keystore                                                   Keystore file path
-
-  --rpcaddr                                                    HTTP-RPC server address 
-
-  --lockedNum                                                  The `MAP` you want to lock
-                                                              
-                                                            
-
-EXAMPLES:
 ./marker lockedMAP
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --lockedNum 1000000
-
-RESPONSE:
-success
-or
-Failed
 ```
 
 ## unlockMap
 
 解锁 MAPO，解锁期过后可以赎回
 
+参数说明:
+
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+  也可以是你自己的 RPC服务地址。
+- `keystore`: keystore 文件的路径。
+-  `lockedNum`: 要解锁的 MAPO 的数量``
+
 ```shell
-USAGE
-  $ ./marker unlockMap
-
-OPTIONS
-  --keystore                                                   Keystore file path
-
-  --rpcaddr                                                    HTTP-RPC server address 
-
-  --lockedNum                                                   The `MAP` you want to unlock
-                                                              
-                                                            
-
-EXAMPLES:
 ./marker unlockMap
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --lockedNum 1000000
-
-RESPONSE:
-success
-or
-Failed
 ```
 
 ## relockMAP
