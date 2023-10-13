@@ -1,7 +1,11 @@
-介绍Map链验证人选举以及整个过程中验证人及投票的管理。
+介绍 Atlas 链 validator 选举以及投票的管理。
 
 ## 质押
- lock,vote，数量，生效时间，account
+
+Atlas 采用权益证明共识机制，如果想参与 atlas 网络的区块生成需要注册成 validator。目前想要成为一个 validator
+需要[锁定](/docs/base/mapo-relay-chain/marker/common.md#lockedmap)
+1,000,000 个 MAPO。并对其进行[投票](/docs/base/mapo-relay-chain/marker/vote.md#vote)。每次选举会按照 validator 收到的票数排序，选出前
+N 名 validator。
 
 ## 更新活动验证器集
 
@@ -22,10 +26,16 @@
 如果由于某些原因我们不选举验证器（有效验证器数量小于1），我们将继续使用上述验证器。如果我们选择最新的一组验证器（这意味着新验证器的数量大于
 1 且小于 100），我们将用新验证器替换上述验证器。
 
-## 解质押
-unlock, pending_vote
+## 解除质押
+
+在质押(锁定)成功后如果你有需求可以解除质押(解锁)，解除质押 15
+天后你可以通过[赎回](/docs/base/mapo-relay-chain/example/how-to-withdraw.md)操作将 MAPO 赎回到你的账户余额。
 
 ## 执行
 
+[Election](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Election.sol) 合约管理锁定 MAPO
+投票和纪元奖励并运行验证者选举。
 
-[Election](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Election.sol) 合约管理锁定 MAPO 投票和纪元奖励并运行验证者选举。
+## 相关主题
+
+- [奖励](/docs/base/mapo-relay-chain/protocol/rewards.md)

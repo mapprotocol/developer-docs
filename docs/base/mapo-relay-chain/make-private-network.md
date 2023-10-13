@@ -190,7 +190,7 @@ Password:
 ## 连接节点
 
 在启动节点之前，请确保引导节点已经运行并且可以从外部访问（尝试 telnet <ip> <port> 以确保它确实可以访问）。
-然后，通过 --bootnodes 将每个后续的 atlas 节点指向引导节点以进行对等节点发现。通过 --datadir 制定数据存储目录。
+然后，通过 --bootnodes 将每个后续的 atlas 节点指向引导节点以进行对等节点发现。通过 --datadir 指定数据存储目录。
 
 ```shell
 $ atlas --datadir=path/to/custom/data/folder --bootnodes=<bootnode-url>

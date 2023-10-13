@@ -72,9 +72,10 @@ Commission 验证器按与 ValidatorReceived 成比例抽取的比例值。
   这些奖励（ VotersReward ）将返回投票池。这个操作相当于增加了每个选民的票数。投票者从投票池中抽取选票并获得相应奖励。
   每个投票者的奖励将根据投票者与验证者的投票比例获得。
 
-
 ## 奖励&赎回
- todo
+
+目前每一个 epoch 的最后一个区块都会计算并发放奖励，奖励会直接增加到你对某个 validator 的活跃投票数量上。
+如果你想将发放的奖励提取到你的账号，你需要进行赎回，有关赎回的具体步骤请参考[这里](/docs/base/mapo-relay-chain/example/how-to-withdraw.md)
 
 ## 扩展
 
@@ -89,4 +90,9 @@ Commission 验证器按与 ValidatorReceived 成比例抽取的比例值。
 
 ## 执行
 
-[EpochRewards])(https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/EpochRewards.sol) 合约管理计算 epoch 奖励。
+[EpochRewards])(https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/EpochRewards.sol) 合约管理计算
+epoch 奖励。
+
+## 相关主题
+
+- [选举](/docs/base/mapo-relay-chain/protocol/election.md)

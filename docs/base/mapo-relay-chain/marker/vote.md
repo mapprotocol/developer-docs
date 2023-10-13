@@ -101,8 +101,6 @@
 
 参数说明:
 
-参数说明:
-
 - `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
