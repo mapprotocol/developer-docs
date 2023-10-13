@@ -39,7 +39,7 @@ EVM 作为一个[堆栈机](https://wikipedia.org/wiki/Stack_machine)运行，�
 
 然而，合约确实包含一个 Merkle Patricia _存储_ trie（作为可字寻址的字数组），该 trie 与帐户和部分全局状态关联。
 
-已编译的智能合约字节码作为许多 EVM [opcodes](docs/mapo-stack/compatible-evm/index.md)执行，它们执行标准的堆栈操作，例如 `XOR`、`AND`、`ADD`、`SUB`等。 EVM 还实现了一些区块链特定的堆栈操作，如 `ADDRESS`、`BALANCE`、`BLOCKHASH` 等。
+已编译的智能合约字节码作为许多 EVM [opcodes](/docs/mapo-stack/compatible-evm/index.md)执行，它们执行标准的堆栈操作，例如 `XOR`、`AND`、`ADD`、`SUB`等。 EVM 还实现了一些区块链特定的堆栈操作，如 `ADDRESS`、`BALANCE`、`BLOCKHASH` 等。
 
 ![表明 EVM 操作需要 Gas 的图表](./evm-gas.jpg)
 
@@ -81,13 +81,13 @@ EVM 作为一个[堆栈机](https://wikipedia.org/wiki/Stack_machine)运行，�
 
 ### 无需准入性 {#permissionless}
 
-任何人都可以编写智能合约并将其部署到区块链网络上。 您只需要学习如何用[智能合约语言编码](docs/mapo-stack/compatible-evm/solidity.md)，并有足够的MAPO币来部署您的合约。 部署智能合约在技术上是一笔交易，因此就像你需要为简单的MAPO币转账支付燃料费一样，你也需要为部署智能合约支付[燃料费](/docs/base/gas/index.md)。 但是，合约部署的燃料成本要高得多。
+任何人都可以编写智能合约并将其部署到区块链网络上。 您只需要学习如何用[智能合约语言编码](/docs/mapo-stack/compatible-evm/solidity.md)，并有足够的MAPO币来部署您的合约。 部署智能合约在技术上是一笔交易，因此就像你需要为简单的MAPO币转账支付燃料费一样，你也需要为部署智能合约支付[燃料费](/docs/base/gas/index.md)。 但是，合约部署的燃料成本要高得多。
 
 MAPO提供了对开发者友好的智能合约编程语言：
 
 - Solidity
 
-然而，智能合约必须要先编译才能部署，以便EVM虚拟机可以解释并存储它们。 [关于编译的更多信息](docs/mapo-stack/compatible-evm/compile.md)
+然而，智能合约必须要先编译才能部署，以便EVM虚拟机可以解释并存储它们。 [关于编译的更多信息](/docs/mapo-stack/compatible-evm/compile.md)
 
 ### 可组合性 {#composability}
 

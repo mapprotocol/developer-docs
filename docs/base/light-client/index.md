@@ -57,5 +57,5 @@ SPV 是比特币特有的术语，主要用于支付验证。它的重点是验�
 MAPO轻客户端主要满足于验证交易的有效性和合法性，所以MAPO轻客户端只需要实现`创世区块`,`区块头验证`，`MPT验证`三个功能，而无需实现与全节点的交互。
 
 + 创世区块： MAPO轻客户端可以支持自定义高度作为`创世区块`，而不需要像普通轻客户端一样从创世高度开始同步数据。
-+ 区块头验证： MAPO轻客户端同步区块头数据，并根据`MAPO-Relay-Chain`的[共识机制](docs/base/mapo-relay-chain/consensus/index.md)来验证区块头。
++ 区块头验证： MAPO轻客户端同步区块头数据，并根据`MAPO-Relay-Chain`的[共识机制](/docs/base/mapo-relay-chain/consensus/index.md)来验证区块头。
 + MPT验证： MAPO轻客户端的[MPT](/docs/base/mpt/index.md)验证主要用于验证交易的有效性和合法性。主要通过验证交易对应的`Receipt`及该`Receipt`所在的该交易所包含的区块对应的`Receipt`MPT树所对应的证明数据，使得计算出`ReceiptRoot`与区块头里的`ReceiptRoot`一致。

@@ -8,7 +8,7 @@ lang: zh
 
 ## 前提条件 {#prerequisites}
 
-区块是一个对初学者非常友好的主题。 为了帮助您更好地理解这个页面，我们建议您先阅读[帐户](docs/base/accounts/index.md)、[交易](docs/base/transactions/index.md)和我们的[MAPO简介](docs/base/intro-to-mapo/index.md)。
+区块是一个对初学者非常友好的主题。 为了帮助您更好地理解这个页面，我们建议您先阅读[帐户](/docs/base/accounts/index.md)、[交易](/docs/base/transactions/index.md)和我们的[MAPO简介](/docs/base/intro-to-mapo/index.md)。
 
 ## 为什么要有区块？ {#why-blocks}
 
@@ -27,7 +27,7 @@ lang: zh
 - 其他获悉新区块的验证者再次执行区块中包含的交易，确定他们同意对全局状态提出的修改。 假设该区块是有效的，验证者就将该区块签名并广播给其他验证者直到收集到超过2/3个验证者的签名，则该区块将被确认。
 
 
-[有关权益证明的更多信息](docs/base/mapo-relay-chain/index.md)
+[有关权益证明的更多信息](/docs/base/mapo-relay-chain/index.md)
 
 ## 区块包含什么？ {#block-anatomy}
 
@@ -97,6 +97,6 @@ type Block struct {
 
 ## 相关主题 {#related-topics}
 
-- [交易](docs/base/transactions/index.md)
-- [燃料](docs/base/gas/index.md)
-- [权益证明](docs/base/mapo-relay-chain/index.md)
+- [交易](/docs/base/transactions/index.md)
+- [燃料](/docs/base/gas/index.md)
+- [权益证明](/docs/base/mapo-relay-chain/index.md)

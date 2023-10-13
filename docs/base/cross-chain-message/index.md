@@ -27,11 +27,11 @@ lang: zh
 MAP Protocol 通过使用轻量级客户端 (Light-client) 实现跨链消息的传递。我们以A,B链间的消息跨链`[A <--> B]`为例，以下是具体的步骤：
 
 ![cross-chain-message](./cross-chain-message.jpg) 
-+ 消息创建: 当一条跨链消息在源链(A链)上产生时，它会被打包进该链的区块中，并被广播至整个网络,MAPO的[mos层](docs/base/mos/index.md)提供了标准的消息跨链接口[transferOut](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/interface/IMOSV3.sol#L45),该接口支持用户自定义需要跨链的消息，一条该接口的合约[交易](/docs/base/transactions/index.md)将会通过MAPO Protocol协议完整的搬移到目的链(B链)上，并可以在目标链(B链)上通过上层应用执行。
++ 消息创建: 当一条跨链消息在源链(A链)上产生时，它会被打包进该链的区块中，并被广播至整个网络,MAPO的[mos层](/docs/base/mos/index.md)提供了标准的消息跨链接口[transferOut](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/interface/IMOSV3.sol#L45),该接口支持用户自定义需要跨链的消息，一条该接口的合约[交易](/docs/base/transactions/index.md)将会通过MAPO Protocol协议完整的搬移到目的链(B链)上，并可以在目标链(B链)上通过上层应用执行。
 
-+ 消息跨链交易提交: 当跨链消息的交易在源链(A链)上被打包后,MAPO Protocol的[Compass服务(Messenger)](docs/base/Compass/index.md)将会监控到该条交易并将该交易和其合法性的证明数据提交到目标链(B链)的[mos层](docs/base/mos/index.md),目标链(B链)[mos层](docs/base/mos/index.md)将会通过部署在本链(B链)上的源链(A链)的[轻客户端](/docs/base/light-client/index.md)来验证该跨链交易的合法性。
++ 消息跨链交易提交: 当跨链消息的交易在源链(A链)上被打包后,MAPO Protocol的[Compass服务(Messenger)](/docs/base/Compass/index.md)将会监控到该条交易并将该交易和其合法性的证明数据提交到目标链(B链)的[mos层](/docs/base/mos/index.md),目标链(B链)[mos层](/docs/base/mos/index.md)将会通过部署在本链(B链)上的源链(A链)的[轻客户端](/docs/base/light-client/index.md)来验证该跨链交易的合法性。
 
-+ 区块头同步: 轻量级客户端需要保持对源链的区块头信息的同步，可以验证消息是否已经被包含在区块中。MAPO Protocol协议的[Compass服务(Maintainer)](docs/base/Compass/index.md)将会自动的同步源链(A链)和目的链(B链)上的区块头到对端的[轻客户端](/docs/base/light-client/index.md),以维持双方轻客户端上保持最新的状态。
++ 区块头同步: 轻量级客户端需要保持对源链的区块头信息的同步，可以验证消息是否已经被包含在区块中。MAPO Protocol协议的[Compass服务(Maintainer)](/docs/base/Compass/index.md)将会自动的同步源链(A链)和目的链(B链)上的区块头到对端的[轻客户端](/docs/base/light-client/index.md),以维持双方轻客户端上保持最新的状态。
 
 + 跨链消息验证: [轻客户端](/docs/base/light-client/index.md)可以通过检查源链的区块头信息来验证跨链消息。它会查看区块中是否包含了要验证的消息的哈希值。
 
