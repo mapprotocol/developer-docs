@@ -10,7 +10,7 @@ lang: zh
 
 ## 前置要求 {#prerequisites}
 
-在部署智能合约之前，您需要理解[MAPO网络](docs/base/mapo-relay-chain/index.md), [交易](/docs/base/transactions/index.md)和[详解智能合约](/docs/mapo-stack/compatible-evm/anatomy.md)。
+在部署智能合约之前，您需要理解[MAPO网络](/docs/base/mapo-relay-chain/index.md), [交易](/docs/base/transactions/index.md)和[详解智能合约](/docs/mapo-stack/compatible-evm/anatomy.md)。
 
 部署一个合约也需要耗费MAPO币 (MAPO)，因为他们被存储在区块链上，所以您应该熟悉MAPO的[燃料和费用](/docs/base/gas/index.md)。
 

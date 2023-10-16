@@ -74,7 +74,7 @@ contract VendingMachine {
 
 更好的方法是将单元测试与基于属性的测试相结合，后者是通过[静态和动态分析](/docs/mapo-stack/compatible-evm/testing.md#2-静态分析和动态分析-static-dynamic-analysis)进行的。 静态分析依赖于底层的表示（例如[控制流程图](https://en.wikipedia.org/wiki/Control-flow_graph)和[抽象语法树](https://deepsource.io/glossary/ast/)）分析可达到的程序状态和执行路径。 相比之下，动态分析技术（例如模糊测试）用随机输入值执行合约代码，以检测违反安全属性的操作。
 
-[形式化验证](docs/mapo-stack/compatible-evm/formal-verification.md)是另一项验证智能合约安全属性的技术。 与常规测试不同，形式化验证能够确证智能合约中没有错误。 这是通过制定细致描述安全属性的形式化规范并证明智能合约的形式化模型符合这一规范来实现的。
+[形式化验证](/docs/mapo-stack/compatible-evm/formal-verification.md)是另一项验证智能合约安全属性的技术。 与常规测试不同，形式化验证能够确证智能合约中没有错误。 这是通过制定细致描述安全属性的形式化规范并证明智能合约的形式化模型符合这一规范来实现的。
 
 ### 4. 申请代码独立审核 {#get-independent-code-reviews}
 

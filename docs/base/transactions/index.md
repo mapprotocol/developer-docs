@@ -8,7 +8,7 @@ lang: zh
 
 ## 前提条件 {#prerequisites}
 
-为了帮助您更好地理解这个页面，我们建议您先阅读[账户](docs/base/accounts/index.md)和我们的[MAPO简介](docs/base/intro-to-mapo/index.md)。
+为了帮助您更好地理解这个页面，我们建议您先阅读[账户](/docs/base/accounts/index.md)和我们的[MAPO简介](/docs/base/intro-to-mapo/index.md)。
 
 ## 什么是交易？ {#whats-a-transaction}
 
@@ -50,7 +50,7 @@ MAPO有几种不同类型的交易：
 
 ### 关于燃料 {#on-gas}
 
-如上所述，执行交易需要耗费[燃料](docs/base/gas/index.md)。 简单的转账交易需要 21000 单位燃料。
+如上所述，执行交易需要耗费[燃料](/docs/base/gas/index.md)。 简单的转账交易需要 21000 单位燃料。
 
 因此，如果 Bob 要在 `baseFeePerGas` 为 100 Gwei 且 `maxPriorityFeePerGas` 为 10 Gwei 时给 Alice 发送一个MAPO币，Bob 需要支付以下费用：
 
@@ -81,6 +81,6 @@ Alice 的帐户将会增加 **+1.0 MAPO币**
 
 ## 相关主题 {#related-topics}
 
-- [帐户](docs/base/accounts/index.md)
-- [虚拟机 (EVM)](docs/mapo-stack/compatible-evm/index.md)
-- [燃料](docs/base/gas/index.md)
+- [帐户](/docs/base/accounts/index.md)
+- [虚拟机 (EVM)](/docs/mapo-stack/compatible-evm/index.md)
+- [燃料](/docs/base/gas/index.md)
