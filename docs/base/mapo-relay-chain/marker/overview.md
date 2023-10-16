@@ -19,7 +19,7 @@ marker 的大多数子命令在使用时需要连接到一个正在运行的 atl
 节点请[这里](/docs/base/mapo-relay-chain/nodes/rpc-nodes.md#运行-rpc-节点)
 。或者您可以直接使用我们提供的[公共 RPC 节点](/docs/base/mapo-relay-chain/public-service.md#endpoints)。
 
-还有一个需要验证身份子命令需要使用到 keystore 文件，因此您在使用这些命令时需要提前准备好 keystore 文件，
+还有一个需要验证身份的子命令需要使用到 keystore 文件，因此您在使用这些命令时需要提前准备好 keystore 文件，
 您可以使用以下方法生成一个 keystore 文件:
 
 1. [构建 atlas](/docs/base/mapo-relay-chain/nodes/run-a-node.md#克隆代码仓库并构建)
@@ -44,7 +44,7 @@ Path of the secret key file: ./datadir/keystore/UTC--2022-03-15T02-11-43.8378070
 The keystore has been stored in the directory specified by --keystore.
 ```
 
-如果您已经有一个账号，可以进入到 atlas 控制台进行转换，将你的账号私钥装换成 keystore 文件。
+如果您已经有一个账号，可以进入到 atlas 控制台进行转换，将你的账号私钥转换成 keystore 文件。
 
 ```shell
 USAGE
