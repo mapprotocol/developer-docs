@@ -32,7 +32,7 @@
         + [中继链（atlas）架构 - 区块和交易结构](docs/base/mapo-relay-chain/nodes/architecture.md)
         + 创世
           + [创世配置 - 介绍创世配置文件](docs/base/mapo-relay-chain/nodes/genesis-config.md)
-          + 创世合约
+          + [创世合约](/docs/base/mapo-relay-chain/genesis-contract/index.md)
             + ABI
               + [Accounts](docs/base/mapo-relay-chain/genesis-contract/accounts.md)
               + [Election](docs/base/mapo-relay-chain/genesis-contract/election.md)
