@@ -9,7 +9,7 @@
 在这一步中，您需要将您的身份信息存储到相应的管理合约中，该合约将管理您的账户、密钥和元数据。
 此步骤的目的是通过授权用手签名证明、投票、验证的替代密钥来确保锁定的 MAPO 更加安全。通过这样
 做，您可以继续参与协议，同时保留可以访问存储中锁定的 MAPO 的密钥。
-您需要 createAccount 命令来执行上述操作，更多关于 createAccount 命令的详细信息请参阅[这里]()。
+您需要 createAccount 命令来执行上述操作，更多关于 createAccount 命令的详细信息请参阅[这里](/docs/base/mapo-relay-chain/marker/common.md#createaccount)。
 
 ### 第2步：授杈
 
@@ -20,13 +20,13 @@
 
 我们设置为 validator 的阈值是锁定 1,000,000 MAPO 到相应的管理智能合约中。
 这部分锁定的 MAPO 将用于以后的惩罚，这也是当选的条件之一。
-您需要 LockedMAP 命令来执行上述操作，更多关于 LockedMAP 命令的详细信息请参[这里]()。
+您需要 LockedMAP 命令来执行上述操作，更多关于 LockedMAP 命令的详细信息请参[这里](/docs/base/mapo-relay-chain/marker/common.md#lockedmap)。
 
 ### 第4步： validator 注册
 
 此步骤是注册成为新 validator 的关键步骤。
-您需要 register 命令来执行上述操作，更多关于register 命令的详细信息请参阅[这里]()。
-到这一步，您将成功注册为 validator 。接下来，您可以尝试为自己投票。如何投票请参阅[这里]()。
+您需要 register 命令来执行上述操作，更多关于register 命令的详细信息请参阅[这里](/docs/base/mapo-relay-chain/marker/validator.md#register)。
+到这一步，您将成功注册为 validator 。接下来，您可以尝试为自己投票。如何投票请参阅[这里](/docs/base/mapo-relay-chain/marker/vote.md#vote)。
 
 ### 第5步：投票
 
@@ -38,7 +38,7 @@ validator 必须至少拥有总票数的 0.001 比例才能考虑参加选举。
 
 ### 启动你的节点
 
-在启动节点之前你需要先构建 atlas，如何构建图集请参阅[这里]()
+在启动节点之前你需要先构建 atlas，如何构建图集请参阅[这里](/docs/base/mapo-relay-chain/nodes/run-a-node.md#克隆代码仓库并构建)
 
 你需要准备两个 keystore，一个用于质押的称为 account，一个用于参与共识签名区块的 signer。
 

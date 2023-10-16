@@ -41,7 +41,7 @@
 - `lockedNum`：您要锁定的 MAPO 数量。
 
 ```shell
-./marker vote
+./marker quicklyVote
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
 --target "0x81f02fd21657df80783755874a92c996749777bf"

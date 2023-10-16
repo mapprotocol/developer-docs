@@ -15,27 +15,6 @@ ecdsaPublicKey、blsPublicKey、BLSProof 将通过 你指定的 keystore 获取�
   如果你想将佣金比例设置问 15%, 那么你需要将该参数设置为 150000 (150000/1000000=15%)。这个属性是投票人投票时参考的对象之一。
 
 ```shell
-USAGE
-  $ ./marker register
-
-OPTIONS
-  --keystore                                                   your keystore file path
-
-  --rpcaddr                                                    HTTP-RPC server address 
-
-  --commission                                                 The proportion of awards 
-                                                               collected by the validator,
-                                                               and then the rest to voter
-                                                               ,The commission parameter 
-                                                               is relative to 1000000
-                                                               (0 < commission <1000000)
-                                                               can`t be greater than 1000000.
-                                                               This attribute is one of the 
-                                                               objects that voters refer to
-                                                               when voting.                                                                                                                            
-
-  
-EXAMPLES:
 ./marker register
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -68,30 +47,6 @@ Failed
 - `signerPriv`：signer 账号的私钥。
 
 ```shell
-USAGE
-  $ ./marker quicklyRegister
-
-OPTIONS
-  --keystore                                                   your keystore file path
-  
-  --rpcaddr                                                    HTTP-RPC server address 
-
-  --commission                                                 The proportion of awards 
-                                                               collected by the validator,
-                                                               and then the rest to voter
-                                                               ,Commission(0< commission <1000000)
-                                                               can`t be greater than 1000000.
-                                                               This attribute is one of the 
-                                                               objects that voters refer to
-                                                               when voting 
-                                                               
-  --lockedNum                                                  In order to register as a 
-                                                               validator,you will lock the 
-                                                               `MAP`. 
-                                                               
-  --signerPriv                                                 The private key of signaddress is used to generate sign data                                            
-                                                                                                            
-EXAMPLES:
 ./marker quicklyRegister
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -120,16 +75,6 @@ Failed
 - `keystore`: keystore 文件的路径。
 
 ```shell
-USAGE
-  $ ./marker deregister
-
-OPTIONS
-  --keystore                                                   your keystore file path
-
-  --rpcaddr                                                    HTTP-RPC server address 
-
-                                                                                                            
-EXAMPLES:
 ./marker deregister
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -152,16 +97,6 @@ Failed
 - `keystore`: keystore 文件的路径。
 
 ```shell
-USAGE
-  $ ./marker revertRegister
-
-OPTIONS
-  --keystore                                                   your keystore file path
-
-  --rpcaddr                                                    HTTP-RPC server address 
-
-                                                                                                            
-EXAMPLES:
 ./marker revertRegister
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -187,17 +122,6 @@ Failed
 - `signerPriv`：signer 账号的私钥。
 
 ```shell
-USAGE
-  $ ./marker authorizeValidatorSigner
-
-OPTIONS
-  --keystore                                                   your keystore file path
-
-  --rpcaddr                                                    HTTP-RPC server address 
-                                                               
-  --signerPriv                                                 The private key of signaddress is used to generate sign data    
-                                                                                                            
-EXAMPLES:
 ./marker authorizeValidatorSigner
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2021-09-08T08-00-15.473724074Z--1c0edab88dbb72b119039c4d14b1663525b3ac15
@@ -221,16 +145,6 @@ INFO [05-30|13:42:03.231] Transaction Success                      func=queryTx 
 - `target`：您要进行签名的 validator 账号的地址。
 
 ```shell
-USAGE
-  $ ./marker makeECDSASignatureFromSigner
-
-OPTIONS
-                                                             
-  --target                                                     the target you will sign the message 
-                                                               
-  --signerPriv                                                 The private key of signaddress is used to generate sign data    
-                                                                                                            
-EXAMPLES:
 makeECDSASignatureFromSigner
 --signerPriv
 c59c8a05f70b5ea0a0f2a2bd9491686a8c4a55c0585db2c8c6ed7ccfa0ee2c7b
@@ -254,16 +168,6 @@ INFO [05-30|13:41:55.131] ECDSASignature                           result=0x6dce
 - `target`：您要进行签名的 validator 账号的地址。
 
 ```shell
-USAGE
-  $ ./marker makeBLSProofOfPossessionFromSigner
-
-OPTIONS
-                                                             
-  --target                                                     the target you will sign the message 
-                                                               
-  --signerPriv                                                 The private key of signaddress is used to generate sign data    
-                                                                                                            
-EXAMPLES:
 makeBLSProofOfPossessionFromSigner
 --signerPriv
 c59c8a05f70b5ea0a0f2a2bd9491686a8c4a55c0585db2c8c6ed7ccfa0ee2c7b
@@ -288,18 +192,6 @@ INFO [05-30|13:52:40.375] === pop ===                                result=0x14
 - `target`：signer 账号的地址。
 
 ```shell
-USAGE
-  $ ./marker signerToAccount
-
-                                                             
-OPTIONS
-  --keystore                                                   your keystore file path
-
-  --rpcaddr                                                    HTTP-RPC server address 
-                                                               
-  --target                                                     target signer address
-                                                                                                            
-EXAMPLES:
 signerToAccount
 --rpcaddr http://127.0.0.1:7445
 --keystore ./UTC--2022-05-11T03-31-08.562982000Z--6621f2b6da2bed64b5ffbd6c5b2138547f44c8f9
@@ -320,16 +212,6 @@ INFO [05-30|13:56:05.126] signerToAccount                          authorizingAc
 - `signerPriv`：signer 账号的私钥。
 
 ```shell
-USAGE
-  $ ./marker generateSignerProof
-
-OPTIONS
-                                                             
-  --validator                                                  The target you will sign the message 
-                                                               
-  --signerPriv                                                 The private key of signaddress is used to generate sign data    
-                                                                                                            
-EXAMPLES:
 ./marker generateSignerProof 
 --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 
 --signerPriv 040939e5...604b6f25
@@ -383,27 +265,17 @@ INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx 
   如果你想将佣金比例设置问 15%, 那么你需要将该参数设置为 150000 (150000/1000000=15%)。这个属性是投票人投票时参考的对象之一。
 
 ```shell
-USAGE
-  $ ./marker registerByProof
-
-OPTIONS
-
-  --rpcaddr                                                    HTTP-RPC server address
-  
-  --keystore                                                   Your keystore file path
-                                                                                                                         
-  --proof                                                      The proof generated by generateSignerProof
-                                                                                                                         
-  --commission                                                 The proportion of awards collected by the validator,
-                                                               and then the rest to voter, The commission parameter 
-                                                               is relative to 1000000 (0 < commission <1000000)
-                                                               can`t be greater than 1000000. This attribute is one of 
-                                                               the objects that voters refer to when voting.                                                                                                                       
-
-EXAMPLES:
 ./marker registerByProof 
 --rpcaddr http://127.0.0.1:7445 
 --keystore ./account.json -
 --proof 0xf90149b8...0e56f0ab1 
 --commission 150000
+
+RESPONSE:
+INFO [08-26|17:32:25.055] registerValidatorByProof                 commission=150,000
+INFO [08-26|17:32:25.548] === getTotalVotesForValidator ===        admin=0x73bc690093b9dd0400c91886184a60cc127b2c33
+INFO [08-26|17:32:25.974] === getTotalVotesForValidator ===        result=0
+INFO [08-26|17:32:26.011] TxInfo                                   func=sendContractTransaction TX data nonce =7  gasLimit =4,500,000  gasPrice =101,000,000,000  chainID =1,098,789
+INFO [08-26|17:32:26.119] Please waiting                           func=getResult                txHash =0xfb0487e7196df7489e90ab91217251da5fc7d07b2bc2d2f4ea67966a506a4cd6
+INFO [08-26|17:32:27.241] Transaction Success                      func=queryTx 
 ```

@@ -522,23 +522,10 @@ INFO [08-31|15:16:17.024] Transaction Success                      func=getResul
   如果你想将佣金比例设置问 15%, 那么你需要将该参数设置为 150000 (150000/1000000=15%)。这个属性是投票人投票时参考的对象之一。
 
 ```shell
-
-USAGE
-  $ ./marker setNextCommissionUpdate
-
-OPTIONS
-  --keystore                                                   Keystore file path of sender
-      
-  --rpcaddr                                                    HTTP-RPC server address   
-                                                                                                                                                              
-  --commission                                                 The proportion of awards collected by the validator,
-                                                               and then the rest to voter, The commission parameter 
-                                                               is relative to 1000000 (0 < commission <1000000)
-                                                               can`t be greater than 1000000. This attribute is one of 
-                                                               the objects that voters refer to when voting. 
-    
-EXAMPLES:
-./marker setNextCommissionUpdate --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d --commission 300000
+./marker setNextCommissionUpdate \
+--rpcaddr http://127.0.0.1:7445 \
+--keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d \
+--commission 300000
 
 RESPONSE:
 INFO [09-01|14:17:15.746] === setNextCommissionUpdate ===          commission=300,000
@@ -559,17 +546,9 @@ INFO [09-01|14:17:20.911] Transaction Success                      func=getResul
 - `keystore`: keystore 文件的路径。
 
 ```shell
-
-USAGE
-  $ ./marker updateCommission
-
-OPTIONS
-  --keystore                                                   Keystore file path of sender
-       
-  --rpcaddr                                                    HTTP-RPC server address   
-                                                                                                                                                                  
-EXAMPLES:
-./marker updateCommission --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d
+./marker updateCommission \
+--rpcaddr http://127.0.0.1:7445 \
+--keystore ./UTC--2022-08-26T10-59-01.086763000Z--ef021f15d188ad28625517a8d73cd20ce743a32d
 
 RESPONSE:
 INFO [09-01|14:18:15.648] === updateCommission === 

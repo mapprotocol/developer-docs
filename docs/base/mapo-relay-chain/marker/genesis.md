@@ -2,7 +2,7 @@ marker genesis 是一个 marker 开发者工具提供的一个功能，用于轻
 
 它相对于之前的解决方案的主要优势在于，它能够创建一个 genesis.json ，其中所有核心合约已经部署在其中
 
-标记我们需要使用标记工具。关于如何使用 marker 工具请参考 [这里](/docs/base/mapo-relay-chain/)。 // todo
+标记我们需要使用标记工具。关于如何使用 marker 工具请参考 [这里](/docs/base/mapo-relay-chain/marker/genesis.md#参数说明)
 
 ## 生成 genesis.json 文件
 
@@ -70,8 +70,8 @@ BLSProofOfPossession：签名者地址账户地址的BLS签名数据
 
 关于 PublicKeyHex、BLSPubKey、BLSG1PubKey
 如何获取请参考 [这里](/docs/base/mapo-relay-chain/make-private-network.md#创建账号)
-关于 ECDSASignature 相关信息请参考 [这里](/docs/base/mapo-relay-chain/marker/) todo
-关于 BLSProofOfPossession 相关信息请参考 [这里](/docs/base/mapo-relay-chain/marker/) todo
+关于 ECDSASignature 相关信息请参考 [这里](/docs/base/mapo-relay-chain/marker/validator.md#makeecdsasignaturefromsigner)
+关于 BLSProofOfPossession 相关信息请参考 [这里](/docs/base/mapo-relay-chain/marker/validator.md#makeblsproofofpossessionfromsigner)
 
 其次，您需要编译您的 atlas-contracts 项目，我们需要关于 atlas-contracts 的 bytecode 来生成 genesis.json 文件。
 关于这部分信息请参考 [这里](/docs/base/mapo-relay-chain/genesis-contract/deploy.md#编译合约)
