@@ -41,7 +41,7 @@
               + [Validators](docs/base/mapo-relay-chain/genesis-contract/validators.md)
             + [地址](docs/base/mapo-relay-chain/genesis-contract/address.md)
             + [部署](docs/base/mapo-relay-chain/genesis-contract/deploy.md)
-        + [预编译合约 - 支持的预编译合约](docs/base/mapo-relay-chain/genesis-contract/)
+        + [预编译合约 - 支持的预编译合约](docs/base/mapo-relay-chain/precompile-contract.md)
         + 协议
           + [Proof of Stake](docs/base/mapo-relay-chain/protocol/pos.md)
           + [共识](docs/base/mapo-relay-chain/protocol/consensus.md)
