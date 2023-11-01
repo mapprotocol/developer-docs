@@ -87,7 +87,7 @@ MAPO帐户有四个字段：
 
 MAPO还有一另种类型的密钥，它们是“BLS”密钥，用来识别验证者，在共识过程中用于就新区块的状态达成一致。 这些密钥可以有效地聚合，减少网络达成共识所需要的带宽。 没有这种密钥集合，验证者的最小质押金额将会高出许多。
 
-[更多关于验证者密钥的信息](/docs/base/mapo-relay-chain/pos.md)。
+[更多关于验证者密钥的信息](/docs/base/mapo-relay-chain/protocol/pos.md)。
 
 ## 关于钱包的说明 {#a-note-on-wallets}
 
