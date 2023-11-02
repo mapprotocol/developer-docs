@@ -30,7 +30,7 @@ MAPO交易是指由外部持有账户发起的行动，换句话说，是指由�
 - `maxPriorityFeePerGas` - 作为小费提供给验证者的已消耗燃料的最高价格
 - `maxFeePerGas` - 愿意为交易支付的每单位燃料的最高费用（包括 `baseFeePerGas` 和 `maxPriorityFeePerGas`）
 
-燃料是指验证者处理交易所需的计算。 用户必须为此计算支付费用。 `gasLimit` 和 `maxPriorityFeePerGas` 决定支付给验证者的最高交易费。 [关于燃料的更多信息](docs/base/gas/index.md)。
+燃料是指验证者处理交易所需的计算。 用户必须为此计算支付费用。 `gasLimit` 和 `maxPriorityFeePerGas` 决定支付给验证者的最高交易费。 [关于燃料的更多信息](/docs/base/gas/index.md)。
 
 
 ### `data`字段 {#the-data-field}
