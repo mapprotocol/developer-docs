@@ -1,24 +1,26 @@
 ---
-title: 区块
-description: MAPO-Relay-Chain区块链中区块的概述 – 其数据结构、存在的意义以及区块如何生成
-lang: zh
+title: Block
+description: Overview of Blocks in MAPO-Relay-Chain - Their Data Structure, Purpose, and How Blocks are Generated
+lang: en
 ---
 
-区块是指一批交易的组合，并且包含链中上一个区块的哈希。 这将区块连接在一起（成为一个链），因为哈希是从区块数据中加密得出的。 这可以防止欺诈，因为以前的任何区块中的任何改变都会使后续所有区块无效，而且所有哈希都会改变，所有运行区块链的人都会注意到。以下`MAPO-Relay-Chain`统称为MAPO.
 
-## 前提条件 {#prerequisites}
+A block refers to a combination of transactions and contains the hash of the previous block in the chain. This links blocks together, forming a chain, because the hash is derived from the block's data. This prevents fraud because any change in any previous block will render all subsequent blocks invalid, and all hashes will change, which will be noticed by everyone running the blockchain. The term `MAPO-Relay-Chain` is collectively referred to as `MAPO`.
 
-区块是一个对初学者非常友好的主题。 为了帮助您更好地理解这个页面，我们建议您先阅读[帐户](/docs/base/accounts/index.md)、[交易](/docs/base/transactions/index.md)和我们的[MAPO简介](/docs/base/intro-to-mapo/index.md)。
+## prerequisites
 
-## 为什么要有区块？ {#why-blocks}
+The concept of blocks is very beginner-friendly. To better understand this page, we recommend reading about [accounts](/docs/base/accounts/index_en.md), [transactions](/docs/base/transactions/index_en.md), and our [MAPO introduction](/docs/base/intro-to-mapo/index_en.md) first.
 
-为了确保MAPO网络上的所有参与者保持同步状态并就交易的确切历史达成共识，我们将交易分为多个区块。 这意味着同时有数十个（甚至数百个）交易被提交、达成一致并同步。
+## why-blocks
 
-## 区块如何工作 {#how-blocks-work}
+To ensure that all participants on the `MAPO` network stay in sync and reach consensus on the exact history of transactions, we divide transactions into multiple blocks. This means that dozens or even hundreds of transactions are submitted, agreed upon, and synchronized simultaneously.
 
-为了保存交易历史，区块被严格排序（创建的每个新区块都包含一个其父块的引用），区块内的交易也严格排序。 除极少数情况外，在任何特定时间，网络上的所有参与者都同意区块的确切数目和历史， 并且正在努力将当前的活动交易请求分批到下一个区块。区块被构建并被确认后将传播到整个网络；所有节点都将该区块添加至其区块链的末尾，大概每5秒钟将会产生一个新的区块。
 
-## 权益证明协议 {#proof-of-work-protocol}
+## how-blocks-work
+
+In order to maintain the transaction history, blocks are strictly ordered (each newly created block contains a reference to its parent block), and transactions within blocks are also strictly ordered. With very few exceptions, at any given time, all participants on the network agree on the exact number and history of blocks, and they are actively working to batch the current pending transaction requests into the next block. Once a block is constructed and confirmed, it is propagated throughout the network, and all nodes append this block to the end of their blockchain. Approximately every 5 seconds, a new block is generated.
+
+## proof-of-work-protocol
 
 权益证明是指：
 
@@ -27,7 +29,7 @@ lang: zh
 - 其他获悉新区块的验证者再次执行区块中包含的交易，确定他们同意对全局状态提出的修改。 假设该区块是有效的，验证者就将该区块签名并广播给其他验证者直到收集到超过2/3个验证者的签名，则该区块将被确认。
 
 
-[有关权益证明的更多信息](/docs/base/mapo-relay-chain/protocol/pos.md)
+[有关权益证明的更多信息](/docs/base/mapo-relay-chain/index.md)
 
 ## 区块包含什么？ {#block-anatomy}
 
