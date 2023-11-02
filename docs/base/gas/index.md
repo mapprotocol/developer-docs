@@ -22,7 +22,7 @@ Gas 是指在MAPO网络上执行特定操作所需的计算工作量。
 
 ## Gas费 {#gas fee}
 
-MAPO网络交易费的计算方式采用跟以太坊[伦敦升级](/history/#london)后计算方式一致。
+MAPO网络交易费的计算方式采用跟以太坊`伦敦升级`后计算方式一致。
 
 假设 Jordan 需要向 Taylor 支付 1 个MAPO币。 在交易中，燃料限额为 21,000 单位，基础费是 10 gwei。 Jordan 支付了 2 gwei 作为小费。
 
