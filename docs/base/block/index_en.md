@@ -22,18 +22,20 @@ In order to maintain the transaction history, blocks are strictly ordered (each 
 
 ## proof-of-work-protocol
 
-权益证明是指：
+Proof of Stake (PoS):
 
-- 验证节点必须质押1000000个MAPO币，作为抵押品防止发生不良行为。 这有助于保护网络，因为如果发生不诚实活动且可以证实，部分甚至全部质押金额将被销毁。
-- 在每个时隙（5 秒的时间间隔）中，会随机选择一个验证者作为区块提议者。 他们将交易打包执行并签名，然后确定一个新的“状态”。 他们将这些信息包装到一个区块中并传送给其他验证者。
-- 其他获悉新区块的验证者再次执行区块中包含的交易，确定他们同意对全局状态提出的修改。 假设该区块是有效的，验证者就将该区块签名并广播给其他验证者直到收集到超过2/3个验证者的签名，则该区块将被确认。
+- PoS is a consensus mechanism in which validators must stake a certain amount of MAPO coins(1000000) as collateral to prevent malicious behavior. This helps secure the network because if dishonest activity occurs and can be proven, a portion or all of the staked amount may be destroyed.
+
+- In each slot (a 5-second time interval), a validator is randomly selected as a block proposer. They package, execute, and sign transactions, and determine a new "state." They package this information into a block and broadcast it to other validators.
+
+- Other validators who receive the new block then re-execute the transactions included in the block to ensure they agree on the proposed changes to the global state. Assuming the block is valid, validators sign it and broadcast it to other validators. Once it collects signatures from more than 2/3 of the validators, the block is confirmed.
 
 
-[有关权益证明的更多信息](/docs/base/mapo-relay-chain/index.md)
+[more about PoS](/docs/base/mapo-relay-chain/protocol/pos_en.md)
 
-## 区块包含什么？ {#block-anatomy}
+## block-anatomy
 
-一个区块中包含很多信息。 区块中包含了区块头和区块体：
+A block contains a lot of information. It includes the block header and the block body：
 
 ```golang
 
@@ -87,18 +89,18 @@ type Block struct {
 }
 ```
 
-## 出块时间 {#block-time}
+## block-time
 
-出块时间是指两个区块之间的时间间隔。 在MAPO中，时间划分为每 5 秒一个单位，每5秒将产生一个新的区块，每50000个区块视为一个纪元(epoch)，每个纪元将进行一次验证者集合的更换过程。
-
-
-## 区块大小 {#block-size}
-
-最后一条重要提示是，区块本身的大小是有界限的。 每个区块的目标大小为 1300 万单位燃料，但区块的大小将根据网络需求增加或减少，直至达到 2000 万单位燃料的区块限制。 区块中所有交易消耗的总燃料量必须低于区块的燃料限制。 这很重要，因为它可以确保区块不能任意扩大。 如果区块可以任意扩大，由于空间和速度方面的要求，性能较差的全节点将逐渐无法跟上网络。 区块越大，在下一个时隙中及时处理它们需要的算力就越强大。 这是一种集中化的因素，可以通过限制区块大小来抵制。
+Block time refers to the time interval between two consecutive blocks. In `MAPO`, time is divided into units of 5 seconds, and a new block is produced every 5 seconds. Every 50000 blocks are considered an epoch, and each epoch involves a process of changing the set of validators.
 
 
-## 相关主题 {#related-topics}
+## block-size
 
-- [交易](/docs/base/transactions/index.md)
-- [燃料](/docs/base/gas/index.md)
-- [权益证明](/docs/base/mapo-relay-chain/index.md)
+The last important note is that the size of blocks is bounded. Each block has a target size of 13 million gas units, but the block size can increase or decrease based on network demand until it reaches the block limit of 20 million gas units. The total gas consumed by all transactions in a block must be below the block's gas limit. This is important because it ensures that blocks cannot arbitrarily expand. If blocks could grow without limits, performance-challenged full nodes would gradually fall behind the network due to space and speed requirements. Larger blocks require more computational power to process them promptly in the next epoch. This is a centralizing factor that can be resisted by limiting block size.
+
+
+## related-topics
+
+- [Transactions](/docs/base/transactions/index_en.md)
+- [Gas](/docs/base/gas/index_en.md)
+- [Pos](/docs/base/mapo-relay-chain/protocol/pos_en.md)

@@ -99,4 +99,4 @@ type Block struct {
 
 - [交易](/docs/base/transactions/index.md)
 - [燃料](/docs/base/gas/index.md)
-- [权益证明](/docs/base/mapo-relay-chain/index.md)
+- [权益证明](/docs/base/mapo-relay-chain/protocol/pos.md)
