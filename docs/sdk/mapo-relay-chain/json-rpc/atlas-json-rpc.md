@@ -1,7 +1,7 @@
 ---
 title: atlas json rpc
 description: 
-lang: zh
+lang: en
 ---
 
 ## JSON RPC API Reference
