@@ -29,7 +29,7 @@ Y(S, T)= S'
 
 交易是来自帐户的密码学签名指令。 交易分为两种：一种是消息调用交易，另一种是合约创建交易。
 
-合约创建交易会创建一个新的合约帐户，其中包含已编译的 [智能合约](/docs/mapo-stack/compatible-evm/index.md) 字节码。 每当另一个帐户对该合约进行消息调用时，它都会执行其字节码。
+合约创建交易会创建一个新的合约帐户，其中包含已编译的 [智能合约](/docs/mapo-stack/compatible-evm/index.md#智能合约smart-contracts) 字节码。 每当另一个帐户对该合约进行消息调用时，它都会执行其字节码。
 
 ## EVM 说明 {#evm-instructions}
 
