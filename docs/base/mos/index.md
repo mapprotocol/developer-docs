@@ -14,7 +14,7 @@ MOS 使用 MAP Protocol 轻客户端来验证跨链消息的交易，以确保�
 
 ## 先决条件
 
-- 应用程序必须位于 MAP 协议支持的链之一上。请参阅[链名称](https://docs.mapprotocol.io/develop/light-client)以获取部署 MAPO 轻客户端的链列表。该列表会随着新链的添加而更新。
+- 应用程序必须位于 MAP 协议支持的链之一上。请参阅[文档](https://docs.mapprotocol.io/develop/light-client)以获取部署 MAPO 轻客户端的链列表。该列表会随着新链的添加而更新。
 
 - 跨链消息的可执行合约权限必须授权给对应链上的MOS合约。
 

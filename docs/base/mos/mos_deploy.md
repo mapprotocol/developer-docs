@@ -33,8 +33,7 @@ npx hardhat relayFactoryDeploy --wrapped <wrapped token> --lightnode <lightNodeM
 ```
 
 - `wrapped token`是 MAP 主网或 MAP Makalu 上WMAP 代币地址。
-- `lightNodeManager address`是部署在 MAP 主网或 MAP Makalu 上的轻客户端管理器地址。请参阅[此处](file:///D:/workSpace/MapoProtocol/docs/develop/mos/protocol/README.md)了解更多信息。
-
+- `lightNodeManager address`是部署在 MAP 主网或 MAP Makalu 上的轻客户端管理器地址。
 2. 部署FeeService合约
 
 ```

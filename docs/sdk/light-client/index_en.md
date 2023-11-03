@@ -1,7 +1,6 @@
-# 轻客户端接口
+# Light client interface
 
-在使用mapo的轻客户端进行交易验证时,我们主要使用的的是verifyProofData方法,我们可以看到verifyProofData需要传入一个bytes作为参数,这是为了
-兼容EVM的链进行的统一规范,他实际是一个结构体
+When using the Mapo light client for transaction verification, the primary method we utilize is verifyProofData. It's worth noting that verifyProofData requires a bytes parameter as input. This is done to conform to a unified standard for EVM-compatible chains. In reality, this bytes parameter is a structured data that
 ```
     struct receiptProof {
         blockHeader header;
@@ -14,7 +13,7 @@
     
 ```
 
-更具体的代码实现请参照[ILightNode](https://github.com/mapprotocol/map-contracts/blob/main/protocol/contracts/interface/ILightNode.sol)
+Please refer to a more detailed code implementation for specifics [ILightNode](https://github.com/mapprotocol/map-contracts/blob/main/protocol/contracts/interface/ILightNode.sol)
 
 ```
 // SPDX-License-Identifier: MIT
