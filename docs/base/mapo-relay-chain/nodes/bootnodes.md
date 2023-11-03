@@ -25,4 +25,4 @@ atlas --bootnodes "enode://<node ID>@<IP address>:<port>
 
 可以再[这里](https://github.com/mapprotocol/atlas/blob/main/params/bootnodes.go)查看 atlas 客户端内置的引导节点列表。
 
-你还可以找到一些由志愿者维护的其他引导节点列表。 请务必始终包含至少一个官方引导节点，否则你可能会受到日蚀攻击。
+你还可以找到一些由志愿者维护的其他引导节点列表。 请务必始终包含至少一个官方引导节点，否则你可能会受到 Eclipse 攻击。

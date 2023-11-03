@@ -4,7 +4,7 @@ description:
 lang: zh
 ---
 
-## 网络信息
+## Endpoints
 
 | network  | address                        | chainid | networkid |
 | -------- |--------------------------------| ------ | ------ |
@@ -13,7 +13,7 @@ lang: zh
 | devnet   | http://43.134.183.62:7445      | 213 | 213 |
 
 
-## 主网
+## Mainnet
 | comment       | address                                    |
 |---------------|--------------------------------------------|
 | Explorer      | [https://maposcan.io](https://maposcan.io) |
@@ -24,7 +24,7 @@ lang: zh
 | Graph API     | https://graph-api.maplabs.io               |
 
 
-## 测试网 - Makalu
+## Testnet - Makalu
 | comment       | address                                                        |
 |---------------|----------------------------------------------------------------|
 | Explorer      | [https://testnet.maposcan.io](https://testnet.maposcan.io)     |
@@ -33,7 +33,7 @@ lang: zh
 | Faucet        | [https://faucet.mapprotocol.io](https://faucet.mapprotocol.io) |
 
 
-## 开发网
+## Devnet
 | comment       | address                                                        |
 |---------------|----------------------------------------------------------------|
 | Explorer      | [http://8.210.132.84:8003/](http://8.210.132.84:8003/)         |

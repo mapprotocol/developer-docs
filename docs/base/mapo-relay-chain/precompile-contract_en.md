@@ -1,14 +1,17 @@
-# 概念
+# Concept
 
-预编译合约是在EVM中使用的一种折衷方案，用于提供更复杂的库函数（通常用于复杂的操作，如加密、哈希等），这些函数不适合使用opcode编写。
-它们适用于简单但频繁调用的合约，或者逻辑上固定但计算密集的合约。预编译合约在客户端上通过客户端代码实现，因为它们不需要EVM，
-所以运行速度快。对于开发人员来说，使用预编译合约的成本也比直接在EVM中运行函数低。
+Precompiled contracts are a compromise used in the EVM to provide more complex library functions (usually used for
+complex operations such as encryption, hashing, etc.) that are not suitable for writing in opcode. They are applied to
+contracts that are simple but frequently called, or that are logically fixed but computationally intensive. Precompiled
+contracts are implemented on the client-side with client code, and because they do not require the EVM, they run fast.
+It also costs less for developers than using functions that run directly in the EVM.
 
-## MAP预编译合约
+## MAP Pre-compiled contracts
 
-为了简化轻客户端的开发，所有种类的密码学原语都在区块链层面上得到支持，并通过预编译合约暴露给EVM。
+To ease the development of light clients, all kinds of cryptography primitives are supported at the blockchain level and
+are exposed to EVM via pre-compiled contracts.
 
-MAP中继链将实现预编译合约以支持：
+MAP Relay Chain will implement the pre-compiled contracts to support:
 
 ### bn256
 
@@ -704,25 +707,25 @@ func (c *getParentSealBitmap) Run(evm *EVM, contract *Contract, input []byte) ([
 package example
 
 func (c *getVerifiedSealBitmap) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
-	// input is comprised of a single argument:
-	// header:  rlp encoded block header
-	var header types.Header
-	if err := rlp.DecodeBytes(input, &header); err != nil {
-		return nil, ErrInputDecode
-	}
-	// Verify the seal against the engine rules.
-	if !evm.Context.VerifySeal(&header) {
-		return nil, ErrInputVerification
-	}
+  // input is comprised of a single argument:
+  // header:  rlp encoded block header
+  var header types.Header
+  if err := rlp.DecodeBytes(input, &header); err != nil {
+    return nil, ErrInputDecode
+  }
+  // Verify the seal against the engine rules.
+  if !evm.Context.VerifySeal(&header) {
+    return nil, ErrInputVerification
+  }
 
-	// Extract the verified seal from the header.
-	extra, err := types.ExtractIstanbulExtra(&header)
-	if err != nil {
-		log.Error("Header without Istanbul extra data encountered in getVerifiedSealBitmap precompile", "extraData", header.Extra, "err", err)
-		// Seal verified by a non-Istanbul engine. Return an error.
-		return nil, ErrEngineIncompatible
-	}
-	return common.LeftPadBytes(extra.AggregatedSeal.Bitmap.Bytes()[:], 32), nil
+  // Extract the verified seal from the header.
+  extra, err := types.ExtractIstanbulExtra(&header)
+  if err != nil {
+    log.Error("Header without Istanbul extra data encountered in getVerifiedSealBitmap precompile", "extraData", header.Extra, "err", err)
+    // Seal verified by a non-Istanbul engine. Return an error.
+    return nil, ErrEngineIncompatible
+  }
+  return common.LeftPadBytes(extra.AggregatedSeal.Bitmap.Bytes()[:], 32), nil
 }
 
 ```
@@ -739,7 +742,7 @@ func (c *getVerifiedSealBitmap) Run(evm *EVM, contract *Contract, input []byte) 
 package example
 
 func (s *store) Run(evm *EVM, contract *Contract, input []byte) (ret []byte, err error) {
-	return RunHeaderStore(evm, contract, input)
+  return RunHeaderStore(evm, contract, input)
 }
 
 ```
@@ -769,48 +772,48 @@ package example
 import "fmt"
 
 func (c *eth2VerifyLightClient) Run(evm *EVM, contract *Contract, input []byte) (ret []byte, err error) {
-	return nil, eth2.VerifyLightClientUpdate(input)
+  return nil, eth2.VerifyLightClientUpdate(input)
 }
 
 func VerifyLightClientUpdate(input []byte) error {
-	verify, err := decodeLightClientVerifyV2(input)
-	if err != nil {
-		log.Warn("decodeLightClientVerifyV2", "error", err)
-		verify, err = decodeLightClientVerifyV1(input)
-		if err != nil {
-			log.Warn("decodeLightClientVerifyV1", "error", err)
-			return err
-		}
-	}
+  verify, err := decodeLightClientVerifyV2(input)
+  if err != nil {
+    log.Warn("decodeLightClientVerifyV2", "error", err)
+    verify, err = decodeLightClientVerifyV1(input)
+    if err != nil {
+      log.Warn("decodeLightClientVerifyV1", "error", err)
+      return err
+    }
+  }
 
-	switch verify.update.(type) {
-	case *LightClientUpdateV1:
-		if err := verifyFinalityV1(verify.update.(*LightClientUpdateV1)); err != nil {
-			log.Warn("verifyFinalityV1", "error", err)
-			return err
-		}
-	case *LightClientUpdateV2:
-		if err := verifyFinalityV2(verify.update.(*LightClientUpdateV2)); err != nil {
-			log.Warn("verifyFinalityV2", "error", err)
-			return err
-		}
+  switch verify.update.(type) {
+  case *LightClientUpdateV1:
+    if err := verifyFinalityV1(verify.update.(*LightClientUpdateV1)); err != nil {
+      log.Warn("verifyFinalityV1", "error", err)
+      return err
+    }
+  case *LightClientUpdateV2:
+    if err := verifyFinalityV2(verify.update.(*LightClientUpdateV2)); err != nil {
+      log.Warn("verifyFinalityV2", "error", err)
+      return err
+    }
 
-	default:
-		log.Warn("invalid light client update type")
-		return fmt.Errorf("invalid light client update type")
-	}
+  default:
+    log.Warn("invalid light client update type")
+    return fmt.Errorf("invalid light client update type")
+  }
 
-	if err := verifyNextSyncCommittee(verify.state, verify.update); err != nil {
-		log.Warn("verifyNextSyncCommittee", "error", err)
-		return err
-	}
+  if err := verifyNextSyncCommittee(verify.state, verify.update); err != nil {
+    log.Warn("verifyNextSyncCommittee", "error", err)
+    return err
+  }
 
-	if err := verifyBlsSignatures(verify.state, verify.update); err != nil {
-		log.Warn("verifyBlsSignatures", "error", err)
-		return err
-	}
+  if err := verifyBlsSignatures(verify.state, verify.update); err != nil {
+    log.Warn("verifyBlsSignatures", "error", err)
+    return err
+  }
 
-	return nil
+  return nil
 }
 
 ```
@@ -829,34 +832,34 @@ package example
 import "math/big"
 
 func (c *ecrecover) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
-	const ecRecoverInputLength = 128
+  const ecRecoverInputLength = 128
 
-	input = common.RightPadBytes(input, ecRecoverInputLength)
-	// "input" is (hash, v, r, s), each 32 bytes
-	// but for ecrecover we want (r, s, v)
+  input = common.RightPadBytes(input, ecRecoverInputLength)
+  // "input" is (hash, v, r, s), each 32 bytes
+  // but for ecrecover we want (r, s, v)
 
-	r := new(big.Int).SetBytes(input[64:96])
-	s := new(big.Int).SetBytes(input[96:128])
-	v := input[63] - 27
+  r := new(big.Int).SetBytes(input[64:96])
+  s := new(big.Int).SetBytes(input[96:128])
+  v := input[63] - 27
 
-	// tighter sig s values input homestead only apply to tx sigs
-	if !allZero(input[32:63]) || !crypto.ValidateSignatureValues(v, r, s, false) {
-		return nil, nil
-	}
-	// We must make sure not to modify the 'input', so placing the 'v' along with
-	// the signature needs to be done on a new allocation
-	sig := make([]byte, 65)
-	copy(sig, input[64:128])
-	sig[64] = v
-	// v needs to be at the end for libsecp256k1
-	pubKey, err := crypto.Ecrecover(input[:32], sig)
-	// make sure the public key is a valid one
-	if err != nil {
-		return nil, nil
-	}
+  // tighter sig s values input homestead only apply to tx sigs
+  if !allZero(input[32:63]) || !crypto.ValidateSignatureValues(v, r, s, false) {
+    return nil, nil
+  }
+  // We must make sure not to modify the 'input', so placing the 'v' along with
+  // the signature needs to be done on a new allocation
+  sig := make([]byte, 65)
+  copy(sig, input[64:128])
+  sig[64] = v
+  // v needs to be at the end for libsecp256k1
+  pubKey, err := crypto.Ecrecover(input[:32], sig)
+  // make sure the public key is a valid one
+  if err != nil {
+    return nil, nil
+  }
 
-	// the first byte of pubkey is bitcoin heritage
-	return common.LeftPadBytes(crypto.Keccak256(pubKey[1:])[12:], 32), nil
+  // the first byte of pubkey is bitcoin heritage
+  return common.LeftPadBytes(crypto.Keccak256(pubKey[1:])[12:], 32), nil
 }
 
 ```
@@ -873,8 +876,8 @@ package example
 import "crypto/sha256"
 
 func (c *sha256hash) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
-	h := sha256.Sum256(input)
-	return h[:], nil
+  h := sha256.Sum256(input)
+  return h[:], nil
 }
 
 ```
@@ -907,31 +910,31 @@ package example
 import "math/big"
 
 func (c *bigModExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
-	var (
-		baseLen = new(big.Int).SetBytes(getData(input, 0, 32)).Uint64()
-		expLen  = new(big.Int).SetBytes(getData(input, 32, 32)).Uint64()
-		modLen  = new(big.Int).SetBytes(getData(input, 64, 32)).Uint64()
-	)
-	if len(input) > 96 {
-		input = input[96:]
-	} else {
-		input = input[:0]
-	}
-	// Handle a special case when both the base and mod length is zero
-	if baseLen == 0 && modLen == 0 {
-		return []byte{}, nil
-	}
-	// Retrieve the operands and execute the exponentiation
-	var (
-		base = new(big.Int).SetBytes(getData(input, 0, baseLen))
-		exp  = new(big.Int).SetBytes(getData(input, baseLen, expLen))
-		mod  = new(big.Int).SetBytes(getData(input, baseLen+expLen, modLen))
-	)
-	if mod.BitLen() == 0 {
-		// Modulo 0 is undefined, return zero
-		return common.LeftPadBytes([]byte{}, int(modLen)), nil
-	}
-	return common.LeftPadBytes(base.Exp(base, exp, mod).Bytes(), int(modLen)), nil
+  var (
+    baseLen = new(big.Int).SetBytes(getData(input, 0, 32)).Uint64()
+    expLen  = new(big.Int).SetBytes(getData(input, 32, 32)).Uint64()
+    modLen  = new(big.Int).SetBytes(getData(input, 64, 32)).Uint64()
+  )
+  if len(input) > 96 {
+    input = input[96:]
+  } else {
+    input = input[:0]
+  }
+  // Handle a special case when both the base and mod length is zero
+  if baseLen == 0 && modLen == 0 {
+    return []byte{}, nil
+  }
+  // Retrieve the operands and execute the exponentiation
+  var (
+    base = new(big.Int).SetBytes(getData(input, 0, baseLen))
+    exp  = new(big.Int).SetBytes(getData(input, baseLen, expLen))
+    mod  = new(big.Int).SetBytes(getData(input, baseLen+expLen, modLen))
+  )
+  if mod.BitLen() == 0 {
+    // Modulo 0 is undefined, return zero
+    return common.LeftPadBytes([]byte{}, int(modLen)), nil
+  }
+  return common.LeftPadBytes(base.Exp(base, exp, mod).Bytes(), int(modLen)), nil
 }
 
 ```
@@ -948,45 +951,45 @@ package example
 import "fmt"
 
 func (c *transfer) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
-	caller := contract.CallerAddress
-	atlasGoldAddress, err := evm.Context.GetRegisteredAddress(evm, params2.GoldTokenRegistryId)
-	if err != nil {
-		return nil, err
-	}
-	// input is comprised of 3 arguments:
-	//   from:  32 bytes representing the address of the sender
-	//   to:    32 bytes representing the address of the recipient
-	//   value: 32 bytes, a 256 bit integer representing the amount of Atlas Gold to transfer
-	// 3 arguments x 32 bytes each = 96 bytes total input
-	if len(input) < 96 {
-		return nil, ErrInputLength
-	}
+  caller := contract.CallerAddress
+  atlasGoldAddress, err := evm.Context.GetRegisteredAddress(evm, params2.GoldTokenRegistryId)
+  if err != nil {
+    return nil, err
+  }
+  // input is comprised of 3 arguments:
+  //   from:  32 bytes representing the address of the sender
+  //   to:    32 bytes representing the address of the recipient
+  //   value: 32 bytes, a 256 bit integer representing the amount of Atlas Gold to transfer
+  // 3 arguments x 32 bytes each = 96 bytes total input
+  if len(input) < 96 {
+    return nil, ErrInputLength
+  }
 
-	if caller != atlasGoldAddress {
-		return nil, fmt.Errorf("Unable to call transfer from unpermissioned address")
-	}
-	from := common.BytesToAddress(input[0:32])
-	to := common.BytesToAddress(input[32:64])
+  if caller != atlasGoldAddress {
+    return nil, fmt.Errorf("Unable to call transfer from unpermissioned address")
+  }
+  from := common.BytesToAddress(input[0:32])
+  to := common.BytesToAddress(input[32:64])
 
-	var parsed bool
-	value, parsed := math.ParseBig256(hexutil.Encode(input[64:96]))
-	if !parsed {
-		return nil, fmt.Errorf("Error parsing transfer: unable to parse value from " + hexutil.Encode(input[64:96]))
-	}
+  var parsed bool
+  value, parsed := math.ParseBig256(hexutil.Encode(input[64:96]))
+  if !parsed {
+    return nil, fmt.Errorf("Error parsing transfer: unable to parse value from " + hexutil.Encode(input[64:96]))
+  }
 
-	if from == params2.ZeroAddress {
-		// Mint case: Create cGLD out of thin air
-		evm.StateDB.AddBalance(to, value)
-	} else {
-		// Fail if we're trying to transfer more than the available balance
-		if !evm.Context.CanTransfer(evm.StateDB, from, value) {
-			return nil, ErrInsufficientBalance
-		}
+  if from == params2.ZeroAddress {
+    // Mint case: Create cGLD out of thin air
+    evm.StateDB.AddBalance(to, value)
+  } else {
+    // Fail if we're trying to transfer more than the available balance
+    if !evm.Context.CanTransfer(evm.StateDB, from, value) {
+      return nil, ErrInsufficientBalance
+    }
 
-		//evm.Context.Transfer(evm, from, to, value)
-	}
+    //evm.Context.Transfer(evm, from, to, value)
+  }
 
-	return input, err
+  return input, err
 }
 
 ```
@@ -1001,77 +1004,77 @@ func (c *transfer) Run(evm *EVM, contract *Contract, input []byte) ([]byte, erro
 package example
 
 import (
-	"fmt"
-	"math/big"
+  "fmt"
+  "math/big"
 )
 
 func (c *fractionMulExp) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
-	// input is comprised of 6 arguments:
-	//   aNumerator:   32 bytes, 256 bit integer, numerator for the first fraction (a)
-	//   aDenominator: 32 bytes, 256 bit integer, denominator for the first fraction (a)
-	//   bNumerator:   32 bytes, 256 bit integer, numerator for the second fraction (b)
-	//   bDenominator: 32 bytes, 256 bit integer, denominator for the second fraction (b)
-	//   exponent:     32 bytes, 256 bit integer, exponent to raise the second fraction (b) to
-	//   decimals:     32 bytes, 256 bit integer, places of precision
-	//
-	// 6 args x 32 bytes each = 192 bytes total input length
-	if len(input) < 192 {
-		return nil, ErrInputLength
-	}
+  // input is comprised of 6 arguments:
+  //   aNumerator:   32 bytes, 256 bit integer, numerator for the first fraction (a)
+  //   aDenominator: 32 bytes, 256 bit integer, denominator for the first fraction (a)
+  //   bNumerator:   32 bytes, 256 bit integer, numerator for the second fraction (b)
+  //   bDenominator: 32 bytes, 256 bit integer, denominator for the second fraction (b)
+  //   exponent:     32 bytes, 256 bit integer, exponent to raise the second fraction (b) to
+  //   decimals:     32 bytes, 256 bit integer, places of precision
+  //
+  // 6 args x 32 bytes each = 192 bytes total input length
+  if len(input) < 192 {
+    return nil, ErrInputLength
+  }
 
-	parseErrorStr := "Error parsing input: unable to parse %s value from %s"
+  parseErrorStr := "Error parsing input: unable to parse %s value from %s"
 
-	aNumerator, parsed := math.ParseBig256(hexutil.Encode(input[0:32]))
-	if !parsed {
-		return nil, fmt.Errorf(parseErrorStr, "aNumerator", hexutil.Encode(input[0:32]))
-	}
+  aNumerator, parsed := math.ParseBig256(hexutil.Encode(input[0:32]))
+  if !parsed {
+    return nil, fmt.Errorf(parseErrorStr, "aNumerator", hexutil.Encode(input[0:32]))
+  }
 
-	aDenominator, parsed := math.ParseBig256(hexutil.Encode(input[32:64]))
-	if !parsed {
-		return nil, fmt.Errorf(parseErrorStr, "aDenominator", hexutil.Encode(input[32:64]))
-	}
+  aDenominator, parsed := math.ParseBig256(hexutil.Encode(input[32:64]))
+  if !parsed {
+    return nil, fmt.Errorf(parseErrorStr, "aDenominator", hexutil.Encode(input[32:64]))
+  }
 
-	bNumerator, parsed := math.ParseBig256(hexutil.Encode(input[64:96]))
-	if !parsed {
-		return nil, fmt.Errorf(parseErrorStr, "bNumerator", hexutil.Encode(input[64:96]))
-	}
+  bNumerator, parsed := math.ParseBig256(hexutil.Encode(input[64:96]))
+  if !parsed {
+    return nil, fmt.Errorf(parseErrorStr, "bNumerator", hexutil.Encode(input[64:96]))
+  }
 
-	bDenominator, parsed := math.ParseBig256(hexutil.Encode(input[96:128]))
-	if !parsed {
-		return nil, fmt.Errorf(parseErrorStr, "bDenominator", hexutil.Encode(input[96:128]))
-	}
+  bDenominator, parsed := math.ParseBig256(hexutil.Encode(input[96:128]))
+  if !parsed {
+    return nil, fmt.Errorf(parseErrorStr, "bDenominator", hexutil.Encode(input[96:128]))
+  }
 
-	exponent, parsed := math.ParseBig256(hexutil.Encode(input[128:160]))
-	if !parsed {
-		return nil, fmt.Errorf(parseErrorStr, "exponent", hexutil.Encode(input[128:160]))
-	}
+  exponent, parsed := math.ParseBig256(hexutil.Encode(input[128:160]))
+  if !parsed {
+    return nil, fmt.Errorf(parseErrorStr, "exponent", hexutil.Encode(input[128:160]))
+  }
 
-	decimals, parsed := math.ParseBig256(hexutil.Encode(input[160:192]))
-	if !parsed {
-		return nil, fmt.Errorf(parseErrorStr, "decimals", hexutil.Encode(input[160:192]))
-	}
+  decimals, parsed := math.ParseBig256(hexutil.Encode(input[160:192]))
+  if !parsed {
+    return nil, fmt.Errorf(parseErrorStr, "decimals", hexutil.Encode(input[160:192]))
+  }
 
-	// Handle passing of zero denominators
-	if aDenominator == big.NewInt(0) || bDenominator == big.NewInt(0) {
-		return nil, fmt.Errorf("Input Error: Denominator of zero provided!")
-	}
+  // Handle passing of zero denominators
+  if aDenominator == big.NewInt(0) || bDenominator == big.NewInt(0) {
+    return nil, fmt.Errorf("Input Error: Denominator of zero provided!")
+  }
 
-	if !decimals.IsInt64() || !exponent.IsInt64() || max(decimals.Int64(), exponent.Int64()) > 100000 {
-		return nil, fmt.Errorf("Input Error: Decimals or exponent too large")
-	}
+  if !decimals.IsInt64() || !exponent.IsInt64() || max(decimals.Int64(), exponent.Int64()) > 100000 {
+    return nil, fmt.Errorf("Input Error: Decimals or exponent too large")
+  }
 
-	numeratorExp := new(big.Int).Mul(aNumerator, new(big.Int).Exp(bNumerator, exponent, nil))
-	denominatorExp := new(big.Int).Mul(aDenominator, new(big.Int).Exp(bDenominator, exponent, nil))
+  numeratorExp := new(big.Int).Mul(aNumerator, new(big.Int).Exp(bNumerator, exponent, nil))
+  denominatorExp := new(big.Int).Mul(aDenominator, new(big.Int).Exp(bDenominator, exponent, nil))
 
-	decimalAdjustment := new(big.Int).Exp(big.NewInt(10), decimals, nil) //10^18
+  decimalAdjustment := new(big.Int).Exp(big.NewInt(10), decimals, nil) //10^18
 
-	numeratorDecimalAdjusted := new(big.Int).Div(new(big.Int).Mul(numeratorExp, decimalAdjustment), denominatorExp).Bytes()
-	denominatorDecimalAdjusted := decimalAdjustment.Bytes()
+  numeratorDecimalAdjusted := new(big.Int).Div(new(big.Int).Mul(numeratorExp, decimalAdjustment), denominatorExp).Bytes()
+  denominatorDecimalAdjusted := decimalAdjustment.Bytes()
 
-	numeratorPadded := common.LeftPadBytes(numeratorDecimalAdjusted, 32)
-	denominatorPadded := common.LeftPadBytes(denominatorDecimalAdjusted, 32)
+  numeratorPadded := common.LeftPadBytes(numeratorDecimalAdjusted, 32)
+  denominatorPadded := common.LeftPadBytes(denominatorDecimalAdjusted, 32)
 
-	return append(numeratorPadded, denominatorPadded...), nil
+  return append(numeratorPadded, denominatorPadded...), nil
 }
 
 ```
@@ -1088,24 +1091,24 @@ package example
 import "crypto/ed25519"
 
 func (c *ed25519Verify) Run(evm *EVM, contract *Contract, input []byte) ([]byte, error) {
-	// Setup success/failure return values
-	var fail32byte, success32Byte = true32Byte, false32Byte
+  // Setup success/failure return values
+  var fail32byte, success32Byte = true32Byte, false32Byte
 
-	// Check if all required arguments are present
-	if len(input) < 96 {
-		return fail32byte, nil
-	}
+  // Check if all required arguments are present
+  if len(input) < 96 {
+    return fail32byte, nil
+  }
 
-	publicKey := input[0:32]  // 32 bytes
-	signature := input[32:96] // 64 bytes
-	message := input[96:]     // arbitrary length
+  publicKey := input[0:32]  // 32 bytes
+  signature := input[32:96] // 64 bytes
+  message := input[96:]     // arbitrary length
 
-	// Verify the Ed25519 signature against the public key and message
-	// https://godoc.org/golang.org/x/crypto/ed25519#Verify
-	if ed25519.Verify(publicKey, message, signature) {
-		return success32Byte, nil
-	}
-	return fail32byte, nil
+  // Verify the Ed25519 signature against the public key and message
+  // https://godoc.org/golang.org/x/crypto/ed25519#Verify
+  if ed25519.Verify(publicKey, message, signature) {
+    return success32Byte, nil
+  }
+  return fail32byte, nil
 }
 
 ```

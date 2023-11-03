@@ -1,10 +1,13 @@
-marker genesis 是一个 marker 开发者工具提供的一个功能，用于轻松运行 Atlas 区块链测试网络和与测试网络相关的任务。
+The marker genesis is a feature provided by the marker developer tool that allows for easy running of the Atlas
+blockchain test network and tasks related to the test network.
 
-它相对于之前的解决方案的主要优势在于，它能够创建一个 genesis.json ，其中所有核心合约已经部署在其中
+The main advantage of this solution compared to previous ones is that it can create a genesis.json file with all the
+core contracts already deployed in it.
 
-标记我们需要使用标记工具。关于如何使用 marker 工具请参考 [这里](/docs/base/mapo-relay-chain/marker/overview.md#使用)。
+To use the marker tool, we need to follow these steps. For details on how to use the marker tool, please refer
+to [here](/docs/base/mapo-relay-chain/marker/overview.md#usage). // todo
 
-## 生成 genesis.json 文件
+## Generating the genesis.json file
 
 ```shell
 git clone github.com/mapprotocol/atlas
@@ -12,7 +15,7 @@ cd atlas/marker/config
 vim markerConfig.json
 ```
 
-首先，你需要像这样配置 markerConfig.json 设置账号的相关信息。
+First, you need to configure the markerConfig.json file with the account information as shown above.
 
 ```shell
 {
@@ -58,25 +61,31 @@ vim markerConfig.json
 }
 ```
 
-## 参数说明
+## Parameter Explanation
 
-`Address`：账号地址，将作为 validator 账号注册到 validator 集合中。
-`SignerAddress`：签名者地址，它是由账号地址授权的，用于替代 validator 与 Atlas 网络上的其他节点达成共识。
-`ECDSASignature`：签名者地址对账号地址的 ECDSA 签名结果。
-`PublicKeyHex`：签名者地址的公钥。
-`BLSPubKey`：签名者地址的 BLS 公钥。
-`BLSG1PubKey`：签名者地址的 BLS G1 公钥。
-`BLSProofOfPossession`：签名者地址账户地址的BLS签名数据
+`Address`: The account address that will be registered as a validator in the validator set.
+`SignerAddress`: The signer address, which is authorized by the account address, is used to represent the validator and
+reach consensus with other nodes on the Atlas network.
+`ECDSASignature`: The ECDSA signature result of the signer address for the account address.
+`PublicKeyHex`: The public key of the signer address.
+`BLSPubKey`: The BLS public key of the signer address.
+`BLSG1PubKey`: The BLS G1 public key of the signer address.
+`BLSProofOfPossession`: The BLS signature data of the signer address and the account address.
 
-关于 PublicKeyHex、BLSPubKey、BLSG1PubKey
-如何获取请参考 [这里](/docs/base/mapo-relay-chain/make-private-network.md#创建账号)
-关于 ECDSASignature 相关信息请参考 [这里](/docs/base/mapo-relay-chain/marker/validator.md#makeecdsasignaturefromsigner)
-关于 BLSProofOfPossession 相关信息请参考 [这里](/docs/base/mapo-relay-chain/marker/validator.md#makeblsproofofpossessionfromsigner)
+Regarding PublicKeyHex, BLSPubKey, and BLSG1PubKey, please refer
+to [here](/docs/base/mapo-relay-chain/make-private-network.md#creating-accounts) for how to obtain them. // todo
+For information related to ECDSASignature, please refer
+to [here](/docs/base/mapo-relay-chain/marker/validator.md#makeecdsasignaturefromsigner).
+For information related to BLSProofOfPossession, please refer
+to [here](/docs/base/mapo-relay-chain/marker/validator.md#makeblsproofofpossessionfromsigner).
 
-其次，您需要编译您的 atlas-contracts 项目，我们需要关于 atlas-contracts 的 bytecode 来生成 genesis.json 文件。
-关于这部分信息请参考 [这里](/docs/base/mapo-relay-chain/genesis-contract/deploy.md#编译合约)
+Next, you need to compile your atlas-contracts project. We need the bytecode of the atlas-contracts to generate the
+genesis.json file.
+Please refer to [here](/docs/base/mapo-relay-chain/genesis-contract/deploy.md#compiling-the-contracts) for
+information // todo
+on this part.
 
-然后执行以下操作：
+Then perform the following steps:
 
 ```shell
 USAGE
@@ -95,14 +104,16 @@ marker genesis --buildpath /home/atlas-contracts/build/contracts --markercfg /ho
 
 ```
 
-上面的命令会在当前目录下生成一个 genesis.json 文件，你可以使用此 genesis.json 初始化 Atlas validator 节点。 像下面这样：
+The above command will generate a genesis.json file in the current directory. You can use this genesis.json file to
+initialize an Atlas validator node. Like this:
 
 ```shell
 ./atlas --datadir ./node-1 init ./genesis.json
 ```
 
-另一种方法是将 genesis.json 中的 alloc
-信息复制到 [core/chain/genesis_alloc_mainnet.go](https://github.com/mapprotocol/atlas/blob/8862631953900d1c5dbbdbb803812b9823678d74/core/chain/genesis_alloc_mainnet.go#L25)
-文件中，覆盖 mainnetAllocJSON 。然后使用 `make atlas` 重新编译代码。
+Another way is to copy the alloc information from genesis.json to
+the [core/chain/genesis_alloc_mainnet.go](https://github.com/mapprotocol/atlas/blob/8862631953900d1c5dbbdbb803812b9823678d74/core/chain/genesis_alloc_mainnet.go#L25)
+file, replacing mainnetAllocJSON. Then recompile the code using `make atlas`.
 
-在这里我们更推荐第一种方式，因为你可以通过修改 genesis.json 文件来定制你想要的参数，比如你可以修改 chainId。并且这种方式更不容易出错。
+Here we recommend the first method because you can customize the parameters you want by modifying the genesis.json file,
+such as changing the chainId. And this method is less prone to errors.
