@@ -22,7 +22,8 @@ compass 配置参数如下
       "http": "true",
       "gasLimit": "4000000000000",
       "maxGasPrice": "2000000000000",
-      "syncIdList": "[34434]"
+      "syncIdList": "[34434]",
+      "apiUrl" : "http://127.0.0.1:8080"
     }
   },
   "chains": [
