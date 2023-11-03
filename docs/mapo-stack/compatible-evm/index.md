@@ -29,7 +29,7 @@ Y(S, T)= S'
 
 交易是来自帐户的密码学签名指令。 交易分为两种：一种是消息调用交易，另一种是合约创建交易。
 
-合约创建交易会创建一个新的合约帐户，其中包含已编译的 [智能合约](/docs/mapo-stack/compatible-evm/index.md) 字节码。 每当另一个帐户对该合约进行消息调用时，它都会执行其字节码。
+合约创建交易会创建一个新的合约帐户，其中包含已编译的 [智能合约](/docs/mapo-stack/compatible-evm/index.md#智能合约smart-contracts) 字节码。 每当另一个帐户对该合约进行消息调用时，它都会执行其字节码。
 
 ## EVM 说明 {#evm-instructions}
 
@@ -39,7 +39,7 @@ EVM 作为一个[堆栈机](https://wikipedia.org/wiki/Stack_machine)运行，�
 
 然而，合约确实包含一个 Merkle Patricia _存储_ trie（作为可字寻址的字数组），该 trie 与帐户和部分全局状态关联。
 
-已编译的智能合约字节码作为许多 EVM [opcodes](/docs/mapo-stack/compatible-evm/index.md)执行，它们执行标准的堆栈操作，例如 `XOR`、`AND`、`ADD`、`SUB`等。 EVM 还实现了一些区块链特定的堆栈操作，如 `ADDRESS`、`BALANCE`、`BLOCKHASH` 等。
+已编译的智能合约字节码作为许多 EVM opcodes执行，它们执行标准的堆栈操作，例如 `XOR`、`AND`、`ADD`、`SUB`等。 EVM 还实现了一些区块链特定的堆栈操作，如 `ADDRESS`、`BALANCE`、`BLOCKHASH` 等。
 
 ![表明 EVM 操作需要 Gas 的图表](./evm-gas.jpg)
 

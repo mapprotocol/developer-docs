@@ -1,22 +1,24 @@
 ---
-title: 详解智能合约
-description: 深入解读智能合约：函数、数据和变量。
-lang: zh
+title: Anatomy of smart contracts
+description: An in-depth look into the anatomy of a smart contact – the functions, data, and variables.
+lang: en
 ---
 
-智能合约是一种在`MAPO-Relay-Chain`某个地址上运行的程序。 它们是由数据和函数组成的，可以在收到交易时执行。 以下概述一个智能合约的组成。以下`MAPO-Relay-Chain`统称为MAPO.
+A smart contract is a program that runs at an address on `MAPO-Relay-Chain`. They're made up of data and functions that can execute upon receiving a transaction. Here's an overview of what makes up a smart contract.
 
-### 前置要求 {#prerequisites}
+The following `MAPO-Relay-Chain` is collectively referred to as MAPO.
 
-确保您已经先阅读了[智能合约](/docs/mapo-stack/compatible-evm/index.md#智能合约smart-contracts)。 本文档假设您已经熟悉某种编程语言，例如 JavaScript 或 Python。
+### prerequisites
 
-## 数据 {#data}
+Make sure you've read about [smart contracts](/docs/mapo-stack/compatible-evm/index_en.md#smart-contracts) first. This document assumes you're already familiar with programming languages such as JavaScript or Python.
 
-任何合约数据必须分配到一个位置：要么是`存储`，要么是`内存`。 在智能合约中修改存储消耗很大，因此您需要考虑数据在哪里存取。
+## data
 
-### 存储 {#storage}
+Any contract data must be assigned to a location: either to `storage` or `memory`. It's costly to modify storage in a smart contract so you need to consider where your data should live.
 
-持久性数据被称之为存储，由状态变量表示。 这些值被永久地存储在区块链上。 您需要声明一个类型，以便于合约在编译时可以跟踪它在区块链上需要多少存储。
+### storage
+
+Persistent data is referred to as storage and is represented by state variables. These values get stored permanently on the blockchain. You need to declare the type so that the contract can keep track of how much storage on the blockchain it needs when it compiles.
 
 ```solidity
 // Solidity example
@@ -26,62 +28,65 @@ contract SimpleStorage {
 }
 ```
 
-如果用过面向对象编程语言，应该会熟悉大多数类型。 但如果是刚接触MAPO开发，则会发现 `address` 是一个新类型。
+If you've already programmed object-oriented languages, you'll likely be familiar with most types. However `address` should be new to you if you're new to Ethereum development.
 
-一个 `address` 类型可以容纳一个MAPO地址，相当于 20 个字节或 160 位。 它以十六进制的形式返回，前导是 0x。
+An `address` type can hold an MAPO address which equates to 20 bytes or 160 bits. It returns in hexadecimal notation with a leading 0x.
 
-其它类型包括：
+Other types include:
 
-- 布尔
-- 整数（integer）
-- 定点数（fixed point numbers）
-- 固定大小的字节数组（fixed-size byte arrays）
-- 动态大小的字节数组（dynamically-sized byte arrays）
-- 有理数和整数常量（Rational and integer literals）
-- 字符常量（String literals）
-- 十六进制常量（Hexadecimal literals）
-- 枚举（Enums）
+- boolean
+- integer
+- fixed point numbers
+- fixed-size byte arrays
+- dynamically-sized byte arrays
+- Rational and integer literals
+- String literals
+- Hexadecimal literals
+- Enums
 
-了解更多信息，请参阅文档：
+For more explanation, take a look at the docs:
 
-- [查看 Solidity 类型](https://solidity.readthedocs.io/en/latest/types.html#value-types)
+- [See Solidity types](https://solidity.readthedocs.io/en/latest/types.html#value-types)
 
-### 内存 {#memory}
+### memory
 
-仅在合约函数执行期间存储的值被称为内存变量。 由于这些变量不是永久地存储在区块链上，所以它们的使用成本要低得多。
+Values that are only stored for the lifetime of a contract function's execution are called memory variables. Since these are not stored permanently on the blockchain, they are much cheaper to use.
 
-在 [Solidity 文档](https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html?highlight=memory#storage-memory-and-the-stack)中了解更多关于EVM虚拟机如何存储数据（存储、内存和栈）。
+Learn more about how the EVM stores data (Storage, Memory, and the Stack) in the [Solidity docs](https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html?highlight=memory#storage-memory-and-the-stack).
 
-### 环境变量 {#environment-variables}
 
-除了在自己合约上定义的变量之外，还有一些特殊的全局变量。 它们主要用于提供有关区块链或当前交易的信息。
+### environment-variables
 
-示例：
+In addition to the variables you define on your contract, there are some special global variables. They are primarily used to provide information about the blockchain or current transaction.
 
-| **属性**          | **状态变量** | **描述**                 |
-| ----------------- | ------------ | ------------------------ |
-| `block.timestamp` | uint256      | 当前区块的时间戳         |
-| `msg.sender`      | 地址         | 消息的发送者（当前调用） |
+Examples:
 
-## 函数 {#functions}
+| **Prop**          | **State variable** | **Description**                      |
+| ----------------- | ------------------ | ------------------------------------ |
+| `block.timestamp` | uint256            | Current block epoch timestamp        |
+| `msg.sender`      | address            | Sender of the message (current call) |
 
-用最简单的术语来说，函数可以获得信息或设置信息，以响应传入的交易。
 
-有两种函数调用方式：
+## functions
 
-- `internal` – 不会创建EVM虚拟机调用
-  - Internal 函数和状态变量只能在内部访问（只能在合约内部或者从其继承的合约内部访问）。
-- `external` – 会创建EVM虚拟机调用
-  - External 函数是合约接口的一部分，这意味着他可以被其它合约和交易调用。 一个 external 函数 `f` 不可以被内部调用（即 `f()` 不行，但 `this.f()` 可以）。
+In the most simplistic terms, functions can get information or set information in response to incoming transactions.
 
-它们可以是 `public` 或 `private`
+There are two types of function calls:
 
-- `public` 函数可以在合约内部调用或者通过消息在合约外部调用
-- `private` 函数仅在其被定义的合约内部可见，并且在该合约的派生合约中不可见。
+- `internal` – these don't create an EVM call
+  - Internal functions and state variables can only be accessed internally (i.e. from within the current contract or contracts deriving from it)
+- `external` – these do create an EVM call
+  - External functions are part of the contract interface, which means they can be called from other contracts and via transactions. An external function `f` cannot be called internally (i.e. `f()` does not work, but `this.f()` works).
 
-函数和状态变量都可以被定义为 public 或 private
+They can also be `public` or `private`
 
-下面是更新合约上一个状态变量的函数：
+- `public` functions can be called internally from within the contract or externally via messages
+- `private` functions are only visible for the contract they are defined in and not in derived contracts
+
+Both functions and state variables can be made public or private
+
+Here's a function for updating a state variable on a contract:
+
 
 ```solidity
 // Solidity example
@@ -90,64 +95,65 @@ function update_name(string value) public {
 }
 ```
 
-- `string` 类型的参数 `value` 传入函数 `update_name`
-- 函数声明为 `public`，意味着任何人都能访问它
-- 函数没有被声明为 `view`，因此它可以修改合约状态
+- The parameter `value` of type `string` is passed into the function: `update_name`
+- It's declared `public`, meaning anyone can access it
+- It's not declared `view`, so it can modify the contract state
 
-### View 函数 {#view-functions}
+### view-functions
 
-这些函数保证不会修改合约数据的状态。 常见的示例是 "getter" 函数 - 例如，它可以用于接收用户的余额。
+These functions promise not to modify the state of the contract's data. Common examples are "getter" functions – you might use this to receive a user's balance for example.
 
 ```solidity
-// Solidity 示例
+// Solidity 
 function balanceOf(address _owner) public view returns (uint256 _balance) {
     return ownerPizzaCount[_owner];
 }
 ```
 
-这些操作被视为修改状态：
+What is considered modifying state:
 
-1. 写入状态变量。
-2. [正在导出事件](https://solidity.readthedocs.io/en/v0.7.0/contracts.html#events)。
-3. [创建其它合约](https://solidity.readthedocs.io/en/v0.7.0/control-structures.html#creating-contracts)。
-4. 使用 `selfdestruct`。
-5. 通过调用发送 ether。
-6. 调用任何未标记为 `view` 或 `pure` 的函数。
-7. 使用底层调用。
-8. 使用包含某些操作码的内联程序组。
+1. Writing to state variables.
+2. [Emitting events](https://solidity.readthedocs.io/en/v0.7.0/contracts.html#events).
+3. [Creating other contracts](https://solidity.readthedocs.io/en/v0.7.0/control-structures.html#creating-contracts).
+4. Using `selfdestruct`.
+5. Sending ether via calls.
+6. Calling any function not marked `view` or `pure`.
+7. Using low-level calls.
+8. Using inline assembly that contains certain opcodes.
 
-### 构造函数 {#constructor-functions}
+### constructor-functions
 
-`constructor` 函数只在首次部署合约时执行一次。 与许多基于类的编程语言中的 `constructor` 函数类似，这些函数常将状态变量初始化到指定的值。
+`constructor` functions are only executed once when the contract is first deployed. Like `constructor` in many class-based programming languages, these functions often initialize state variables to their specified values.
 
 ```solidity
-// Solidity 示例
-// 初始化合约数据，设置 `owner`为合约的创建者。
+// Solidity example
+// Initializes the contract's data, setting the `owner`
+// to the address of the contract creator.
 constructor() public {
-    // 所有智能合约依赖外部交易来触发其函数。
-    // `msg` 是一个全局变量，包含了给定交易的相关数据，
-    // 例如发送者的地址和交易中包含的 ETH 数量。
-    // 了解更多：https://solidity.readthedocs.io/en/v0.5.10/units-and-global-variables.html#block-and-transaction-properties
+    // All smart contracts rely on external transactions to trigger its functions.
+    // `msg` is a global variable that includes relevant data on the given transaction,
+    // such as the address of the sender and the MAPO value included in the transaction.
+    // Learn more: https://solidity.readthedocs.io/en/v0.5.10/units-and-global-variables.html#block-and-transaction-properties
     owner = msg.sender;
 }
 ```
 
-### 内置函数 {#built-in-functions}
+### built-in-functions
 
-除了自己在合约中定义的变量和函数外，还有一些特殊的内置函数。 最明显的例子是：
+In addition to the variables and functions you define on your contract, there are some special built-in functions. The most obvious example is:
 
 - `address.send()` – Solidity
 
-这使合约可以发送MAPO币给其它帐户。
+These allow contracts to send MAPO to other accounts.
 
-## 编写函数 {#writing-functions}
+## writing-functions
 
-您的函数需要：
+Your function needs:
 
-- 参数变量及其类型（如果它接受参数）
-- 声明为 internal/external
-- 声明为 pure/view/payable
-- 返回类型（如果它返回值）
+- parameter variable and type (if it accepts parameters)
+- declaration of internal/external
+- declaration of pure/view/payable
+- returns type (if it returns a value)
 
 ```solidity
 pragma solidity >=0.4.0 <=0.6.0;
@@ -172,138 +178,140 @@ contract ExampleDapp {
 }
 ```
 
-一个完整的合约可能就是这样。 在这里，`constructor` 函数为 `dapp_name` 变量提供了初始化值。
+A complete contract might look something like this. Here the `constructor` function provides an initial value for the `dapp_name` variable.
 
-## 事件和日志 {#events-and-logs}
+## events-and-logs
 
-事件可以让您通过前端或其它订阅应用与您的智能合约通信。 当交易被挖矿执行时，智能合约可以触发事件并且将日志写入区块链，然后前端可以进行处理。
+Events let you communicate with your smart contract from your frontend or other subscribing applications. When a transaction is mined, smart contracts can emit events and write logs to the blockchain that the frontend can then process.
 
-## 附带说明的例子 {#annotated-examples}
+## annotated-examples
 
-这是一些用 Solidity 写的例子。 如果希望运行这些代码，您可以在 [Remix](http://remix.ethereum.org) 中调试。
+These are some examples written in Solidity. If you'd like to play with the code, you can interact with them in [Remix](http://remix.ethereum.org).
 
 ### Hello world {#hello-world}
 
 ```solidity
 // Specifies the version of Solidity, using semantic versioning.
-// 了解更多：https://solidity.readthedocs.io/en/v0.5.10/layout-of-source-files.html#pragma
+// Learn more: https://solidity.readthedocs.io/en/v0.5.10/layout-of-source-files.html#pragma
 pragma solidity ^0.5.10;
 
-// 定义合约名称 `HelloWorld`。
-// 一个合约是函数和数据（其状态）的集合。
-// 一旦部署，合约就会留在MAPO区块链的一个特定地址上。
-// 了解更多： https://solidity.readthedocs.io/en/v0.5.10/structure-of-a-contract.html
+// Defines a contract named `HelloWorld`.
+// A contract is a collection of functions and data (its state).
+// Once deployed, a contract resides at a specific address on the MAPO blockchain.
+// Learn more: https://solidity.readthedocs.io/en/v0.5.10/structure-of-a-contract.html
 contract HelloWorld {
 
-    // 定义`string`类型变量 `message`
-    // 状态变量是其值永久存储在合约存储中的变量。
-    // 关键字 `public` 使得可以从合约外部访问。
-    // 并创建了一个其它合约或客户端可以调用访问该值的函数。
+    // Declares a state variable `message` of type `string`.
+    // State variables are variables whose values are permanently stored in contract storage.
+    // The keyword `public` makes variables accessible from outside a contract
+    // and creates a function that other contracts or clients can call to access the value.
     string public message;
 
-    // 类似于很多基于类的面向对象语言，
-    // 构造函数是仅在合约创建时执行的特殊函数。
-    // 构造器用于初始化合约的数据。
-    // 了解更多：https://solidity.readthedocs.io/en/v0.5.10/contracts.html#constructors
+    // Similar to many class-based object-oriented languages, a constructor is
+    // a special function that is only executed upon contract creation.
+    // Constructors are used to initialize the contract's data.
+    // Learn more: https://solidity.readthedocs.io/en/v0.5.10/contracts.html#constructors
     constructor(string memory initMessage) public {
-        // 接受一个字符变量 `initMessage`
-        // 并为合约的存储变量`message` 赋值
+        // Accepts a string argument `initMessage` and sets the value
+        // into the contract's `message` storage variable.
         message = initMessage;
     }
 
-    // 一个 public 函数接受字符参数并更新存储变量 `message`
+    // A public function that accepts a string argument
+    // and updates the `message` storage variable.
     function update(string memory newMessage) public {
         message = newMessage;
     }
 }
 ```
 
-### 代币（Token） {#token}
+### Token {#token}
 
 ```solidity
 pragma solidity ^0.5.10;
 
 contract Token {
-    // 一个 `address` 类比于邮件地址 - 它用来识别MAPO的一个帐户。
-    // 地址可以代表一个智能合约或一个外部（用户）帐户。
-    // 了解更多：https://solidity.readthedocs.io/en/v0.5.10/types.html#address
+    // An `address` is comparable to an email address - it's used to identify an account on MAPO.
+    // Addresses can represent a smart contract or an external (user) accounts.
+    // Learn more: https://solidity.readthedocs.io/en/v0.5.10/types.html#address
     address public owner;
 
-    //  `mapping` 是一个哈希表数据结构。
-    // 此 `mapping` 将一个无符号整数（代币余额）分配给地址（代币持有者）。
-    // 了解更多： https://solidity.readthedocs.io/en/v0.5.10/types.html#mapping-types
+    // A `mapping` is essentially a hash table data structure.
+    // This `mapping` assigns an unsigned integer (the token balance) to an address (the token holder).
+    // Learn more: https://solidity.readthedocs.io/en/v0.5.10/types.html#mapping-types
     mapping (address => uint) public balances;
 
-    // 事件允许在区块链上记录活动。
-    // MAPO客户端可以监听事件，以便对合约状态更改作出反应。
-    // 了解更多： https://solidity.readthedocs.io/en/v0.5.10/contracts.html#events
+    // Events allow for logging of activity on the blockchain.
+    // MAPO clients can listen for events in order to react to contract state changes.
+    // Learn more: https://solidity.readthedocs.io/en/v0.5.10/contracts.html#events
     event Transfer(address from, address to, uint amount);
 
-    // 初始化合约数据，设置 `owner`为合约创建者的地址。
+    // Initializes the contract's data, setting the `owner`
+    // to the address of the contract creator.
     constructor() public {
-        // 所有智能合约依赖外部交易来触发其函数。
-        // `msg` 是一个全局变量，包含了给定交易的相关数据，
-        // 例如发送者的地址和包含在交易中的 ETH 数量。
-        // 了解更多：https://solidity.readthedocs.io/en/v0.5.10/units-and-global-variables.html#block-and-transaction-properties
+        // All smart contracts rely on external transactions to trigger its functions.
+        // `msg` is a global variable that includes relevant data on the given transaction,
+        // such as the address of the sender and the MAPO value included in the transaction.
+        // Learn more: https://solidity.readthedocs.io/en/v0.5.10/units-and-global-variables.html#block-and-transaction-properties
         owner = msg.sender;
     }
 
-    // 创建一些新代币并发送给一个地址。
+    // Creates an amount of new tokens and sends them to an address.
     function mint(address receiver, uint amount) public {
-        // `require` 是一个用于强制执行某些条件的控制结构。
-        // 如果 `require` 的条件为 `false`，则异常被触发，
-        // 所有在当前调用中对状态的更改将被还原。
-        // 学习更多: https://solidity.readthedocs.io/en/v0.5.10/control-structures.html#error-handling-assert-require-revert-and-exceptions
+        // `require` is a control structure used to enforce certain conditions.
+        // If a `require` statement evaluates to `false`, an exception is triggered,
+        // which reverts all changes made to the state during the current call.
+        // Learn more: https://solidity.readthedocs.io/en/v0.5.10/control-structures.html#error-handling-assert-require-revert-and-exceptions
 
-        // 只有合约创建人可以调用这个函数
+        // Only the contract owner can call this function
         require(msg.sender == owner, "You are not the owner.");
 
-        // 强制执行代币的最大数量
+        // Enforces a maximum amount of tokens
         require(amount < 1e60, "Maximum issuance exceeded");
 
-        // 将 "收款人"的余额增加"金额"
+        // Increases the balance of `receiver` by `amount`
         balances[receiver] += amount;
     }
 
-    // 从任何调用者那里发送一定数量的代币到一个地址。
+    // Sends an amount of existing tokens from any caller to an address.
     function transfer(address receiver, uint amount) public {
-        // 发送者必须有足够数量的代币用于发送
+        // The sender must have enough tokens to send
         require(amount <= balances[msg.sender], "Insufficient balance.");
 
-        // 调整两个帐户的余额
+        // Adjusts token balances of the two addresses
         balances[msg.sender] -= amount;
         balances[receiver] += amount;
 
-        // 触发之前定义的事件。
+        // Emits the event defined earlier
         emit Transfer(msg.sender, receiver, amount);
     }
 }
 ```
 
-### 唯一的数字资产 {#unique-digital-asset}
+### Unique digital asset {#unique-digital-asset}
 
 ```solidity
 pragma solidity ^0.5.10;
 
-// 从其它文件向当前合约中导入符号。
-// 本例使用一系列来自 OpenZeppelin 的辅助合约。
-// 了解更多：https://solidity.readthedocs.io/en/v0.5.10/layout-of-source-files.html#importing-other-source-files
+// Imports symbols from other files into the current contract.
+// In this case, a series of helper contracts from OpenZeppelin.
+// Learn more: https://solidity.readthedocs.io/en/v0.5.10/layout-of-source-files.html#importing-other-source-files
 
 import "../node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "../node_modules/@openzeppelin/contracts/introspection/ERC165.sol";
 import "../node_modules/@openzeppelin/contracts/math/SafeMath.sol";
 
-// `is` 关键字用于从其它外部合约继承函数和关键字。
-// 本例中，`CryptoPizza` 继承 `IERC721` 和 `ERC165` 合约。
-// 了解更多：https://solidity.readthedocs.io/en/v0.5.10/contracts.html#inheritance
+// The `is` keyword is used to inherit functions and keywords from external contracts.
+// In this case, `CryptoPizza` inherits from the `IERC721` and `ERC165` contracts.
+// Learn more: https://solidity.readthedocs.io/en/v0.5.10/contracts.html#inheritance
 contract CryptoPizza is IERC721, ERC165 {
-    // 使用 OpenZeppelin's SafeMath 库来安全执行算数操作。
-    // 了解更多：https://docs.openzeppelin.com/contracts/2.x/api/math#SafeMath
+    // Uses OpenZeppelin's SafeMath library to perform arithmetic operations safely.
+    // Learn more: https://docs.openzeppelin.com/contracts/2.x/api/math#SafeMath
     using SafeMath for uint256;
 
-    // Solidity 语言中的常量状态变量与其他语言类似。
-    // 但是必须用一个表达式为常量赋值，而这个表达式本身必须在编译时是一个常量。
+    // Constant state variables in Solidity are similar to other languages
+    // but you must assign from an expression which is constant at compile time.
     // Learn more: https://solidity.readthedocs.io/en/v0.5.10/contracts.html#constant-state-variables
     uint256 constant dnaDigits = 10;
     uint256 constant dnaModulus = 10 ** dnaDigits;
@@ -391,7 +399,7 @@ contract CryptoPizza is IERC721, ERC165 {
     {
         // Uses the `memory` storage location to store values only for the
         // lifecycle of this function call.
-        // 了解更多：https://solidity.readthedocs.io/en/v0.5.10/introduction-to-smart-contracts.html#storage-memory-and-the-stack
+        // Learn more: https://solidity.readthedocs.io/en/v0.5.10/introduction-to-smart-contracts.html#storage-memory-and-the-stack
         uint256[] memory result = new uint256[](ownerPizzaCount[_owner]);
         uint256 counter = 0;
         for (uint256 i = 0; i < pizzas.length; i++) {
@@ -403,7 +411,7 @@ contract CryptoPizza is IERC721, ERC165 {
         return result;
     }
 
-    // 转移 Pizza 和归属关系到其它地址
+    // Transfers Pizza and ownership to other address
     function transferFrom(address _from, address _to, uint256 _pizzaId) public {
         require(_from != address(0) && _to != address(0), "Invalid address.");
         require(_exists(_pizzaId), "Pizza does not exist.");
@@ -414,17 +422,17 @@ contract CryptoPizza is IERC721, ERC165 {
         ownerPizzaCount[_from] = SafeMath.sub(ownerPizzaCount[_from], 1);
         pizzaToOwner[_pizzaId] = _to;
 
-        // 触发继承自 IERC721 合约中定义的事件。
+        // Emits event defined in the imported IERC721 contract
         emit Transfer(_from, _to, _pizzaId);
         _clearApproval(_to, _pizzaId);
     }
 
     /**
-     * 安全转账给定代币 ID 的所有权到其它地址
-     * 如果目标地址是一个合约，则该合约必须实现 `onERC721Received`函数,
-     * 该函数调用了安全转账并且返回一个 magic value。
+     * Safely transfers the ownership of a given token ID to another address
+     * If the target address is a contract, it must implement `onERC721Received`,
+     * which is called upon a safe transfer, and return the magic value
      * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`;
-     * 否则，转账被回退。
+     * otherwise, the transfer is reverted.
     */
     function safeTransferFrom(address from, address to, uint256 pizzaId)
         public
@@ -434,11 +442,11 @@ contract CryptoPizza is IERC721, ERC165 {
     }
 
     /**
-     * 安全转账给定代币 ID 所有权到其它地址
-     * 如果目标地址是一个合约，则该合约必须实现 `onERC721Received` 函数，
-     * 该函数调用安全转账并返回一个 magic value
+     * Safely transfers the ownership of a given token ID to another address
+     * If the target address is a contract, it must implement `onERC721Received`,
+     * which is called upon a safe transfer, and return the magic value
      * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`;
-     * 否则，转账被回退。
+     * otherwise, the transfer is reverted.
      */
     function safeTransferFrom(
         address from,
@@ -610,13 +618,14 @@ contract CryptoPizza is IERC721, ERC165 {
 }
 ```
 
-## 延伸阅读 {#further-reading}
 
-查阅 Solidity文档，以获得关于智能合约的更完整概述：
+## further-reading
+
+Check out Solidity's documentation for a more complete overview of smart contracts:
 
 - [Solidity](https://solidity.readthedocs.io/)
 
-## 相关主题 {#related-topics}
+## related-topics
 
-- [智能合约](/docs/mapo-stack/compatible-evm/index.md#智能合约smart-contracts)
-- [EVM虚拟机](/docs/mapo-stack/compatible-evm/index.md)
+- [smart-contracts](/docs/mapo-stack/compatible-evm/index_en.md#smart-contracts)
+- [EVM](/docs/mapo-stack/compatible-evm/index_en.md)
