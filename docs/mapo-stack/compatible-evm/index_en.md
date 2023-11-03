@@ -4,7 +4,9 @@ description: An introduction to the EVM and how it relates to state, transaction
 lang: en
 ---
 
-`MAPO-Relay-Chain`使用以太坊EVM作为链的虚拟机，该虚拟机是所有`MAPO-Relay-Chain`帐户和智能合约依存的环境。 在链上任何给定的区块处，`MAPO-Relay-Chain`有且只有一个“规范”状态，而EVM虚拟机定义从一个区块到另一个区块计算新的有效状态的规则。以下`MAPO-Relay-Chain`统称为MAPO.
+`MAPO-Relay-Chain` uses Ethereum EVM as the virtual machine of the chain, which is the environment on which all `MAPO-Relay-Chain` accounts and smart contracts depend. At any given block on the chain, `MAPO-Relay-Chain` has and has only one "canonical" state, and the EVM virtual machine defines the rules for calculating new valid states from one block to another.
+
+The following `MAPO-Relay-Chain` is collectively referred to as MAPO.
 
 ## prerequisites
 
