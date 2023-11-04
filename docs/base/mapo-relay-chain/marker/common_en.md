@@ -1,15 +1,16 @@
-本篇文章将介绍创建账号、锁定 MAPO 及其各种查询接口等功能。
+This article will introduce the features of creating an account, locking MAPO, and various query interfaces.
 
 ## createAccount
 
-创建账号
+Create an account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `name`：账号名称
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `name`: The name of the account.
 
 ```shell
 ./marker createAccount
@@ -20,14 +21,15 @@
 
 ## lockedMAP
 
-锁定用于投票或注册 validator 的 MAPO。
+Lock MAPO for voting or registering validators.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `lockedNum`: 要锁定的 MAPO 的数量``
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `lockedNum`: The amount of MAPO to be locked.
 
 ```shell
 ./marker lockedMAP
@@ -38,14 +40,15 @@
 
 ## unlockMap
 
-解锁 MAPO，解锁期过后可以赎回
+Unlock MAPO, which can be redeemed after the lock period.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `lockedNum`: 要解锁的 MAPO 的数量``
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `lockedNum`: The amount of MAPO to be unlocked.
 
 ```shell
 ./marker unlockMap
@@ -56,16 +59,17 @@
 
 ## relockMAP
 
-重新锁定已解锁但未赎回的 MAPO
+Relock MAPO that has been unlocked but not redeemed.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `lockedNum`: 锁定的 MAPO 的数量``
-- `relockIndex`:
-  待赎回的请求编号，通过 [getPendingWithdrawals](/docs/base/mapo-relay-chain/marker/common.md#getpendingwithdrawals) 命令查询
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `lockedNum`: The amount of MAPO to be locked.
+- `relockIndex`: The index of the request to be redeemed, obtained through
+  the [getPendingWithdrawals](/docs/base/mapo-relay-chain/marker/common_en.md#getpendingwithdrawals) command.
 
 ```shell
 ./marker relockMAP
@@ -77,16 +81,16 @@
 
 ## withdrawMap
 
-赎回已过解锁期的 MAPO。
+Redeem MAPO that has passed the unlock period.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `withdrawIndex`:
-  待赎回的请求编号，通过 [getPendingWithdrawals](/docs/base/mapo-relay-chain/marker/common.md#getpendingwithdrawals) 命令查询
-
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `withdrawIndex`: The index of the request to be redeemed, obtained through
+  the [getPendingWithdrawals](/docs/base/mapo-relay-chain/marker/common_en.md#getpendingwithdrawals) command.
 
 ```shell
 USAGE
@@ -98,12 +102,13 @@ USAGE
 
 ## getNumRegisteredValidators
 
-获取已注册的 validator 的数量。
+Get the number of registered validators.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
 
 ```shell
 ./marker getNumRegisteredValidators --rpcaddr http://127.0.0.1:7445
@@ -111,13 +116,14 @@ USAGE
 
 ## getTopValidators
 
-返回 validator 集合中的前 N 个 validator 。
+Return the top N validators in the validator set.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `topNum`: 指定要查询的前几个 validator。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `topNum`: Specify the number of top validators to query.
 
 ```shell
 ./marker GetTopValidators
@@ -134,12 +140,13 @@ INFO [03-14|17:04:48.636] Validator:                               index=3 addr=
 
 ## getTotalVotesForEligibleValidators
 
-返回所有可投票的 validator 列表以及他们收到的票数。
+Return the list of all eligible validators and the number of votes they have received.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
 
 ```shell
 ./marker getTotalVotesForEligibleValidators
@@ -158,12 +165,13 @@ INFO [03-14|17:06:13.049] Validator:                               addr=0x81f02F
 
 ## getTotalVotes
 
-获取所有 validator 收到的总票数。
+Get the total number of votes received by all validators.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
 
 ```shell
 ./marker getTotalVotes
@@ -176,13 +184,14 @@ INFO [03-14|17:07:24.487] result                                   getTotalVotes
 
 ## getValidatorEligibility
 
-查询 validator 是否有获得投票的资格。
+Check if a validator is eligible for receiving votes.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`: 要查询的 validator 地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the validator to query.
 
 ```shell
 ./marker getValidatorEligibility
@@ -196,13 +205,14 @@ INFO [03-14|17:10:28.018] === result ===                           bool=true
 
 ## getValidator
 
-获取指定 validator 的信息。
+Get information about a specific validator.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`: 要查询的 validator 地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the validator to query.
 
 ```shell
 ./marker getValidator
@@ -224,12 +234,13 @@ INFO [03-14|17:12:22.333]                                          LastSlashed=0
 
 ## getValidatorRewardInfo
 
-返回 validator 上一个 epoch 的奖励信息。
+Return the reward information for the previous epoch of a validator.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
 
 ```shell
 ./marker getValidatorRewardInfo --rpcaddr http://127.0.0.1:7445
@@ -246,14 +257,15 @@ INFO [03-14|17:13:42.874] === END ===
 
 ## getPendingVotesForValidatorByAccount
 
-获取指定账号对指定 validator 的待定投票数。
+Get the pending vote count from a specific account for a specific validator.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystoreAddress`: 账号地址。
-- `target`: 要查询的 validator 地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystoreAddress`: The address of the account.
+- `target`: The address of the validator to query.
 
 ```shell
 ./marker getPendingVotesForValidatorByAccount 
@@ -268,14 +280,15 @@ INFO [10-10|23:14:24.944] PendingVotes                             balance=0
 
 ## getActiveVotesForValidatorByAccount
 
-获取指定账号对指定 validator 的激活投票数。
+Get the active vote count from a specific account for a specific validator.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystoreAddress`: 账号地址。
-- `target`: 要查询的 validator 地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystoreAddress`: The address of the account.
+- `target`: The address of the validator to query.
 
 ```shell
 ./marker getActiveVotesForValidatorByAccount 
@@ -290,14 +303,15 @@ INFO [10-10|23:15:01.851] ActiveVotes                              balance=100,0
 
 ## getPendingInfoForValidator
 
-获取指定账号对指定 validator 进行的待处理投票以及待处理的 epoch。
+Get the pending votes and pending epoch for a specific validator made by a specific account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystoreAddress`: 账号地址。
-- `target`: 要查询的 validator 地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystoreAddress`: The address of the account.
+- `target`: The address of the validator to query.
 
 ```shell
 ./marker getPendingInfoForValidator 
@@ -312,13 +326,14 @@ INFO [03-14|17:20:49.074] getPendingInfoForValidator               Value=0 Epoch
 
 ## getValidatorsVotedForByAccount
 
-获取指定账号已投票的 validator 列表。
+Get the list of validators voted for by a specific account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`: 要查询的账号地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the account to query.
 
 ```shell
 ./marker getValidatorsVotedForByAccount 
@@ -332,13 +347,14 @@ INFO [10-10|23:32:23.092] validator                                Address=0x51E
 
 ## getAccountTotalLockedGold
 
-获取账号锁定的 MAPO 的总量。
+Get the total amount of locked MAPO for a specific account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`: 要查询的账号地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the account to query.
 
 ```shell
 ./marker getAccountTotalLockedGold \
@@ -352,13 +368,14 @@ INFO [10-10|23:38:05.419] result                                   lockedGold=1,
 
 ## getAccountNonvotingLockedGold
 
-获取账号非投票锁定的 MAPO 的总量。
+Get the total amount of non-voting locked MAPO for a specific account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`:  要查询的账号地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the account to query.
 
 ```shell
 ./marker getAccountNonvotingLockedGold \
@@ -372,13 +389,14 @@ INFO [10-10|23:40:19.401] result                                   lockedGold=0
 
 ## getPendingWithdrawals
 
-获取账号的待赎回的 MAPO 数量。
+Get the amount of pending MAPO withdrawals for a specific account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`:  要查询的账号地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the account to query.
 
 ```shell
 ./marker getPendingWithdrawals
@@ -392,15 +410,16 @@ INFO [03-14|17:33:18.724] nil
 
 ## transfer
 
-将 MAPO 从一个账号转移到另一个账号。
+Transfer MAPO from one account to another.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `target`: 接受者的账号地址。
-- `amount`: 要转移的 MAPO 数量。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `target`: The address of the recipient's account.
+- `amount`: The amount of MAPO to transfer.
 
 ```shell
 ./marker transfer \
@@ -420,13 +439,14 @@ INFO [08-30|10:56:15.748] transfer success                         from =0x3B778
 
 ## getAccountMetadataURL
 
-获取账号元数据 URL。
+Get the metadata URL for a specific account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`:  要查询的账号地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the account to query.
 
 ```shell
 ./marker getAccountMetadataURL \
@@ -439,14 +459,15 @@ INFO [10-10|23:50:02.275] get account metadata url                 address=0x829
 
 ## setAccountMetadataURL
 
-设置账号元数据 URL。
+Set the metadata URL for a specific account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `target`: 账号地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `target`: The address of the account.
 
 ```shell
 ./marker setAccountMetadataURL \
@@ -465,13 +486,14 @@ INFO [08-30|11:09:58.350] Transaction Success                      func=getResul
 
 ## getAccountName
 
-获取账号名称。
+Get the name of an account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `target`: 账号地址。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `target`: The address of the account.
 
 ```shell
 ./marker getAccountName \
@@ -484,14 +506,15 @@ INFO [10-10|23:52:46.084] get name                                 address=0x5d6
 
 ## setAccountName
 
-设置账号名称。
+Set the name for an account.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `name`: 要设置的账号名称。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `name`: The name to set for the account.
 
 ```shell
 ./marker setAccountName \
@@ -511,15 +534,17 @@ INFO [08-31|15:16:17.024] Transaction Success                      func=getResul
 
 ## setNextCommissionUpdate
 
-将 validator 佣金更新请求加入到队列。如果之前有存在的更新请求，那么它将被覆盖。
+Add a validator commission update request to the queue. If there is an existing update request, it will be overridden.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
-- `commission`: 佣金，validator 收取的奖励比例，然后将剩余部分分配给 voter，佣金参数相对于 1000000 设置的，其范围是 0 到 1000000
-  如果你想将佣金比例设置问 15%, 那么你需要将该参数设置为 150000 (150000/1000000=15%)。这个属性是投票人投票时参考的对象之一。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
+- `commission`: The commission rate for the validator, expressed as a ratio relative to 1000000. The range of the
+  commission parameter is from 0 to 1000000. If you want to set the commission rate to 15%, you would set this parameter
+  to 150000 (150000/1000000=15%). This is one of the parameters that voters consider when voting.
 
 ```shell
 ./marker setNextCommissionUpdate \
@@ -536,14 +561,15 @@ INFO [09-01|14:17:20.911] Transaction Success                      func=getResul
 
 ## updateCommission
 
-根据之前队列中的更新请求更新佣金，该操作只能在执行完 [setNextCommissionUpdate](#setNextCommissionUpdate) 后的 2000
-个区块后执行。
+Update the commission based on the previous update request in the queue. This operation can only be executed after 2000
+blocks have passed since [setNextCommissionUpdate](#setNextCommissionUpdate) was executed.
 
-参数说明:
+Parameter description:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
-  也可以是你自己的 RPC服务地址。
-- `keystore`: keystore 文件的路径。
+- `rpcaddr`: The address of the RPC service, which can be the
+  provided [RPC service address](/docs/base/mapo-relay-chain/public-service_en.md#endpoints) or your own RPC service
+  address.
+- `keystore`: The path to the keystore file.
 
 ```shell
 ./marker updateCommission \

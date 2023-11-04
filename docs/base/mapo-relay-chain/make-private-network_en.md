@@ -1,18 +1,19 @@
-# 搭建私有网络
+# Setting up a private network
 
-## 前提条件
+## Prerequisites
 
-- 私钥和地址
-- 构建 atlas 需要 git、Go（1.14 或更高版本）和 C 编译器
-- 克隆代码仓库
+- Private key and address
+- Building Atlas requires git, Go (version 1.14 or higher), and a C compiler
+- Clone the code repository
 
 ```shell
 git clone https://github.com/mapprotocol/atlas.git
 ```
 
-## 构建
+## Build
 
-我们可以在一个主机上启动四个不同端口的节点，也可以在多个主机上启动四个节点。以下将使用在一个主机上启动四个不同端口的节点的方法来进行演示。
+We can start four nodes with different ports on a single host, or we can start four nodes on multiple hosts. The
+following example demonstrates starting four nodes with different ports on a single host.
 
 ```shell
 git checkout v1.1.5
@@ -20,9 +21,10 @@ git checkout v1.1.5
 make atlas
 ```
 
-## 创建账号
+## Create an account
 
-Atlas 允许开发者在 Atlas 区块链上使用以太坊的账户。如果没有账户，可以使用下面的命令创建。
+Atlas allows developers to use Ethereum accounts on the Atlas blockchain. If you don't have an account, you can create
+one using the following command.
 
 ```shell
 $ ./atlas --datadir ./node-1 account new
@@ -51,12 +53,14 @@ Path of the secret key file: node-1/keystore/UTC--2023-10-09T09-37-38.019902000Z
 - You must REMEMBER your password! Without the password, it's impossible to decrypt the key!
 ```
 
-## 生成 genesis.json 文件
+## Generating genesis.json file
 
-如何生成 genesis.json 文件，请参考 [这里](/docs/base/mapo-relay-chain/nodes/genesis-config.md#生成-genesisjson-文件)
+To generate the genesis.json file, please refer
+to [this](/docs/base/mapo-relay-chain/nodes/genesis-config_en.md#generating-the-genesisjson-file)
 
-我们现在使用上一步生成的四个账号的信息来生成 genesis.json 文件。将我们创建账户时输出的信息填入到 `markerConfig.json` 文件相应的键值中。AdminAddress
-对应的值可以是我们上面创建的四个账户之一，也可以是其他账户。
+Now we will use the information of the four accounts generated in the previous step to generate the genesis.json file.
+Fill in the corresponding key-value pairs in the `markerConfig.json` file with the information outputted when we created
+the accounts. The value for AdminAddress can be one of the four accounts we created earlier or any other account.
 
 ```json
 {
@@ -97,12 +101,12 @@ Path of the secret key file: node-1/keystore/UTC--2023-10-09T09-37-38.019902000Z
       "BLSPubKey": "0x...",
       "BLSG1PubKey": "0x...",
       "BLSProofOfPossession": "0x..."
-    },
+    }
   ]
 }
 ```
 
-然后使用我们上面的的 `markerConfig.json` 文件生成 genesis.json 文件，像下面这样：
+Then, generate the genesis.json file using the markerConfig.json file mentioned above, as follows:
 
 ```shell
 marker genesis --buildpath /home/atlas-contracts/build/contracts --markercfg /home/atlas/cmd/marker/markerConfig.json
@@ -128,12 +132,11 @@ INFO [10-09|17:53:57.962] Running deploy step                      obj=deploymen
 ......
 ```
 
-等待命令执行完成后就可以在当前目录下找到 genesis.json 文件
+After the command execution is complete, you can find the genesis.json file in the current directory.
 
+## Initialize the nodes
 
-## 初始化节点
-
-使用在前一步骤中生成的创世文件初始化四个验证节点
+Initialize the four validator nodes using the genesis file generated in the previous step.
 
 ```shell
 ./atlas --datadir ./node-1 init ./genesis.json
@@ -151,9 +154,9 @@ INFO [10-09|18:06:38.011] Persisted trie from memory database      nodes=296 siz
 INFO [10-09|18:06:38.011] Successfully wrote genesis state         database=lightchaindata hash=0f40ec..668040
 ```
 
-## 启动节点
+## Start the nodes
 
-通过以下命令使用之前创建的四个账号启动四个相应的节点
+Start the four corresponding nodes using the four accounts created earlier using the following command.
 
 ```shell
 ./atlas --datadir ./node-1 --networkid 110112 --port 20201 --mine --miner.validator 0xB16561A66B6439944DAf0388b5E6a2D3D0a49e12 --unlock 0xB16561A66B6439944DAf0388b5E6a2D3D0a49e12 console
@@ -163,7 +166,7 @@ INFO [10-09|18:06:38.011] Successfully wrote genesis state         database=ligh
 
 ```
 
-在命令行输入上述命令，然后按回车键，您将看到以下提示：
+Please enter the above command in the command line and press Enter. You will see the following prompt:
 
 ```shell
 
@@ -177,9 +180,10 @@ Unlocking account 0x3BaB3BDe5ECC520134da32Bf7891578c108FC290 | Attempt 1/3
 Password: 
 ```
 
-此时，我们需要输入与账号对应的密码并按下回车键，恭喜，您已成功启动一个节点。然后我们以同样的方式启动剩余的节点。
+At this point, you will need to enter the password corresponding to the account and press Enter. Congratulations, you
+have successfully started one node. Then, you can start the remaining nodes in the same way.
 
-如果你想启动一个 RPC 节点，可以使用以下方法。
+If you want to start an RPC node, you can use the following method.
 
 ```shell
 ./atlas --datadir ./node-rpc init ./genesis.json
@@ -187,16 +191,17 @@ Password:
 ./atlas --datadir ./node-rpc --networkid 110112 --port 20205 --http --http.addr "0.0.0.0" --http.port 7445 --http.api eth,web3,net,debug,txpool,header,istanbul --http.corsdomain "*" console
 ```
 
-## 连接节点
+## Connect the nodes
 
-在启动节点之前，请确保引导节点已经运行并且可以从外部访问（尝试 telnet <ip> <port> 以确保它确实可以访问）。
-然后，通过 --bootnodes 将每个后续的 atlas 节点指向引导节点以进行对等节点发现。通过 --datadir 指定数据存储目录。
+Before starting the nodes, make sure that the bootnode is running and accessible from the outside (try
+telnet <ip> <port> to ensure it can be accessed). Then, use --bootnodes to point each subsequent Atlas node to the
+bootnode for peer discovery. Specify the data storage directory using --datadir.
 
 ```shell
 $ atlas --datadir=path/to/custom/data/folder --bootnodes=<bootnode-url>
 ```
 
-查询自己的节点 enode 信息：
+To query the enode information of your node, you can use the following command:
 
 ```shell
 admin.nodeInfo.enode
@@ -205,7 +210,7 @@ Output:
 enode://89b72450e02cf8a22dc66db717f4bab75b55961f2a474846f88615fd2be49bf406f3499842b39c5acd0d4ebc9fa72c29e27f1995a740d334c20b647e29a477b2@127.0.0.1:20201
 ```
 
-在控制台使用一下命令连接节点
+To connect to a node using the console, use the following command:
 
 ```shell
 admin.addPeer("enode://89b72450e02cf8a22dc66db717f4bab75b55961f2a474846f88615fd2be49bf406f3499842b39c5acd0d4ebc9fa72c29e27f1995a740d334c20b647e29a477b2@127.0.0.1:20201")
@@ -214,9 +219,9 @@ admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac57
 admin.addPeer("enode://88c2fdd0189a33e3b8ee02a04a767c4792140c00c08de5d368b9aac578a0a36b5518aee5fcb695cd93c348237901a5c532f561170adc00903001e40ca3eff041@127.0.0.1:20204")
 ```
 
-## 检查节点状态
+## Check node status
 
-输入连接节点的命令后开始看到一些输出。几分钟后，你应该会看到像这样的行。这意味着你的节点已经连接了其他节点并将开始生成区块。
+After entering the command to connect to the node, you will start seeing some output. After a few minutes, you should see a line like this. This means that your node has connected to other nodes and will start generating blocks.
 
 ```shell
 INFO [10-09|18:32:27.683] Looking for peers                        peercount=2 tried=5 static=4
@@ -225,4 +230,4 @@ mer cur_seq=23 cur_epoch=1 cur_round=0 des_round=5 state="Waiting for new round"
 INFO [03-16|20:32:39.311] Looking for peers                        peercount=3 tried=0 static=4
 ```
 
-你也可以通过在控制台中输入 `admin.peers` 来查看连接的节点。
+You can also use `admin.peers` command in the console to see the connected nodes.

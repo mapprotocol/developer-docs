@@ -3,8 +3,8 @@
 ## 质押
 
 Atlas 采用权益证明共识机制，如果想参与 atlas 网络的区块生成需要注册成 validator。目前想要成为一个 validator
-需要[锁定](/docs/base/mapo-relay-chain/marker/common.md#lockedmap)
-1,000,000 个 MAPO。并对其进行[投票](/docs/base/mapo-relay-chain/marker/vote.md#vote)。每次选举会按照 validator 收到的票数排序，选出前
+需要[锁定](/docs/base/mapo-relay-chain/marker/common_en.md#lockedmap)
+1,000,000 个 MAPO。并对其进行[投票](/docs/base/mapo-relay-chain/marker/vote_en.md#vote)。每次选举会按照 validator 收到的票数排序，选出前
 N 名 validator。
 
 ## 更新活动验证器集
@@ -29,7 +29,7 @@ N 名 validator。
 ## 解除质押
 
 在质押(锁定)成功后如果你有需求可以解除质押(解锁)，解除质押 15
-天后你可以通过[赎回](/docs/base/mapo-relay-chain/example/how-to-withdraw.md)操作将 MAPO 赎回到你的账户余额。
+天后你可以通过[赎回](/docs/base/mapo-relay-chain/example/how-to-withdraw_en.md)操作将 MAPO 赎回到你的账户余额。
 
 ## 执行
 
@@ -38,4 +38,4 @@ N 名 validator。
 
 ## 相关主题
 
-- [奖励](/docs/base/mapo-relay-chain/protocol/rewards.md)
+- [奖励](/docs/base/mapo-relay-chain/protocol/rewards_en.md)

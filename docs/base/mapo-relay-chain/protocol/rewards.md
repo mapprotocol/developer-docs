@@ -22,24 +22,24 @@ CommunityFundMultiplier 默认值 = 0。
 
 ### 第二步
 
-第二步，我们将统计每个验证人的签名数量，并将其转换为分数（ Sorce >=0,<=1），最终参与奖励的计算。
+第二步，我们将统计每个验证人的签名数量，并将其转换为分数（0 <= Score <= 1），最终参与奖励的计算。
 如果验证人未能履行职责，将通过惩罚机制进行惩罚。
 因此每个验证者将获得奖励：
 
 - ValidatorReceived = ( EpochReward - CommunityFundReward ) * StakingWeight * OwnActiveVotes / TotalActiveVotes +
 - WorkWeight * OwnScore / TotalScores 。
-- StakingWeight 验证人的质押权重（StakeWeight>0，StakeWeight<=1，默认值为1）
+- StakingWeight 验证人的质押权重（0 < StakeWeight <= 1，默认值为1）
 - WorkWeight 验证人的工作权重（WorkWeight = 1 - StakeWeight）。
 - OwnActiveVotes 当前验证人激活的投票数。
 - TotalActiveVotes 所有验证者收到的活跃投票。
 - OwnScore
   当前验证者获得的分数。你的节点在线时间会直接影响这个参数。如果您的此参数小于其他验证器，您将受到惩罚，这将大幅削减您的奖励。 (
-  0 <= 自己的得分 <= 1)
+  0 <= OwnScore <= 1)
 - TotalScores 所有验证者的分数总和。
 
 分数由以下公式计算：
 
-- NewScore = UptimeScore * AdjustmentSpeed + OldScore * (1 - 调整速度 )
+- NewScore = UptimeScore * AdjustmentSpeed + OldScore * (1 - AdjustmentSpeed )
 - UptimeScore 这是 TotalMonitoredBlocks 完成的工作分数。
     - TotalMonitoredBlocks 是我们监控纪元正常运行时间的区块总数。
     - TotalMonitoredBlocks
@@ -63,9 +63,11 @@ CommunityFundMultiplier 默认值 = 0。
 
 ### 第三步
 
-第三步，由于验证者会将奖励分发给投票者，因此实际验证者将收到奖励：
+第三步，由于验证者会将奖励分发给投票者，因此实际上验证者将收到奖励：
+
 ValidatorActualReceived = ValidatorReceived * Commission * OwnScore 。
-Commission 验证器按与 ValidatorReceived 成比例抽取的比例值。
+Commission 是验证者按比例从 ValidatorReceived 中提取的比例值。
+
 验证者的投票者将收到：
 
 - VotersReward = ValidatorReceived - ValidatorActualReceived 。

@@ -13,7 +13,7 @@ network, you need to register as a validator. Currently, to become a validator, 
 ## Running a Validator Node
 
 To run a validator node, you need an account registered in the validator set. To learn how to register as a validator,
-please refer to [here](/docs/base/mapo-relay-chain/example/how-to-become-a-new-validator.md).
+please refer to [here](/docs/base/mapo-relay-chain/example/how-to-become-a-new-validator_en.md).
 
 Run the following command to start a validator node:
 
@@ -23,6 +23,6 @@ atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.va
 
 ## Related Topics
 
-- [Election](/docs/base/mapo-relay-chain/protocol/election.md)
-- [Reward](/docs/base/mapo-relay-chain/protocol/rewards.md)
-- [How to become a new validator](/docs/base/mapo-relay-chain/example/how-to-become-a-new-validator.md)
+- [Election](/docs/base/mapo-relay-chain/protocol/election_en.md)
+- [Reward](/docs/base/mapo-relay-chain/protocol/rewards_en.md)
+- [How to become a new validator](/docs/base/mapo-relay-chain/example/how-to-become-a-new-validator_en.md)

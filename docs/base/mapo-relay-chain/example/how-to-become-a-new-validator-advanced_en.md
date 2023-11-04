@@ -1,54 +1,68 @@
-## 如何成为新的 validator 高级篇
+## How to become a new validator advanced
 
-为了让您的资产更安全，我们需要您设置一些必要的身份识别参数才能成为 validator 。我们也设置了相应的阈值，以便筛选那些真正想为链做出贡献的人。
-当然，我们会给这些人相应的奖励。 以下步骤视为您的第一次操作，因为您只需执行一次以下操作即可成为 validator 。除非您注销验证器或取消
-相应的操作，否则您无需执行第二次操作，以免浪费您的 gas 费。
+To ensure the security of your assets, we require you to set up some necessary identity verification parameters to
+become a validator. We also have corresponding thresholds to filter out those who are truly committed to contributing to
+the chain. Of course, we will reward those individuals accordingly. The following steps are considered your initial
+setup as a validator, as you only need to perform these steps once to become a validator. You do not need to perform
+these steps a second time unless you unregister as a validator or cancel the corresponding operation to avoid wasting
+your gas fees.
 
-### 第1步：创建账号
+### Step 1: Create Account
 
-在这一步中，您需要将您的身份信息存储到相应的管理合约中，该合约将管理您的账户、密钥和元数据。
-此步骤的目的是通过授权用手签名证明、投票、验证的替代密钥来确保锁定的 MAPO 更加安全。通过这样
-做，您可以继续参与协议，同时保留可以访问存储中锁定的 MAPO 的密钥。
-您需要 createAccount 命令来执行上述操作，更多关于 createAccount 命令的详细信息请参阅[这里](/docs/base/mapo-relay-chain/marker/common.md#createaccount)。
+In this step, you need to store your identity information in the corresponding management contract, which will manage
+your account, keys, and metadata. The purpose of this step is to ensure the security of the locked MAPO by authorizing
+an alternative key for signing, voting, and validating. By doing so, you can continue to participate in the protocol
+while retaining access to the locked MAPO in storage. You need to use the `createAccount` command to perform the above
+operations. For more detailed information about the `createAccount` command, please refer
+to [here](/docs/base/mapo-relay-chain/marker/common_en.md#createaccount).
 
-### 第2步：授杈
+### Step 2: Authorization
 
-授权一个地址代表账号签名共识消息。这个授权地址称为 signer（签名人）。正如他的名字一样，他只负责签名，你的奖
-励不会发放给 signer，而是发放给上一步创建的账户，
+Authorize an address to sign consensus messages on behalf of your account. This authorized address is called the signer.
+As the name suggests, the signer is only responsible for signing, and your rewards will not be issued to the signer but
+to the account created in the previous step.
 
-### 第3步：锁定 MAP
+### Step 3: Lock MAP
 
-我们设置为 validator 的阈值是锁定 1,000,000 MAPO 到相应的管理智能合约中。
-这部分锁定的 MAPO 将用于以后的惩罚，这也是当选的条件之一。
-您需要 LockedMAP 命令来执行上述操作，更多关于 LockedMAP 命令的详细信息请参[这里](/docs/base/mapo-relay-chain/marker/common.md#lockedmap)。
+The threshold for becoming a validator is to lock 1,000,000 MAPO into the corresponding management smart contract. This
+locked MAP will be used for future penalties and is one of the conditions for election. You need to use the `LockedMAP`
+command to perform the above operation. For more detailed information about the `LockedMAP` command, please refer
+to [here](/docs/base/mapo-relay-chain/marker/common_en.md#lockedmap).
 
-### 第4步： validator 注册
+### Step 4: Validator Registration
 
-此步骤是注册成为新 validator 的关键步骤。
-您需要 register 命令来执行上述操作，更多关于register 命令的详细信息请参阅[这里](/docs/base/mapo-relay-chain/marker/validator.md#register)。
-到这一步，您将成功注册为 validator 。接下来，您可以尝试为自己投票。如何投票请参阅[这里](/docs/base/mapo-relay-chain/marker/vote.md#vote)。
+This step is a key step in registering as a new validator. You need to use the `register` command to perform the above
+operation. For more detailed information about the `register` command, please refer
+to [here](/docs/base/mapo-relay-chain/marker/validator_en.md#register). At this point, you will have successfully
+registered as a validator. Next, you can try to vote for yourself. For more information on how to vote, please refer
+to [here](/docs/base/mapo-relay-chain/marker/vote_en.md#vote).
 
-### 第5步：投票
+### Step 5: Voting
 
-validator 必须至少拥有总票数的 0.001 比例才能考虑参加选举。所以 validator 不能没有选票。
-我们可以使用我们的 validator 账户为自己投票，也可以让其他 validator 或投票者为自己投票。
-我们在第了步中锁定了 1,000,000 MAP，现在为自己投票是一个明智的决定
+A validator must have at least 0.001 proportion of the total votes to be considered for election. Therefore, a validator
+cannot have zero votes. We can either vote for ourselves using our validator account or have other validators or voters
+vote for us. Since we have locked 1,000,000 MAP in Step 3, it is wise to vote for ourselves.
 
-## 示例
+## Example
 
-### 启动你的节点
+### Start Your Node
 
-在启动节点之前你需要先构建 atlas，如何构建图集请参阅[这里](/docs/base/mapo-relay-chain/nodes/run-a-node.md#克隆代码仓库并构建)
+Before starting the node, you need to build Atlas. Please refer
+to [here](/docs/base/mapo-relay-chain/nodes/run-a-node_en.md#clone-the-code-repository-and-build) for instructions on
+how
+to build Atlas.
 
-你需要准备两个 keystore，一个用于质押的称为 account，一个用于参与共识签名区块的 signer。
+You will need two keystore files, one for the account used for staking, called `account`, and one for the signer used
+for signing consensus blocks.
 
-如果希望 atlas 节点在后台运行而不挂起，可以组合使用nohup和＆，或者 screen 或者类似的。下面我们将使用 screen 进行演示
+If you want the Atlas node to run in the background without hanging up, you can use `nohup` and `&` together, or
+use `screen` or similar. Here we will demonstrate using `screen`.
 
-`account.json`：account 的 keystore 文件
-`signer.json`：signer 的 keystore 文件
+`account.json`: keystore file for the account
+`signer.json`: keystore file for the signer
 
-`--miner.validator `：指定 signer 的地址
-`--port 30321`：确保端口在防火墙上打开
+`--miner.validator`: specify the address of the signer
+`--port 30321`: make sure the port is open on the firewall
 
 ```shell
 ./atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
@@ -80,11 +94,12 @@ INFO [08-01|16:40:51.790] Imported new chain segment               blocks=1 txs=
 INFO [08-01|16:40:53.892] Finalized                                func=Finalize        block=3 epochSize=50000 duration="104.285µs" lastInEpoch=false
 INFO [08-01|16:40:53.893] Finalized                                func=Finalize        block=4 epochSize=50000 duration="105.568µs" lastInEpoch=false
 ```
-节点启动后会通过内置的引导节点连接到网络，并同步区块数据。
 
-### 生成 ECDSA 签名
+After starting the node, it will connect to the network through built-in bootstrap nodes and synchronize block data.
 
-生成一个由 signer 账号签署的 ECDSA 签名，该 signer 账号签署了 validator 账号
+### Generating ECDSA Signature
+
+Generate an ECDSA signature signed by the signer account.
 
 ```shell
 ./marker makeECDSASignatureFromSigner --target 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
@@ -94,10 +109,9 @@ INFO [08-26|17:31:49.422] === signer  ===                          account=0x266
 INFO [08-26|17:31:49.422] ECDSASignature                           result=0x59dff185...32f0d700
 ```
 
+### Generating Proof
 
-### 生成证明
-
-使用 signer 私钥生成证明。
+Generate a certificate using the signer private key.
 
 ```shell
 ./marker generateSignerProof --validator 0x73bc690093b9dd0400c91886184a60cc127b2c33 --signerPriv 040939e5...604b6f25
@@ -107,7 +121,7 @@ INFO [08-26|17:32:23.955] === makeBLSProofOfPossessionFromSigner ===
 INFO [08-26|17:32:23.958] generateBLSProof                         proof=0xf90149b8...0e56f0ab1
 ```
 
-### 创建账号
+### Create an account
 
 ```shell
 ./marker createAccount --rpcaddr https://rpc.maplabs.io --keystore ./account.json --name "validator"
@@ -127,12 +141,12 @@ INFO [07-08|14:54:35.785] Please waiting                           func=getResul
 INFO [07-08|14:54:40.224] Transaction Success                      func=queryTx                 block Number=11
 ```
 
-### 使用签名授权
+### Use signature authorization
 
-使用 signer 签署的 ECDSA 签名 (0x59dff185...32f0d700) 进行授权
+Authorize using ECDSA signature(0x59dff185...32f0d700) signed by signer
 
-signer 账号：0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
-signer 私钥：8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
+signer`s account：0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
+signer's private key：8df920b696ef3f5fdcf01624405ea8236b2b4907766ad61d42ce877df05f8bca
 
 ```shell
 ./marker authorizeValidatorSignerBySignature --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --signer 0x26654eb0bb935dce4a34daa3e14c67662a8aa1f8 --signature 0x59dff185...32f0d700
@@ -142,7 +156,7 @@ INFO [07-08|14:55:00.032] Please waiting                           func=getResul
 INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx                  block Number=16
 ```
 
-### 锁定 MAPO
+### Locking MAPO
 
 ```shell
 ./marker lockedMAP --rpcaddr https://rpc.maplabs.io --keystore ./account.json --lockedNum 1000000
@@ -154,9 +168,9 @@ INFO [07-08|14:54:49.150] Please waiting                           func=getResul
 INFO [07-08|14:54:50.765] Transaction Success                      func=queryTx                 block Number=13
 ```
 
-### 使用证明注册 validator
+### Registering a Validator Using Proof
 
-通过使用 signer 的私钥生成的证明进行注册 validator。
+Register the validator using a proof generated by the signer's private key.
 
 ```shell
 ./marker registerByProof --rpcaddr http://127.0.0.1:7445 --keystore ./account.json --proof 0xf90149b8...0e56f0ab1 --commission 150000
@@ -169,9 +183,9 @@ INFO [08-26|17:32:26.119] Please waiting                           func=getResul
 INFO [08-26|17:32:27.241] Transaction Success                      func=queryTx                 block Number=194
 ```
 
-### 验证注册
+### Verify
 
-至此我们已经完成了 validator 的注册步骤，现在我们来验证一下是否成为了 validator。
+After completing the registration steps for a validator, let's now verify if you have become a validator.
 
 ```shell
 ./marker getTotalVotesForEligibleValidators --rpcaddr https://rpc.maplabs.io
@@ -182,15 +196,14 @@ INFO [07-08|15:10:03.301] Validator:                               addr=0xA53516
 INFO [07-08|15:10:03.301] Validator:                               addr=0x5d643Dfb9ae372ce4Fdbc80890156E2CD8290846 vote amount=1,000,000,000,000,000,000,000,000
 INFO [07-08|15:10:03.301] Validator:                               addr=0x73bC690093b9dD0400c91886184A60cC127b2c33 vote amount=0
 ```
-### 投票
 
-投票数不能大于锁定票数。
+### Voting
 
-有关投票和选举的更多信息，请点击以下链接查看：
-[投票](/docs/base/mapo-relay-chain/marker/vote.md#vote)
-[选举](/docs/base/mapo-relay-chain/protocol/election.md)
+The number of votes cannot exceed the locked votes.
 
-现在我们来给 validator 投票，投票的命令如下：
+For more information about voting and elections, please click on the following links:
+[Voting](/docs/base/mapo-relay-chain/marker/vote_en.md#vote)
+[Elections](/docs/base/mapo-relay-chain/protocol/election_en.md)
 
 ```shell
 ./marker vote --rpcaddr https://rpc.maplabs.io --keystore ./account.json --target 0x73bc690093b9dd0400c91886184a60cc127b2c33 --voteNum 1000000
@@ -201,9 +214,9 @@ INFO [07-08|15:11:13.710] Please waiting                           func=getResul
 INFO [07-08|15:11:15.123] Transaction Success                      func=queryTx                 block Number=210
 ```
 
-### 验证投票 
+### Validating the Vote
 
-现在，让我们验证投票是否有效。
+Now, let's validate if the vote is valid.
 
 ```shell
 ./marker getTotalVotesForEligibleValidators --rpcaddr https://rpc.maplabs.io
@@ -216,7 +229,9 @@ INFO [07-08|15:21:45.881] Validator:                               addr=0x73bC69
 
 ```
 
-从结果来看，我已经成功给自己投票了，但是还不够。我们需要在下一个epoch 中 调用 RPC 来最終确定我们是否被选为可以参与区块生成的验证者，如下所示：
+From the results, it appears that I have successfully voted for myself, but it's not enough. We need to call the RPC in
+the next epoch to ultimately determine if we have been selected as a validator eligible for block production. Here's how
+it looks:
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"istanbul_getValidators","params":[],"id":1}' https://rpc.maplabs.io

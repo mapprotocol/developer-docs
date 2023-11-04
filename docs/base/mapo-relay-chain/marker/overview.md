@@ -17,7 +17,7 @@ make marker
 
 marker 的大多数子命令在使用时需要连接到一个正在运行的 atlas RPC 节点，所以您需要先启动一个 atlas RPC 节点。如何启动 RPC
 节点请[这里](/docs/base/mapo-relay-chain/nodes/rpc-nodes.md#运行-rpc-节点)
-。或者您可以直接使用我们提供的[公共 RPC 节点](/docs/base/mapo-relay-chain/public-service.md#endpoints)。
+。或者您可以直接使用我们提供的[公共 RPC 节点](/docs/base/mapo-relay-chain/public-service.md#网络信息)。
 
 还有一个需要验证身份的子命令需要使用到 keystore 文件，因此您在使用这些命令时需要提前准备好 keystore 文件，
 您可以使用以下方法生成一个 keystore 文件:

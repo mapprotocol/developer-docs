@@ -2,7 +2,7 @@ marker genesis 是一个 marker 开发者工具提供的一个功能，用于轻
 
 它相对于之前的解决方案的主要优势在于，它能够创建一个 genesis.json ，其中所有核心合约已经部署在其中
 
-标记我们需要使用标记工具。关于如何使用 marker 工具请参考 [这里](/docs/base/mapo-relay-chain/marker/genesis.md#参数说明)
+标记我们需要使用标记工具。关于如何使用 marker 工具请参考 [这里](/docs/base/mapo-relay-chain/marker/overview.md#使用)。
 
 ## 生成 genesis.json 文件
 
@@ -60,13 +60,13 @@ vim markerConfig.json
 
 ## 参数说明
 
-Address：账号地址，将作为 validator 账号注册到 validator 集合中。
-SignerAddress：签名者地址，它是由账号地址授权的，用于替代 validator 与 Atlas 网络上的其他节点达成共识。
-ECDSASignature：签名者地址对账号地址的 ECDSA 签名结果。
-PublicKeyHex：签名者地址的公钥。
-BLSPubKey：签名者地址的 BLS 公钥。
-BLSG1PubKey：签名者地址的 BLS G1 公钥。
-BLSProofOfPossession：签名者地址账户地址的BLS签名数据
+`Address`：账号地址，将作为 validator 账号注册到 validator 集合中。
+`SignerAddress`：签名者地址，它是由账号地址授权的，用于替代 validator 与 Atlas 网络上的其他节点达成共识。
+`ECDSASignature`：签名者地址对账号地址的 ECDSA 签名结果。
+`PublicKeyHex`：签名者地址的公钥。
+`BLSPubKey`：签名者地址的 BLS 公钥。
+`BLSG1PubKey`：签名者地址的 BLS G1 公钥。
+`BLSProofOfPossession`：签名者地址账户地址的BLS签名数据
 
 关于 PublicKeyHex、BLSPubKey、BLSG1PubKey
 如何获取请参考 [这里](/docs/base/mapo-relay-chain/make-private-network.md#创建账号)
@@ -93,11 +93,9 @@ EXAMPLES:
 
 marker genesis --buildpath /home/atlas-contracts/build/contracts --markercfg /home/atlas/marker/config/markerConfig.json
 
-
-This will create a `genesis.json` in the ./root/atlasEnv folder
 ```
 
-你可以使用此 genesis.json 初始化 Atlas validator 节点。 像下面这样：
+上面的命令会在当前目录下生成一个 genesis.json 文件，你可以使用此 genesis.json 初始化 Atlas validator 节点。 像下面这样：
 
 ```shell
 ./atlas --datadir ./node-1 init ./genesis.json

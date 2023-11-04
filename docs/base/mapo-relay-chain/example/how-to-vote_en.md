@@ -1,11 +1,13 @@
-本篇文档将介绍投票的完整流程。
+This document will introduce the complete process of voting.
 
-## 创建账号
+## Create an account
 
-如果您之前已经创建过账号，请跳过此步骤。
+If you have already created an account, please skip this step.
 
-在这一步骤中，会将您的身份信息存储到相应的管理合约，该合约将管理您的账户、密钥和元数据。
-您需要使用 `createAccount` 命令来执行上述操作，有关 `createAccount` 命令的更多详情，请参阅[这里](/docs/base/mapo-relay-chain/marker/common.md#createaccount)。
+In this step, your identity information will be stored in the corresponding management contract, which will manage your
+account, keys, and metadata.
+You need to use the `createAccount` command to perform the above operations. For more details about the `createAccount`
+command, please refer to [here](/docs/base/mapo-relay-chain/marker/common_en.md#createaccount).
 
 ```shell
 ./marker createAccount --rpcaddr http://127.0.0.1:7445 --name "validator" --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 
@@ -25,11 +27,12 @@ INFO [07-01|05:54:47.126] Please waiting                           func=getResul
 INFO [07-01|05:54:52.152] Transaction Success                      func=queryTx                 block Number=360,087
 ```
 
-## 锁定
+## Locking
 
-如果您已经锁定了足够的MAP来投票，请跳过此步骤。
+If you have already locked enough MAP to vote, please skip this step.
 
-您需要使用 `lockedMAP` 命令来执行上述操作，有关 `lockedMAP` 命令的更多详情，请参阅[这里](/docs/base/mapo-relay-chain/marker/common.md#lockedmap)。
+You need to use the `lockedMAP` command to perform the above operation. For more details about the `lockedMAP` command,
+please refer to [here](/docs/base/mapo-relay-chain/marker/common_en.md#lockedmap).
 
 ```shell
 ./marker lockedMAP --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --lockedNum 1000000
@@ -41,11 +44,11 @@ INFO [07-01|06:12:45.085] Please waiting                           func=getResul
 INFO [07-01|06:12:47.095] Transaction Success                      func=queryTx                 block Number=360,302
 ```
 
-## 投票
+## Voting
 
-当您到达这一步时，您可以为您喜爱的 validator
-投票。您可以使用 [getTotalVotesForEligibleValidators](/docs/base/mapo-relay-chain/marker/common.md#gettotalvotesforeligiblevalidators)
-命令来查看当前所有 validator 及其投票。
+When you reach this step, you can vote for your favorite validators. You can use
+the [getTotalVotesForEligibleValidators](/docs/base/mapo-relay-chain/marker/common_en.md#gettotalvotesforeligiblevalidators)
+command to view all current validators and their votes.
 
 ```shell
 ./marker getTotalVotesForEligibleValidators --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 
@@ -59,7 +62,7 @@ INFO [07-06|06:04:01.434] Validator:                               addr=0x19C560
 INFO [07-06|06:04:01.434] Validator:                               addr=0x078F684c7d3bf78BDbe8bEf93E56998442dc8099 vote amount=103,060,000,000,004,450,909,077
 ```
 
-下面我们来为 validator(0x078F684c7d3bf78BDbe8bEf93E56998442dc8099) 投票。
+Let's proceed to vote for the validator (0x078F684c7d3bf78BDbe8bEf93E56998442dc8099).
 
 ```shell
 ./marker vote --rpcaddr http://127.0.0.1:7445 --keystore ./UTC--2022-07-01T04-02-22.985282926Z--078f684c7d3bf78bdbe8bef93e56998442dc8099 --target "0x078F684c7d3bf78BDbe8bEf93E56998442dc8099" --voteNum 100000
@@ -70,4 +73,5 @@ INFO [07-06|06:05:31.479] Please waiting                           func=getResul
 INFO [07-06|06:05:32.083] Transaction Success                      func=queryTx                 block Number=446,614
 ```
 
-当您完成投票后，您的投票将处于待决状态。在当前的 epoch 结束时，被选中的 validator 将自动激活与他相关的待决投票
+Once you have voted, your vote will be in a pending state. At the end of the current epoch, the selected validator will
+be automatically activated along with their associated pending votes.

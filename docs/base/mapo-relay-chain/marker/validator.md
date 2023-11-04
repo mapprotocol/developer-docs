@@ -8,7 +8,7 @@ ecdsaPublicKey、blsPublicKey、BLSProof 将通过 你指定的 keystore 获取�
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `commission`: 佣金，validator 收取的奖励比例，然后将剩余部分分配给 voter，佣金参数相对于 1000000 设置的，其范围是 0 到 1000000
@@ -37,7 +37,7 @@ Failed
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `commission`: 佣金，validator 收取的奖励比例，然后将剩余部分分配给 voter，佣金参数相对于 1000000 设置的，其范围是 0 到
@@ -70,7 +70,7 @@ Failed
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 
@@ -92,7 +92,7 @@ Failed
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 
@@ -116,7 +116,7 @@ Failed
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `signerPriv`：signer 账号的私钥。
@@ -135,9 +135,9 @@ INFO [05-30|13:42:03.231] Transaction Success                      func=queryTx 
 
 ```
 
-## MakeECDSASignatureFromSigner
+## makeECDSASignatureFromSigner
 
-生成一个由 singer 账号签署的 ECDSA 签名，该 singer 账号签署了 validator 账号
+生成一个由 signer 账号签署的 ECDSA 签名，该 signer 账号签署了 validator 账号
 
 参数说明:
 
@@ -158,9 +158,9 @@ INFO [05-30|13:41:55.131] ECDSASignature                           result=0x6dce
 
 ```
 
-## MakeBLSProofOfPossessionFromSigner
+## makeBLSProofOfPossessionFromSigner
 
-生成一个 BLSProofOfPossession，由 singer 账号对 validator 账号进行 BLS 签名。
+生成一个 BLSProofOfPossession，由 signer 账号对 validator 账号进行 BLS 签名。
 
 参数说明:
 
@@ -186,7 +186,7 @@ INFO [05-30|13:52:40.375] === pop ===                                result=0x14
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `target`：signer 账号的地址。
@@ -230,11 +230,11 @@ INFO [08-26|17:32:23.958] generateBLSProof                         proof=0xf9014
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `signer`: signer 账号的地址。
-- `signature` 使用 [MakeECDSASignatureFromSigner](#MakeECDSASignatureFromSigner) 命令生成的 ECDSA 签名。
+- `signature` 使用 [makeECDSASignatureFromSigner](#makeECDSASignatureFromSigner) 命令生成的 ECDSA 签名。
 
 ```shell                                                                                               
 ./marker authorizeValidatorSignerBySignature 
@@ -252,11 +252,11 @@ INFO [07-08|14:55:05.078] Transaction Success                      func=queryTx 
 
 ## registerByProof
 
-使用 generateSignerProof 生成的证明来注册 validator。
+使用 `generateSignerProof` 生成的证明来注册 validator。
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `proof`: 使用 [generateSignerProof](#generateSignerProof) 命令生成的证明。

@@ -12,7 +12,7 @@
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `target`：您要进行投票的 validator 的地址。
@@ -33,7 +33,7 @@
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `target`：您要进行投票的 validator 的地址。
@@ -57,7 +57,7 @@
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `target`：您要进行激活投票的 validator 的地址。
@@ -78,7 +78,7 @@
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `target`：您要进行撤销待定投票的 validator 的地址。
@@ -101,7 +101,7 @@
 
 参数说明:
 
-- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#endpoints)
+- `rpcaddr`: RPC 服务的地址，可以是我们提供的的 [RPC 服务地址](/docs/base/mapo-relay-chain/public-service.md#网络信息)
   也可以是你自己的 RPC服务地址。
 - `keystore`: keystore 文件的路径。
 - `target`：您要进行撤销待定投票的 validator 的地址。
