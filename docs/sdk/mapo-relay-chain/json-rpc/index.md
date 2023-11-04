@@ -4,7 +4,7 @@ description:
 lang: zh
 ---
 
-为了让软件应用程序与`MAPO-Relay-Chain`区块链交互（通过读取区块链数据或向网络发送交易），它必须连接到`MAPO-Relay-Chain`节点或其提供的[公共网络](docs/base/mapo-relay-chain/public-service.md)。以下`MAPO-Relay-Chain`统称为MAPO.
+为了让软件应用程序与`MAPO-Relay-Chain`区块链交互（通过读取区块链数据或向网络发送交易），它必须连接到`MAPO-Relay-Chain`节点或其提供的[公共网络](/docs/base/mapo-relay-chain/public-service.md)。以下`MAPO-Relay-Chain`统称为MAPO.
 
 JSON-RPC（JavaScript Object Notation Remote Procedure Call）是一种轻量级的远程过程调用（RPC）协议，它使用 JSON 作为数据交换格式。JSON-RPC 允许在客户端和服务器之间进行跨网络通信，以调用远程服务或方法，类似于传统的远程过程调用（RPC）协议，但使用 JSON 格式进行数据传输。
 

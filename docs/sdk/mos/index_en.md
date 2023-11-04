@@ -1,14 +1,14 @@
-# MOS 接口
+# MOS interface
 
-MOSV2是一个token跨链的服务,在兼容EVM的生态链上主要有4中token款连的模式
-- transferOutToken 主要发出一些token的跨链请求到目标链
-- transferOutNative 主要发出一些本地链的原生token的跨链请求到目标链
-- depositToken 从来源链跨出一些token到目标链进行质押
-- depositNative 从来源链跨出一些来源链的原生token到目标链进行质押
+MOSV2 is a token cross-chain service that operates on EVM-compatible ecosystems. It primarily offers four token cross-chain modes:
+- transferOutToken This mode is used to initiate cross-chain requests for transferring specific tokens to the target chain.
+- transferOutNative It is used to initiate cross-chain requests for transferring native tokens of the source chain to the target chain.
+- depositToken In this mode, tokens are transferred from the source chain to the target chain for staking or collateralization.
+- depositNative Native tokens of the source chain are transferred to the target chain for staking or collateralization in this mode.
 
-具体的代码实现可以参考[IMOSV2](https://github.com/mapprotocol/map-contracts/blob/main/mos/evmv2/contracts/interface/IMOSV2.sol)
+Please refer to a more detailed code implementation for specifics [IMOSV2](https://github.com/mapprotocol/map-contracts/blob/main/mos/evmv2/contracts/interface/IMOSV2.sol)
 
-想要使用MOSV2进行一些跨链操作,可以使用以下接口
+If you want to perform cross-chain operations using MOSV2, you can use the following interfaces
 
 ```
 // SPDX-License-Identifier: MIT
@@ -34,11 +34,11 @@ interface IMOSV2 {
 }
 ```
 
-MOSV3是一个消息跨链的服务,在兼容EVM的生态链上主要负责将来源链的信息跨到目标链上进行消息的更新和执行,不仅可以进行token的跨链还能进行合约的信息更新
-- transferOut 主要负责弹出跨链消息日志,有messager在目标链上进行传递执行
-- getMessageFee 主要负责在来源上进行跨链到目标链上费用的预估
+MOSV3 is a message-based cross-chain service that primarily operates in EVM-compatible ecosystems. It is responsible for transferring information from the source chain to the target chain for message updates and execution. It not only supports cross-chain token transfers but also enables the update of contract information.
+- transferOut It is primarily responsible for popping cross-chain message logs and has messengers for executing message delivery on the target chain.
+- getMessageFee Its main responsibility is to estimate the fees for cross-chain transactions from the source chain to the target chain.
 
-具体的代码实现请查看[IMOSV3](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/interface/IMOSV3.sol)
+Please refer to a more detailed code implementation for specifics[IMOSV3](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/interface/IMOSV3.sol)
 ```
 // SPDX-License-Identifier: MIT
 

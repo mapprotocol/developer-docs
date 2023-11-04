@@ -1,7 +1,7 @@
 ---
 title: atlas validator json rpc
 description: 
-lang: zh
+lang: en
 ---
 
 ## Validator Tool RPC
