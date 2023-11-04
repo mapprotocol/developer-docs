@@ -9,7 +9,7 @@
 
 ## 基础主題
 
-+ [MAPO简介](docs/base/intro-to-mapo/index.md)-----MAPO简要介绍
++ [脉波简介](docs/base/intro-to-mapo/index.md)-----脉波简要介绍
 + [MAPO币](docs/base/intro-to-mapo/mapo-coin.md)-----MAPO币简要介绍
 + [全链去中心化应用](docs/base/omnichain-dapp/index.md)------覆盖各种区块链的去中心化应用介绍
 + [全链应用与单链或多链应用的区别](docs/base/omnichain-dapp/different.md)----基于跨链技术带来的差异
