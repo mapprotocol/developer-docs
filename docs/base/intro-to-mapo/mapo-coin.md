@@ -31,7 +31,7 @@ MAPO是脉波的核心。当您发送MAPO或在脉波上使用应用程序时，
 因为脉波是可编程的，开发者可以以无数种方式塑造MAPO。以下是您可以使用MAPO做的一些事情：
 
 - **通过 [ButterSwap](https://www.butterswap.io/)实现代币兑换**——您可以在多个不同的链上与代币进行交易。
-- **通过[质押](https://staking.mapprotocol.io/#/login))赚取利息**——质押MAPO并获得奖励。
+- **通过[质押](https://staking.mapprotocol.io/#/login)赚取利息**——质押MAPO并获得奖励。
 - **获得稳定币**——以稳定、波动性较小的价值进入加密货币世界。
 ## 获取 MAPO 币
 用户可以从中心化交易所或去中心化交易所获得MAPO 币，或者成为验证者或参与质押来赚取 MAPO 作为奖励。
