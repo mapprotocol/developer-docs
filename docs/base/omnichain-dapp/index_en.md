@@ -3,8 +3,8 @@ title: OmniApp with MAP Protocol
 description: Use MAP Protocol to build Omnichain dApps.
 lang: en
 ---
-# OmniApp with MAP Protocol
-MAP Protocol is primarily responsible for cross-chain message transmission. Core logic such as asset management, staking, Mint/Burn, etc., are completed and maintained by the omnichain dApps
+# Omnichain dApp (OmniApp)
+Omnichain dApp refers to decentralized apps that do not rely on any trusted third parties, but use truly decentralized methods to achieve cross-chain capabilities. You can use MAP Protocol, the peer-to-peer omnichain network focused on cross-chain interoperability, to build your OmniApp. In the OmniApp building process, MAP Protocol is primarily responsible for cross-chain message transmission. Core logic such as asset management, staking, Mint/Burn, etc., are completed and maintained by the omnichain dApps.
 ## MAP Protocol decentralized cross-chain flow
 The following diagram illustrates the process for omnichain dApps to achieve decentralized cross-chain functionality, showing transactions related to dApp logic activities transmitted from Ethereum through the MAP Relay Chain to Polygon
 ![](OmniApp.png)
