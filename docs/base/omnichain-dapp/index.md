@@ -27,9 +27,8 @@ MAP Protocol 在全链协议中主要负责跨链消息的传递，协议中核�
 14. 全链 dApp 的逻辑合约可以 Emi t出‘执行完成’类似的`Event`
 ## 脉波全链去中心化 dApps 关键技术要件
 ### [MOS 合约 (MOS Contract)](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/MapoServiceV3.sol)
-MAP Omnichain Service (MOS) Contract 是 MAP Protocol 负责跨链消息传递的核心合约。在源链、MAP Relay Chain，以及目标链都会部署相应的 MOS Contract用来**发送、承接以及接受跨链消息**，其中全链 dApp 会涉及到两个关键方法：
-**`TransferOut`**
-> transferOut 方法会由全链 dApp的逻辑合约 调用并将其内部方法所构建的calldata进行传递。
+MAP Omnichain Service (MOS) Contract 是 MAP Protocol 负责跨链消息传递的核心合约。在源链、MAP Relay Chain，以及目标链都会部署相应的 MOS Contract用来**发送、承接以及接受跨链消息**，其中全链 dApp 会涉及到两个关键方法：\
+**`TransferOut`**: transferOut 方法会由全链 dApp的逻辑合约 调用并将其内部方法所构建的calldata进行传递。
  ```
     function transferOut(uint256 _toChain, bytes memory _messageData, address _feeToken)
  ``` 
@@ -37,8 +36,7 @@ MAP Omnichain Service (MOS) Contract 是 MAP Protocol 负责跨链消息传递�
 - `bytes memory _messageData` 是要传递的 **calldata**
 - `address _feeToken` 则是所要收取的手续费 **token地址**
 
-**`TransferIn`**
-> transferIn方法会由Messenger调用并将其所构建的交易相关的证明传递给目标链；transferIn方法还会将证明传递给所在链的轻客户进行验证并再验证成功后执行其所包含的calldata；
+**`TransferIn`**: transferIn方法会由Messenger调用并将其所构建的交易相关的证明传递给目标链；transferIn方法还会将证明传递给所在链的轻客户进行验证并再验证成功后执行其所包含的calldata；
  ```
     function transferIn(uint256 _chainId, bytes memory _receiptProof)
  ``` 
