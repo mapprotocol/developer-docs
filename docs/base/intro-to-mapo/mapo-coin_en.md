@@ -8,7 +8,7 @@ lang: en
 ## What is a cryptocurrency?
 Cryptocurrency is a digital or virtual form of currency that uses cryptography for security, making it difficult to counterfeit or double-spend. It is decentralized and operates on a technology called blockchain, which is a distributed ledger enforced by a disparate network of computers. Cryptocurrencies are distinguished by their lack of physical form and traditional oversight or governance, such as that provided by central banks or financial institutions.
 
-The pioneering cryptocurrency, Bitcoin, was created in 2009 by an anonymous individual or group known as Satoshi Nakamoto. Since then, thousands of alternate cryptocurrencies have emerged, each with distinct functionalities, use cases, and underlying technologies.
+The pioneering cryptocurrency, **Bitcoin**, was created in 2009 by an anonymous individual or group known as Satoshi Nakamoto. Since then, thousands of alternate cryptocurrencies have emerged, each with distinct functionalities, use cases, and underlying technologies.
 
 These digital currencies are used for a wide range of purposes, including online purchases, investments, remittances, and as a means to transfer value across borders efficiently and without the need for traditional intermediaries. Their rise has sparked significant debate and interest, reshaping the landscape of finance and raising questions about the future of money in the digital age.
 
@@ -28,9 +28,9 @@ Moving beyond mere transactions, the omnichain community is crafting an all-enco
 Currently, users can earn MAPO through staking. However, as MAP Protocol evolves and expands, forthcoming functionalities like borrowing and lending will be introduced, broadening the utility of MAPO.
 ### Uses for MAPO grow every day
 Because MAP Protocol is programmable, developers can shape MAPO in countless ways. Here are just some of the things you can do with MAPO.
--Swap tokens — you can trade MAPO with tokens on multiple different chains.
--Earn interest — stake MAPO and get rewarded.
--Get stablecoins — access the world of cryptocurrencies with a steady, less volatile value.
+- **Swap tokens with [ButterSwap](https://www.butterswap.io/)** — you can trade MAPO with tokens on multiple different chains.
+- **Earn interest by [staking](https://staking.mapprotocol.io/#/login)** — stake MAPO and get rewarded.
+- **Get stablecoins** — access the world of cryptocurrencies with a steady, less volatile value.
 
 ## Getting MAPO
 Users can get MAPO from a  centralized exchange or decentralized exchange. You can also become a validator or participate in staking to earn MAPO as a reward.
@@ -44,4 +44,4 @@ Once validators have configured their Validator node, they need to have 1 Millio
 
 
 ## Query MAPO
-Users can query the MAPO balance of any account by inspecting the account's balance field, which shows MAPO holdings denominated in Gwei. [Maposcan](https://maposcan.io/) is the tool to inspect address balances via a web-based application. Account balances can also be queried using wallets or directly by making requests to nodes.
+Users can query the MAPO balance of any account by inspecting the account's balance field, which shows MAPO holdings denominated in Gwei. **[Maposcan](https://maposcan.io/) **is the tool to inspect address balances via a web-based application. Account balances can also be queried using wallets or directly by making requests to nodes.
