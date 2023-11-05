@@ -1,10 +1,10 @@
 ---
-title: OmniApp with MAP Protocol
+title: Omnichain dApp with MAP Protocol
 description: Use MAP Protocol to build Omnichain dApps.
 lang: en
 ---
-# Omnichain dApp (OmniApp)
-Omnichain dApp refers to decentralized apps that do not rely on any trusted third parties, but use truly decentralized methods to achieve cross-chain capabilities. You can use [MAP Protocol](docs/base/intro-to-mapo/index_en.md), the peer-to-peer omnichain network focused on cross-chain interoperability, to build your OmniApp. In the OmniApp building process, MAP Protocol is primarily responsible for cross-chain message transmission. Core logic such as asset management, staking, Mint/Burn, etc., are completed and maintained by the omnichain dApps.
+# Omnichain dApp
+Omnichain dApp refers to decentralized apps that do not rely on any trusted third parties, but use truly decentralized methods to achieve cross-chain capabilities. You can use [MAP Protocol](docs/base/intro-to-mapo/index_en.md), the peer-to-peer omnichain network focused on cross-chain interoperability, to build your Omnichain dAPp. In the building process, MAP Protocol is primarily responsible for cross-chain message transmission. Core logic such as asset management, staking, Mint/Burn, etc., are completed and maintained by the omnichain dApps.
 ## MAP Protocol decentralized cross-chain flow
 The following diagram illustrates the process for omnichain dApps to achieve decentralized cross-chain functionality, showing transactions related to dApp logic activities transmitted from Ethereum through the MAP Relay Chain to Polygon
 ![](OmniApp.png)
@@ -24,7 +24,7 @@ The specific process is as follows:
 12. The **`TransferIn`** method will verify this proof data in the light client of the MAP Relay Chain deployed on Polygon.
 13. If the verification is successful, the MOS contract will call the logic contract of the all-chain dApp on Polygon and execute the passed calldata.
 14. The logic contract of the all-chain dApp can Emit an Event similar to 'execution completed'.
-## MAP Protocol OmniApp Key Components
+## MAP Protocol Omnichain dApp Key Components
 ### [MOS Contract](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/contracts/MapoServiceV3.sol)
 The MAPO Omnichain Service Contract is the core contract of MAP Protocol responsible for cross-chain message transmission. MOS Contracts are deployed on the source chain, MAP Relay Chain, and target chain to send, undertake, and receive cross-chain messages. The omnichain dApp involves two key methods:
 \
@@ -58,7 +58,7 @@ The MAPO Executor is an interface that developers need to implement themselves, 
 - bytes calldata _fromAddress is the initiating address of this transaction, which is the address of the all-chain dApp.
 - bytes32 _orderId is the unique ID of this cross-chain transaction.
 - bytes calldata _message is the execution logic contained in this transaction
-## Possible Examples of OmniApp
+## Possible Examples of Omnichain dApp
 Through the MAP Protocol's omnichain interoperability infrastructure, developers can design and develop many creative and practically meaningful Omni-DApps. Here we list some possibilities.
 ### Omni-DeFi
 Omnichain DeFi refers to protocols that can accept different assets from different chains to participate in economic activities by leveraging the underlying infrastructure of MAP Protocol.
