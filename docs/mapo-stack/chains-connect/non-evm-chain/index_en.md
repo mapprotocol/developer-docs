@@ -1,14 +1,14 @@
 ---
 title: integration of MAP with Non-EVM-Compatible Chains
 description: 
-lang: zh
+lang: en
 ---
 
 # Integration of MAP with Non-EVM-Compatible Chains
 
 The cross-chain process of the Mapo Protocol involves multiple steps, from locking assets to verifying data, ensuring the secure transfer and interoperability of assets across different blockchains. Here, we are only discussing the onboarding process for non-EMV-compatible chains. Completing the development and deployment of the following modules will allow you to integrate with the Mapo Protocol.
 
-## Light-client层
+## Light-client
 
 Both chains involved in integrating with the Mapo Protocol need to deploy each other's `light clients`. Here, we are discussing how to implement the `Mapo-Relay-Chain`'s `light client` on a target chain that supports smart contracts. Since the target chain supports on-chain smart contracts (wasm or others), so `Mapo-Relay-Chain`'s `light clients` will be implemented in the smart contract language supported by the target chain. In this context, we will primarily introduce some data structures and validation methods for the `Mapo-Relay-Chain`'s `light client` to assist users in implementing this light client in a specific language.
 

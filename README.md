@@ -4,7 +4,7 @@
 
 基于开源的社区准则，你可以随时提出新的主题，添加新的内容，并在认为可能有用的地方提供示例。所有文档都可以通过github编辑，并会存储到去中心化存储设施`Arweave`。如果不确定如何操作，请遵循[说明进行](docs/editing-markdown.md)。
 
-如果这是你第一次尝试MAPO开发，建议你从头开始阅读，这不仅可以让你更好的熟悉MAPO，其中涉及区块链底层的技术以及ZK等内容，也会让你对点对点的代码信任有一个全新的认识。
+如果这是你第一次尝试MAPO开发，建议你从头开始阅读，这不仅可以让你更好的熟悉MAPO，其中涉及区块链底层的技术以及ZK等内容，也会让你对点对点的代码信任有一个全新的认识。[english](./readme_en.md)
 
 
 ## 基础主題
@@ -27,7 +27,7 @@
     + [MOS接口和功能](docs/base/mos/mos_interface.md) - 区分relay-chain和其他链的区别
     + [MOS的部署](docs/base/mos/mos_deploy.md) - 在不同链上部署mos
     + [Messenger](docs/base/mos/Messenger.md) - 跨链消息的监控与路由
-+ [中继链(atlas)](docs/base/mapo-relay-chain/index.md) - 基于POS共识的EVM兼容区块链网络
++ [中继链(atlas)](docs/base/mapo-relay-chain/nodes/architecture.md) - 基于POS共识的EVM兼容区块链网络
     + 节点架构
         + [中继链（atlas）架构 - 区块和交易结构](docs/base/mapo-relay-chain/nodes/architecture.md)
         + 创世
@@ -93,16 +93,14 @@
       + [maintainer增加对新区块链支持](docs/mapo-stack/chains-connect/evm-chain/index.md#maintainer开发) - 二次开发增加对新链支持
       + [部署maintainer](docs/base/Compass/index.md#compass环境与部署) 
     + [MOS层](docs/mapo-stack/chains-connect/evm-chain/index.md#mos层) - 支持全链应用开发的基础服务层
-      + MOS结构与接口
       + [MOS层的部署与升级](docs/mapo-stack/chains-connect/evm-chain/index.md#mos合约部署)
-      + [全链应用调用过程](docs/mapo-stack/omni-dapp/index.md) - 一个消息跨链(资产跨链)调用的完整流程
+      + [MOS层的Messenger](docs/mapo-stack/chains-connect/evm-chain/index.md#messeager程序开发) - messenger开发
   + [非EVM兼容链的跨链互通](docs/mapo-stack/chains-connect/non-evm-chain/index.md)
     + [轻客户端验证](docs/mapo-stack/chains-connect/non-evm-chain/index.md#light-client层) - 根据源链和目标链共识机制实现轻客户端功能
     + [轻客户端状态更新](docs/mapo-stack/chains-connect/non-evm-chain/index.md#maintainer开发) - 使用链下服务程序实现源链和目标链上的轻客户端状态更新
     + [MOS层](docs/mapo-stack/chains-connect/non-evm-chain/index.md#mos层) 
-      + [MOS结构与接口](docs/mapo-stack/chains-connect/non-evm-chain/index.md#mos层) - 定义及实现基于目标链平台的MOS结构与接口
-      + [MOS层的Messenger](docs/mapo-stack/chains-connect/non-evm-chain/index.md#messeager程序开发)  - mapo端的mos层的部署与升级
-+ [如何开发跨链应用](docs/mapo-stack/omni-dapp/index.md) - 如何开发一个基于mapo跨链网络的全链dapp
+      + [MOS层的Messenger](docs/mapo-stack/chains-connect/non-evm-chain/index.md#messeager程序开发)  - messenger开发
++ [如何开发全链应用](docs/mapo-stack/omni-dapp/index.md) - 如何开发一个基于mapo跨链网络的全链dapp
 + SDK/API - mapo支持的API
   +  [MOS接口](docs/sdk/mos/index.md)
   +  [轻客户端接口](docs/sdk/light-client/index.md)
@@ -118,12 +116,6 @@
 
 
 ## 零知识证明(zk)
-
-
-## 入门开发教程
-
-+ 全链dapp开发视频及例子
-+ 开发者入门例子 - 包括环境配置，开发工具选择，合约代码示例
 
 
 
