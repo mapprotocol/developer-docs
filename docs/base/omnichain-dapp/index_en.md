@@ -6,7 +6,8 @@ lang: en
 # OmniApp with MAP Protocol
 MAP Protocol is primarily responsible for cross-chain message transmission. Core logic such as asset management, staking, Mint/Burn, etc., are completed and maintained by the omnichain dApps
 ## MAP Protocol decentralized cross-chain flow
-The following diagram illustrates the process for omnichain dApps to achieve decentralized cross-chain functionality, showing transactions related to dApp logic activities transmitted from Ethereum through the MAP Relay Chain to Polygon.
+The following diagram illustrates the process for omnichain dApps to achieve decentralized cross-chain functionality, showing transactions related to dApp logic activities transmitted from Ethereum through the MAP Relay Chain to Polygon
+![](OmniApp.png)
 
 The specific process is as follows:
 1. Users interact with the dApp logic contract on Ethereum.
