@@ -8,7 +8,7 @@ lang: zh
 MAP Protocol 在全链协议中主要负责跨链消息的传递，协议中核心业务逻辑例如资产管理、质押、铸造、销毁等都是由全链 dApp 自主完成并维护。
 ## MAP Protocol 去中心化跨链流程示意
 以下为全链 dApp 实现去中心化跨链的流程示意图，展示了与dApp 逻辑活动相关的交易从Ethereum 经过 MAP Relay Chain 传递到 Polygon。
-
+![](OmniApp.png)
 
 ### 具体流程
 1. 用户与在 Ethereum dApp 逻辑合约中发生交互
