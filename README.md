@@ -109,10 +109,9 @@
         +  [atlas json rpc](docs/sdk/mapo-relay-chain/json-rpc/atlas-json-rpc.md)
         +  [atlas consensus rpc](docs/sdk/mapo-relay-chain/json-rpc/atlas-consensus-rpc.md)
      +  [javaScript sdk](docs/sdk/mapo-relay-chain/javaScript.md)
-     +  go-sdk
+     +  [go-sdk](docs/sdk/mapo-relay-chain/go-sdk.md)
   + 后端API
     + [浏览器API](docs/sdk/backend/index.md)
-    + 数据统计与分析API
 
 
 ## 零知识证明(zk)
