@@ -10,7 +10,7 @@ First appeared in a 1985 paper — [“The knowledge complexity of interactive p
 
 It operates on the principle of [challenge-response protocols](https://csrc.nist.gov/glossary/term/challenge_response_protocol). The prover makes an assertion and provides evidence to the verifier without disclosing any critical information. The verifier then issues challenges to the prover, who must respond in a way that convinces the verifier of the truth of the assertion. This process is repeated multiple times to ensure that the proof is accurate and not a result of chance. The security of zero-knowledge proofs relies on the computational difficulty of certain mathematical problems, ensuring that it's infeasible for an adversary to cheat the system.
 
-From financial transactions and supply chains to identity verification, zero-knowledge proofs have a wide array of applications in various sectors. Beyond those common use cases, zk-proof can also be used for improving network verification efficiency. MAP Protocol has refactored its light clients verification network with zk-proof. 
+From financial transactions and supply chains to identity verification, zero-knowledge proofs have a wide array of applications in various sectors. Beyond those common use cases, zk-proof can also be used for improving network verification efficiency. MAP Protocol has refactored its light clients verification network with zk-proof.
 
 ## ZK-Improved Light Clients for MAP Relay Chain
 The cross-chain verification of MAP Protocol is mainly performed by the light client smart contract of the origin chain deployed on the target chain to perform the following two verifications:
