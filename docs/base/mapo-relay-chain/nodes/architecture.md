@@ -4,7 +4,7 @@ description:
 lang: zh
 ---
 
-Atlas是Mapo Protocol中的`Mapo-Relay-Chain`的名字,是一条EVM(Ethereum Virtual Machine)兼容的区块链，一种开放的加密协议，允许应用程序以安全和去中心化的方式进行交易并运行智能合约。Atlas 区块链代码与以太坊有着共同的祖先，并保持智能合约的完全
+Atlas 是 MAPO Protocol中的`Mapo-Relay-Chain`的名字，它是一条EVM(Ethereum Virtual Machine)兼容的区块链，一种开放的加密协议，允许应用程序以安全和去中心化的方式进行交易并运行智能合约。Atlas 区块链代码与以太坊有着共同的祖先，并保持智能合约的完全
 EVM 兼容性。然而，它使用拜占庭容错（BFT）共识机制（权益证明）而不是工作量证明，并且具有不同的块格式、交易格式以及天然气支付和定价机制。Atlas主要基于[geth](https://github.com/ethereum/go-ethereum)节点实现。Atlas兼容EVM，支持`web3.js`,`remix`,`hardhat`等应用开发工具。
 
 其主要模块如下：

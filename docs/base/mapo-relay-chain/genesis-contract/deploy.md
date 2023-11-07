@@ -34,15 +34,13 @@ truffle init
 在文本编辑器中打开truffle-config.js，并通过以下示例配置其内容：
 
 ```js
-  networks: {
-    atlas: {
-        host: "https://rpc.maplabs.io",
-            port
-    :
-        7445,
-            network_id
-    :
-        "22776"
+module.exports = {
+    networks: {
+        atlas: {
+            host: "https://rpc.maplabs.io",
+            port: 7445,
+            network_id: "22776"
+        }
     }
 }
 ```
@@ -68,5 +66,5 @@ truffle deploy --network atlas
 1. 在任意文件夹中下载 atlas-contracts 项目，使用以下命令 `git clone https://github.com/mapprotocol/atlas-contracts.git`
 2. 假设您已经安装了 node ，然后切换到项目文件，初始化项目并使用以下命令 `npm install`
 
-3. 使用 `npm install truffle` 下载 truffle 并使用 truffle 编译项目，truffle 的编译命令是 `truffle compile` 保姆哦完成后在您的
+3. 使用 `npm install truffle` 下载 truffle 并使用 truffle 编译项目，truffle 的编译命令是 `truffle compile` 完成后在您的
    atlas-contracts 项目中将生成一个名为 build 的文件。我们将使用此文件来指定相应的参数。

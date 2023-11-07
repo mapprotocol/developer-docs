@@ -1,8 +1,8 @@
-marker genesis 是一个 marker 开发者工具提供的一个功能，用于轻松运行 Atlas 区块链测试网络和与测试网络相关的任务。
+marker genesis 是 marker 开发者工具提供的一个功能，用于轻松运行 Atlas 区块链测试网络和与测试网络相关的任务。
 
 它相对于之前的解决方案的主要优势在于，它能够创建一个 genesis.json ，其中所有核心合约已经部署在其中
 
-标记我们需要使用标记工具。关于如何使用 marker 工具请参考 [这里](/docs/base/mapo-relay-chain/marker/overview.md#使用)。
+关于如何使用 marker 工具请参考 [这里](/docs/base/mapo-relay-chain/marker/overview.md#使用)。
 
 ## 生成 genesis.json 文件
 

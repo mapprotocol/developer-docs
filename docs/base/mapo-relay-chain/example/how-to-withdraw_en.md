@@ -1,12 +1,12 @@
-This document will provide a complete guide on how to perform redemption operations. There are two types of redemption
-based on different roles: validator redemption and voter redemption.
+This document will provide a comprehensive guide on how to perform withdraw operations. withdraw is divided into two
+types based on the roles: validator withdraw and voter withdraw.
 
 ## Validator withdraw
 
 ### Query locked MAPO amount
 
 You can use the following command to query the amount of locked MAPO, which represents the amount of MAPO available for
-redemption.
+withdraw.
 
 ```shell
 T-2:bin t$ ./marker getAccountTotalLockedGold --rpcaddr https://rpc.maplabs.io --target 0xa116617832F02cFFFb9aE8b78D8299E31A27Cc8f
@@ -31,7 +31,7 @@ INFO [08-02|16:52:41.107] Transaction Success                      func=queryTx 
 
 ### Unlocking
 
-This step is used to transition the status of MAPO from locked to pending redemption.
+This step is used to transition the status of MAPO from locked to pending withdraw.
 
 ```shell
 ./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore  /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --lockedNum 200000
@@ -58,7 +58,8 @@ the funds with index 1.
 
 ### Withdraw
 
-This step will convert the reward status from pending redemption to the account balance. However, this step can only be executed after a 15-day unlocking period.
+This step will convert the reward status from a pending withdraw state to an account balance, but it can only be executed
+after a 15-day unlocking period.
 
 ```shell
 ./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --withdrawIndex 1
@@ -148,7 +149,7 @@ INFO [08-03|14:44:20.661] result                                   lockedGold=60
 
 ## Unlocking
 
-This step is used to transition the status of MAPO from locked to pending redemption.
+This step is used to transition the status of MAPO from locked to pending withdraw.
 
 ```shell
 ./marker unlockMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --lockedNum 60000
@@ -169,7 +170,8 @@ INFO [08-03|14:45:57.069] result:                                  index=0 value
 
 ### withdraw
 
-This step will convert the reward status from pending redemption to the account balance. However, this step can only be executed after a 15-day unlocking period.
+This step will convert the reward status from a pending withdraw state to an account balance, but it can only be executed
+after a 15-day unlocking period.
 
 ```shell
 ./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --withdrawIndex 0

@@ -7,8 +7,8 @@
 ### 第1步：创建账号
 
 在这一步中，您需要将您的身份信息存储到相应的管理合约中，该合约将管理您的账户、密钥和元数据。
-此步骤的目的是通过授权用手签名证明、投票、验证的替代密钥来确保锁定的 MAPO 更加安全。通过这样
-做，您可以继续参与协议，同时保留可以访问存储中锁定的 MAPO 的密钥。
+此步骤的目的是通过授权用于签名证明、投票、验证替代密钥来确保锁定的 MAPO 更加安全。通过
+这样做，您可以在保持访问存储您锁定的 MAPO 的密钥的同时继续参与协议。
 您需要 createAccount 命令来执行上述操作，更多关于 createAccount 命令的详细信息请参阅[这里](/docs/base/mapo-relay-chain/marker/common.md#createaccount)。
 
 ### 第2步：授杈
@@ -18,7 +18,7 @@
 
 ### 第3步：锁定 MAP
 
-我们设置为 validator 的阈值是锁定 1,000,000 MAPO 到相应的管理智能合约中。
+我们设置成为 validator 的阈值是锁定 1,000,000 MAPO 到相应的管理智能合约中。
 这部分锁定的 MAPO 将用于以后的惩罚，这也是当选的条件之一。
 您需要 LockedMAP 命令来执行上述操作，更多关于 LockedMAP 命令的详细信息请参[这里](/docs/base/mapo-relay-chain/marker/common.md#lockedmap)。
 
@@ -42,7 +42,7 @@ validator 必须至少拥有总票数的 0.001 比例才能考虑参加选举。
 
 你需要准备两个 keystore，一个用于质押的称为 account，一个用于参与共识签名区块的 signer。
 
-如果希望 atlas 节点在后台运行而不挂起，可以组合使用nohup和＆，或者 screen 或者类似的。下面我们将使用 screen 进行演示
+如果希望 atlas 节点在后台运行而不挂起，可以使用nohup和＆的组合，或者 screen 之类的工具。下面我们将使用 screen 进行演示
 
 `account.json`：account 的 keystore 文件
 `signer.json`：signer 的 keystore 文件
@@ -216,7 +216,7 @@ INFO [07-08|15:21:45.881] Validator:                               addr=0x73bC69
 
 ```
 
-从结果来看，我已经成功给自己投票了，但是还不够。我们需要在下一个epoch 中 调用 RPC 来最終确定我们是否被选为可以参与区块生成的验证者，如下所示：
+从结果来看，我已经成功给自己投票了，但是还不够。我们需要在下一个 epoch 中 调用 RPC 来最终确定我们是否被选为可以参与区块生成的验证者，如下所示：
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"istanbul_getValidators","params":[],"id":1}' https://rpc.maplabs.io

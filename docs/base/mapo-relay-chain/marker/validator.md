@@ -2,9 +2,10 @@
 
 ## register
 
-注册一个新的 validator。通过这个命令，我们将把您的佣金，ecdsaPublicKey、blsPublicKey、blsG1PublicKey、BLSProof转移到管理合约中，以管理和保护您的资产。你的
-ecdsaPublicKey、blsPublicKey、BLSProof 将通过 你指定的 keystore 获取。Validator 用于共识的 ECDSA 公钥应与验证者签名者匹配，长度为64字节。
-验证者用于共识的 BLS公钥应通过拥有证明，长度为129字节。验证者用于共识的BLS G1公钥，长度为129字节。BLS公钥的拥有证明由对账户地址的签名组成，长度为129字节。
+注册一个新的 validator。通过这个命令，我们将把您的佣金，ecdsaPublicKey、blsPublicKey、blsG1PublicKey、BLSProof转移到管理合约中，
+以管理和保护您的资产。你的 ecdsaPublicKey、blsPublicKey、BLSProof 将通过你指定的 keystore 获取。Validator 用于共识的 ECDSA
+公钥应与验证者签名者匹配，长度为64字节。 验证者用于共识的 BLS公钥应通过所有权证明，长度为129字节。验证者用于共识的BLS G1公钥，
+长度为129字节。BLS公钥的所有权证明由对账户地址的签名组成，长度为129字节。
 
 参数说明:
 

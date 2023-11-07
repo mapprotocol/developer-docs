@@ -290,7 +290,7 @@ INFO [10-10|23:15:01.851] ActiveVotes                              balance=100,0
 
 ## getPendingInfoForValidator
 
-获取指定账号对指定 validator 进行的待处理投票以及待处理的 epoch。
+获取指定账号对指定 validator 进行的待处理投票以及对应的 epoch。
 
 参数说明:
 

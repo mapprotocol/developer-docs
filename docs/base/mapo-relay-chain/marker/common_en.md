@@ -303,7 +303,7 @@ INFO [10-10|23:15:01.851] ActiveVotes                              balance=100,0
 
 ## getPendingInfoForValidator
 
-Get the pending votes and pending epoch for a specific validator made by a specific account.
+Retrieve the pending votes and corresponding epoch for a specified account on a specific validator.
 
 Parameter description:
 

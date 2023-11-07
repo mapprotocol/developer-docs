@@ -3,11 +3,11 @@
 RPC (Remote Procedure Call) is a protocol for requesting services from a remote computer over a network without needing
 knowledge of the underlying network technology. RPC assumes the existence of certain protocols, such as TCP/UDP, to
 carry the information between communicating programs. In the OSI network model, RPC spans the transport layer and the
-application layer, making it easier to develop applications, including network distributed multi-programming.
+application layer, making it easier to develop applications, including network distributed programs.
 
-In blockchain technology, an RPC node serves as a communication bridge. It is a dedicated server that can connect
-decentralized applications (DApps) with the blockchain network. RPC nodes enable these applications to interact with the
-blockchain, facilitating tasks such as transaction verification and data retrieval.
+In blockchain technology, an RPC node plays a crucial role in communication. It serves as a specialized server that can
+connect decentralized applications (DApps) and the blockchain network. RPC nodes enable these applications to interact
+with the blockchain, facilitating tasks such as transaction verification and data retrieval.
 
 ## How RPC nodes work
 

@@ -11,9 +11,9 @@ your gas fees.
 
 In this step, you need to store your identity information in the corresponding management contract, which will manage
 your account, keys, and metadata. The purpose of this step is to ensure the security of the locked MAPO by authorizing
-an alternative key for signing, voting, and validating. By doing so, you can continue to participate in the protocol
-while retaining access to the locked MAPO in storage. You need to use the `createAccount` command to perform the above
-operations. For more detailed information about the `createAccount` command, please refer
+alternative keys for signing proofs, voting, and validation. By doing so, you can continue to participate in the
+protocol while maintaining access to the keys that store your locked MAPO. You need to use the `createAccount` command
+to perform the above operations. For more detailed information about the `createAccount` command, please refer
 to [here](/docs/base/mapo-relay-chain/marker/common_en.md#createaccount).
 
 ### Step 2: Authorization
@@ -55,8 +55,8 @@ to build Atlas.
 You will need two keystore files, one for the account used for staking, called `account`, and one for the signer used
 for signing consensus blocks.
 
-If you want the Atlas node to run in the background without hanging up, you can use `nohup` and `&` together, or
-use `screen` or similar. Here we will demonstrate using `screen`.
+If you want your Atlas node to run in the background without hanging, you can use a combination of nohup and &, or tools
+like screen. Below, we will demonstrate using screen.
 
 `account.json`: keystore file for the account
 `signer.json`: keystore file for the signer

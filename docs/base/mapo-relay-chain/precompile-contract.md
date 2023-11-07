@@ -14,9 +14,9 @@ MAP中继链将实现预编译合约以支持：
 
 #### bn256AddIstanbul
 
-- 地址： 0x0000000000000000000000000000000000000006
+- Address 0x0000000000000000000000000000000000000006
 
-  bn256Add是一个符合伊斯坦布尔共识规则的本地椭圆曲线点加法实现。
+  bn256Add implements a native elliptic curve point addition conforming to Istanbul consensus rules.
 
 ```golang
 package example

@@ -6,9 +6,9 @@
 
 对您指定的 validator 进行投票。
 
-您必须提前将足够的 MAPO [锁定](/docs/base/mapo-relay-chain/marker/common.md#lockedMAP)在 lockedGold 合同中，并将您的信息注册到合同中。
+您必须提前将足够的 MAPO [锁定](/docs/base/mapo-relay-chain/marker/common.md#lockedMAP)在 LockedGold 合同中，并将您的信息注册到合同中。
 
-该操作会在 LockedGold 合约中，减少您先前注册的账号对应的总票数和未投票数并在 Election 合约中增加 validator 的总票数和待处理票数。
+该操作会在 LockedGold 合约中减少您先前注册的账号对应的总票数和未投票数并在 Election 合约中增加 validator 的总票数和待处理票数。
 
 参数说明:
 
@@ -53,7 +53,7 @@
 
 激活待定选票以开始获得奖励。
 
-作为 voter 获得奖励，需要在产生待定选票的 epoch 结束后的某个时间点激活它们。 这意味着将 account 的待定投票转换为有效投票。
+作为 voter 获得奖励，需要在产生待定选票的 epoch 结束后的某个时间点激活它们。这意味着将 account 的待定投票转换为有效投票。
 
 参数说明:
 

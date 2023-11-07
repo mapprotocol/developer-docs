@@ -36,16 +36,14 @@ update this configuration file to point to the Atlas network and add some specif
 Open the truffle-config.js file in a text editor and configure its contents as shown in the example below:
 
 ```js
-  networks: {
-    atlas: {
-        host: "https://rpc.maplabs.io",
-            port
-    :
-        7445,
-            network_id
-    :
-        "22776"
-    }
+module.exports = {
+   networks: {
+      atlas: {
+         host: "https://rpc.maplabs.io",
+         port: 7445,
+         network_id: "22776"
+      }
+   }
 }
 ```
 

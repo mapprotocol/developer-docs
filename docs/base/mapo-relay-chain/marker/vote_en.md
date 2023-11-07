@@ -6,7 +6,7 @@ Introduction to commands related to voting operations
 
 Vote for the specified validator.
 
-You must lock enough MAPO tokens in the [lockedGold](/docs/base/mapo-relay-chain/marker/common_en.md#lockedMAP) contract
+You must [locked](/docs/base/mapo-relay-chain/marker/common_en.md#lockedMAP) enough MAPO tokens in the LockedGold contract
 in advance and register your information in the contract.
 
 This operation will decrease the total votes and unvoted amount of your previously registered account in the LockedGold

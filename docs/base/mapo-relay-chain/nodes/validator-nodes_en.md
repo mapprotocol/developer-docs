@@ -18,7 +18,7 @@ please refer to [here](/docs/base/mapo-relay-chain/example/how-to-become-a-new-v
 Run the following command to start a validator node:
 
 ```shell
-atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
+atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 console
 ```
 
 ## Related Topics

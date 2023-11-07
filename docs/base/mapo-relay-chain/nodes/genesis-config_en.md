@@ -1,10 +1,10 @@
-The marker genesis is a feature provided by the marker developer tool that allows for easy running of the Atlas
-blockchain test network and tasks related to the test network.
+Marker Genesis is a feature provided by the Marker developer tool that allows for easy setup of Atlas blockchain test
+networks and tasks related to the test network.
 
-The main advantage of this solution compared to previous ones is that it can create a genesis.json file with all the
-core contracts already deployed in it.
+The main advantage of Marker Genesis over previous solutions is that it can create a genesis.json file where all the
+core contracts have already been deployed.
 
-To use the marker tool, we need to follow these steps. For details on how to use the marker tool, please refer
+For instructions on how to use the Marker tool, please refer
 to [here](/docs/base/mapo-relay-chain/marker/overview_en.md#usage).
 
 ## Generating the genesis.json file

@@ -2,13 +2,13 @@
 
 ## register
 
-To register a new validator, use the following command. This command will transfer your commission, ecdsaPublicKey,
-blsPublicKey, blsG1PublicKey, and BLSProof to the management contract for asset management and protection. Your
-ecdsaPublicKey, blsPublicKey, and BLSProof will be obtained from the specified keystore. The ECDSA public key used for
-consensus by the validator should match the signer of the validator and be 64 bytes long. The BLS public key used for
-consensus should have a proof of ownership and be 129 bytes long. The BLS G1 public key used for consensus should be 129
-bytes long. The proof of ownership for the BLS public key consists of a signature on the account address and is 129
-bytes long.
+Register a new validator. Through this command, we will transfer your Commission, ecdsaPublicKey, blsPublicKey,
+blsG1PublicKey, and BLSProof to the management contract to manage and secure your assets. Your ecdsaPublicKey,
+blsPublicKey, and BLSProof will be obtained through the specified keystore. The ECDSA public key that the validator is
+using for consensus should match the validator signer and be 64 bytes in length. The BLS public key that the validator
+is using for consensus should pass proof of possession and be 129 bytes in length. The BLS G1 public key that the
+validator is using for consensus should be 129 bytes in length. The BLS public key proof-of-possession consists of a
+signature on the account address and is 129 bytes in length.
 
 Parameter description:
 

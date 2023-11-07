@@ -10,13 +10,13 @@ Atlas 采用权益证明共识机制，如果想参与 atlas 网络的区块生�
 
 ## 运行 validator 节点
 
-要运行一个 validator 节点，您需要有一个注册到 validator 集合中账号。如何注册 validator
+要运行一个 validator 节点，您需要有一个注册到 validator 集合中的账号。如何注册 validator
 请参考 [这里](/docs/base/mapo-relay-chain/example/how-to-become-a-new-validator.md)
 
 通过下面的命令运行 validator 节点：
 
 ```shell
-atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005
+atlas --datadir ./node --syncmode "full" --port 30321 --v5disc --mine --miner.validator 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 --unlock 0x98efa292822eb7b3045c491e8ae4e82b3b1ac005 console
 ```
 
 ## 相关主题

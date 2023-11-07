@@ -1,4 +1,4 @@
-本篇文档将完整的介绍如何进项赎回操作。根绝角色的不同赎回分为两种，一种是 validator 赎回，另一种是 voter 赎回。
+本篇文档将完整的介绍如何进行赎回操作。根据角色的不同赎回分为两种，一种是 validator 赎回，另一种是 voter 赎回。
 
 ## Validator 赎回
 
@@ -54,7 +54,7 @@ INFO [08-02|17:24:28.343] result:                                  index=1 value
 
 ### 赎回
 
-此步骤会将奖励状态从带赎回状态兑换到账户余额，但此步骤需要解锁 15 天后才能执行。
+此步骤会将奖励状态从待赎回状态兑换到账户余额，但此步骤需要解锁 15 天后才能执行。
 
 ```shell
 ./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-14T05-46-17.312327000Z--73bc690093b9dd0400c91886184a60cc127b2c33 --withdrawIndex 1
@@ -165,7 +165,7 @@ INFO [08-03|14:45:57.069] result:                                  index=0 value
 
 ### 赎回
 
-此步骤会将奖励状态从带赎回状态兑换到账户余额，但此步骤需要解锁 15 天后才能执行。
+此步骤会将奖励状态从待赎回状态兑换到账户余额，但此步骤需要解锁 15 天后才能执行。
 
 ```shell
 ./marker withdrawMap --rpcaddr http://127.0.0.1:7445 --keystore /Users/alex/data/atlas-1/keystore/UTC--2022-06-17T03-50-52.931374000Z--6d842e9c25c0c6246231296ca6ecf4bc8268949f --withdrawIndex 0

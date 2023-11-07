@@ -92,7 +92,7 @@ Commission 是验证者按比例从 ValidatorReceived 中提取的比例值。
 
 ## 执行
 
-[EpochRewards])(https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/EpochRewards.sol) 合约管理计算
+[EpochRewards](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/EpochRewards.sol) 合约管理计算
 epoch 奖励。
 
 ## 相关主题

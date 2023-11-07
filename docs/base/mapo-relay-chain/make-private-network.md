@@ -196,7 +196,7 @@ Password:
 $ atlas --datadir=path/to/custom/data/folder --bootnodes=<bootnode-url>
 ```
 
-查询自己的节点 enode 信息：
+查询你的节点的 enode 信息：
 
 ```shell
 admin.nodeInfo.enode
@@ -205,7 +205,7 @@ Output:
 enode://89b72450e02cf8a22dc66db717f4bab75b55961f2a474846f88615fd2be49bf406f3499842b39c5acd0d4ebc9fa72c29e27f1995a740d334c20b647e29a477b2@127.0.0.1:20201
 ```
 
-在控制台使用一下命令连接节点
+在控制台使用以下命令连接节点
 
 ```shell
 admin.addPeer("enode://89b72450e02cf8a22dc66db717f4bab75b55961f2a474846f88615fd2be49bf406f3499842b39c5acd0d4ebc9fa72c29e27f1995a740d334c20b647e29a477b2@127.0.0.1:20201")
