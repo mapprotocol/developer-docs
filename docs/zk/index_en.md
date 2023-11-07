@@ -13,6 +13,7 @@ It operates on the principle of [challenge-response protocols](https://csrc.nist
 From financial transactions and supply chains to identity verification, zero-knowledge proofs have a wide array of applications in various sectors. Beyond those common use cases, zk-proof can also be used for improving network verification efficiency. MAP Protocol has refactored its light clients verification network with zk-proof.
 
 ## ZK-Improved Light Clients for MAP Relay Chain
+![MAPOzk](docs/zk/MAPOlczk.png)
 The cross-chain verification of MAP Protocol is mainly performed by the light client smart contract of the origin chain deployed on the target chain to perform the following two verifications:
 1. **Correctness verification of the block header**: Verify the legality of the block header requested by the maintainer to be written in. Depending on the different chain consensus mechanisms, this verification scheme will vary. For chains using PoS and BFT mechanisms, it is usually to verify that the legal signature represented in the block header has more than 2/3 of the voting rights.
 2. **Verification of Merkle proof**: Verify that a specific event is emitted at a specific block height, the correct Merkle root value is required in the block header, and the first step ensures correctness. In a group of blockchains similar to Ethereum's structure, this Merkle proof is usually proof of the existence of the Merkle Patricia Trie, that is, the receipt tree MPT does indeed contain a specific event.
