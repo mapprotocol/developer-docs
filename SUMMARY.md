@@ -52,7 +52,7 @@
     * [验证节点 （中继链）](docs/base/mapo-relay-chain/nodes/validator-nodes.md)
     * [RPC节点（中继链）](docs/base/mapo-relay-chain/nodes/rpc-nodes.md)
   * [Marker工具 - atlas的简易客户端工具](docs/base/mapo-relay-chain/marker/overview.md)
-    * [Genesis](docs/base/mapo-relay-chain/marker/genesis.md)
+    * [Genesis](docs/base/mapo-relay-chain/nodes/genesis-config.md)
     * [Validator](docs/base/mapo-relay-chain/marker/validator.md)
     * [Vote](docs/base/mapo-relay-chain/marker/vote.md)
     * [Common](docs/base/mapo-relay-chain/marker/common.md)

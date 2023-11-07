@@ -57,7 +57,7 @@ If this is your first time diving into MAPO development, it is recommended that 
       + [run atlas(validator)](docs/base/mapo-relay-chain/nodes/validator-nodes_en.md)
       + [run atlas（RPC）](docs/base/mapo-relay-chain/nodes/rpc-nodes_en.md)
     + [Marker tool](docs/base/mapo-relay-chain/marker/overview_en.md)
-      + [Genesis](docs/base/mapo-relay-chain/marker/genesis_en.md) 
+      + [Genesis](docs/base/mapo-relay-chain/nodes/genesis-config_en.md) 
       + [Validator](docs/base/mapo-relay-chain/marker/validator_en.md) 
       + [Vote](docs/base/mapo-relay-chain/marker/vote_en.md) 
       + [Common](docs/base/mapo-relay-chain/marker/common_en.md)
