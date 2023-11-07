@@ -29,16 +29,16 @@ A PoS chain can enhance its security and address the [long-range attack](https:/
 The `MAPO` platform supports the cross-chain transfer of [inscription](https://docs.ordinals.com/inscriptions.html) assets (BRC-20) from the Bitcoin network to the `MAPO` platform in a peer-to-peer manner. This enables other cryptocurrencies on different blockchains to be traded with `BRC-20` assets through a more convenient and cost-effective route, enhancing the liquidity of [inscription](https://docs.ordinals.com/inscriptions.html)  assets. This interoperability helps expand the use cases of Bitcoin and integrates the Bitcoin ecosystem into a broader crypto financial ecosystem, bringing new contributions to the Bitcoin community.
 
 
-`MAPO` provides a comprehensive solution that allows users to easily transfer `BRC-20` assets to the `MAPO` platform. `MAPO` utilizes the native [mapo-brc201](/docs/btc-layer2/brc201.md) protocol on the Bitcoin network, enabling users to seamlessly move assets from the `BRC-20` protocol to the BRC201 protocol and cross-chain to the `MAPO` platform without any loss. As shown in the diagram: 
+`MAPO` provides a comprehensive solution that allows users to easily transfer `BRC-20` assets to the `MAPO` platform. `MAPO` utilizes the native [mapo-brc201](./brc201.md) protocol on the Bitcoin network, enabling users to seamlessly move assets from the `BRC-20` protocol to the BRC201 protocol and cross-chain to the `MAPO` platform without any loss. As shown in the diagram: 
 
 ![架构图](./frame2.png) 
 
 + Indexer Service: The Indexer service is primarily responsible for gathering and parsing `inscription transactions` on the Bitcoin network. It collects information related to these transactions, making them accessible for further analysis and processing.
 
-+ Collection Service: Building on the data obtained from the Indexer service, the Collection service is responsible for analyzing and processing data related to `BRC-20` and [BRC-201](/docs/btc-layer2/brc201.md) protocols. It focuses on identifying and saving relevant user assets associated with these protocols.
++ Collection Service: Building on the data obtained from the Indexer service, the Collection service is responsible for analyzing and processing data related to `BRC-20` and [BRC-201](./brc201.md) protocols. It focuses on identifying and saving relevant user assets associated with these protocols.
 
-+ Bridge Service: The Bridge service plays a crucial role in routing `BRC-20` assets from the Bitcoin network to the MAPO platform using the [BRC-201](/docs/btc-layer2/brc201.md) protocol. This service facilitates the seamless transfer of assets between the two networks, enhancing interoperability.
++ Bridge Service: The Bridge service plays a crucial role in routing `BRC-20` assets from the Bitcoin network to the MAPO platform using the [BRC-201](./brc201.md) protocol. This service facilitates the seamless transfer of assets between the two networks, enhancing interoperability.
 
-+ Order Service: The Order service is designed to support the creation and management of `inscription transactions` based on the [BRC-201](/docs/btc-layer2/brc201.md) protocol. It helps users construct and execute transactions that adhere to this protocol.
++ Order Service: The Order service is designed to support the creation and management of `inscription transactions` based on the [BRC-201](./brc201.md) protocol. It helps users construct and execute transactions that adhere to this protocol.
 
 These services collectively contribute to the smooth operation and functionality of the MAPO platform, allowing for the transfer and management of assets across the Bitcoin network and the MAPO ecosystem.
