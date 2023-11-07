@@ -1,6 +1,6 @@
 ---
 title: Zero-Knowledge Proof
-description: MAP Protocol uses ZK to enhance light clients verification network.
+description: MAP Protocol uses ZK to refactor light clients verification network.
 lang: en
 ---
 # Zero-Knowledge Proof
