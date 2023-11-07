@@ -14,6 +14,7 @@
 + [全链去中心化应用](docs/base/omnichain-dapp/index.md)------覆盖各种区块链的去中心化应用介绍
 + [全链应用与单链或多链应用的区别](docs/base/omnichain-dapp/different.md)----基于跨链技术带来的差异
 + [第三方信任跨链与点对点跨链方案区别](docs/base/omnichain-dapp/the-other.md)----基于技术方案带来的差异
++ [比特币二层](docs/btc-layer2/index.md)
 + [帐户](docs/base/accounts/index.md) – 网络中能够持有余额和发送交易的实体
 + [交易](docs/base/transactions/index.md) – 转账和其他导致MAPO状态变化的行为
 + [区块](docs/base/block/index.md) – 交易分批进行，以确保状态在所有行为者之间同步
