@@ -1,5 +1,5 @@
 # MAPO Protocol开发文档
-> [English](https://mapo.gitbook.io/docs-en/)
+> 还可阅读[英文版](https://mapo.gitbook.io/docs-en/)
 
 本文档旨在帮助你认识MAPO，或使用它构建你想构建的去中心化应用，或将一条区块链接入MAPO实现与其他区块链的互通。该文档介绍了MAPO的概念，解释了MAPO技术堆栈，以及MAPO应用的使用案例。
 
