@@ -10,6 +10,7 @@
 * [全链应用与单链或多链应用的区别](docs/base/omnichain-dapp/different.md)
 * [第三方信任跨链与点对点跨链方案区别](docs/base/omnichain-dapp/the-other.md)
 * [比特币二层](docs/btc-layer2/index.md)
+  * [brc-201](docs/btc-layer2/brc201.md)
 * [帐户](docs/base/accounts/index.md)
 * [交易](docs/base/transactions/index.md)
 * [区块](docs/base/block/index.md)
