@@ -31,6 +31,7 @@ lang: zh
 ### 引入zkSNARK后的更新
 
 为了表述清晰，以下是引入zkSNARK后跨链流程中新引入的证明人 (Prover) 的角色以及更新的messenger/maintainer的逻辑，以及每一方所接受的输入：
+
 ![LCrefactored](./mapolczk2.png)
 
 1. Prover的输入为：区块头、当前验证者集合中每个验证者的公钥以及投票权重。
