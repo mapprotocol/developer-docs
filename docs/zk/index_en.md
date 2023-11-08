@@ -13,7 +13,9 @@ It operates on the principle of [challenge-response protocols](https://csrc.nist
 From financial transactions and supply chains to identity verification, zero-knowledge proofs have a wide array of applications in various sectors. Beyond those common use cases, zk-proof can also be used for improving network verification efficiency. MAP Protocol has refactored its light clients verification network with zk-proof.
 
 ## ZK-Improved Light Clients for MAP Relay Chain
-![MAPOzk](docs/zk/MAPOlczk.png)
+
+![MAPOzk](./mapolczk1.png)
+
 The cross-chain verification of MAP Protocol is mainly performed by the light client smart contract of the origin chain deployed on the target chain to perform the following two verifications:
 1. **Correctness verification of the block header**: Verify the legality of the block header requested by the maintainer to be written in. Depending on the different chain consensus mechanisms, this verification scheme will vary. For chains using PoS and BFT mechanisms, it is usually to verify that the legal signature represented in the block header has more than 2/3 of the voting rights.
 2. **Verification of Merkle proof**: Verify that a specific event is emitted at a specific block height, the correct Merkle root value is required in the block header, and the first step ensures correctness. In a group of blockchains similar to Ethereum's structure, this Merkle proof is usually proof of the existence of the Merkle Patricia Trie, that is, the receipt tree MPT does indeed contain a specific event.
@@ -29,8 +31,10 @@ If the aggregate signature verification passes and the sum of the voting weights
 Therefore, the block header verification logic of the MAP Relay Chain light client built on zkSNARK can be simplified as whether the input block header is the correct block within the validator set information represented by the current commit value. The success or failure of this judgment depends on the zkSNARK proof input along with the block header.
 
 ### Cross-chain mechanism after introducing zkSNARK
+
 For clarity, here are the newly introduced roles of the prover in the cross-chain process after introducing zkSNARK, the updated logic of messenger/maintainer, and the inputs received by each party:
-![LCrefactored](docs/zk/LCrefactored.png)
+
+![LCrefactored](./mapolczk2.png)
 
 Prover's input: block header, public key of each validator in the current validator set, and their voting weights.
 1. Circuit's input: t0 and t1, the aggregate signature to be verified, public keys and voting weights of each validator in the current validator set, and the bitmap indicating the aggregate validators.
