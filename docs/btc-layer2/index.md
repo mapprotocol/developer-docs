@@ -22,6 +22,92 @@ POS链可以通过比特币时间戳服务的特性，来增强其安全性，�
 
 ![架构图](./frame1.png) 
 
+### 基于比特币网络检查点的MAP中继链
+
+MAP中继链拥有一组独立的验证者集合，用于维护整个中继链的安全性和稳定性，每个验证者都将对每个新产生的区块进行验证并签名，以保证区块的正确性和合法性，满足2/3验证者签名的区块将被最终确认并上链存储。
+
+验证者将对如下数据进行签名:
+
+**hash**: 未包含其他签名信息的区块头hash
+
+**round**: 验证者达成共识的顺序号
+
+**commit**: 常量数据
+
+签名数据`Msg`包含了区块头的`hash`,达成共识的`round`以及一个`MsgCommit`:
+
+```golang
+// hash: header.Hash()
+func PrepareCommittedSeal(hash common.Hash, round *big.Int) []byte {
+	var buf bytes.Buffer
+	buf.Write(hash.Bytes())
+	buf.Write(round.Bytes())
+	buf.Write([]byte{byte(istanbul.MsgCommit)})
+	return buf.Bytes()
+}
+```
+
+验证者对数据进行签名后并搜集其他验证者的签名，将签名数据进行聚合后并以相关数据构建成一个`IstanbulExtra`结构，如下：
+
+```golang
+type IstanbulExtra struct {
+	// AddedValidators are the validators that have been added in the block
+	AddedValidators []common.Address
+	// AddedValidatorsPublicKeys are the BLS public keys for the validators added in the block
+	AddedValidatorsPublicKeys []blscrypto.SerializedPublicKey
+	// AddedValidatorsG1PublicKeys are the BLS public keys for the validators added in the block
+	AddedValidatorsG1PublicKeys []blscrypto.SerializedG1PublicKey
+	// RemovedValidators is a bitmap having an active bit for each removed validator in the block
+	RemovedValidators *big.Int
+	// Seal is an ECDSA signature by the proposer
+	Seal []byte
+	// AggregatedSeal contains the aggregated BLS signature created via IBFT consensus.
+	AggregatedSeal IstanbulAggregatedSeal
+	// ParentAggregatedSeal contains and aggregated BLS signature for the previous block.
+	ParentAggregatedSeal IstanbulAggregatedSeal
+}
+
+type IstanbulAggregatedSeal struct {
+	// Bitmap is a bitmap having an active bit for each validator that signed this block
+	Bitmap *big.Int
+	// Signature is an aggregated BLS signature resulting from signatures by each validator that signed this block
+	Signature []byte
+	// Round is the round in which the signature was created.
+	Round *big.Int
+}
+```
+
+`IstanbulExtra`结构的数据经过rlp编码后存入`header.Extra`字段，其中就包含了达成共识的`round`数据，bls的签名数据`AggregatedSeal`.`Signature`以及变化的验证者。[更多信息](https://docs.mapprotocol.io/develop/map-relay-chain/consensus/aggregatedseal)
+
+#### 检查点
+
+MAP Protocol会定期将中继链上的区块构建成一个`检查点`并提交到比特币网络，以确保整个中继链的确定性，确保不会被伪造而推翻。`检查点`需要包含：
+
++ PreCheckPointHash: 上一次检查点的哈希
++ Root: 用于确保中继链当时状态的根哈希
++ Height: 检查点对应的中继链上的区块高度
+
+**发布中继链区块哈希到比特币网络**：
+
++ 生成检查点: 中继链定期生成POS链的检查点信息。构建包含了指定高度的验证者聚合签名的根哈希和确认过时间顺序的前一个检查点哈希。
+
++ 创建OP_RETURN交易: 中继链将生成的检查点信息,构建为OP_RETURN交易。
+
+
+**检查点时间顺序**：
+
++ 中继链将根据其上的`btc-light-client`，确保检查点交易的时间顺序，并在检查校验时保证比特币检查点的时间戳是递增的。可以通过检查新收到的检查点的时间戳是否大于先前接收的检查点的时间戳来实现。如果时间戳递减或者相等，则拒绝该检查点。
+  
+
+**校验检查点信息**：
+
++ 中继链客户端检查比特币交易中的OP_RETURN输出，提取检查点信息，包括哈希、高度等。
++ 根据相应高度的检查点信息来验证中继链本地数据信息是否一致，如中继链通过相应的高度获取对应的验证者集合，验证`检查点`中的哈希的对应的签名是否一致，来判断中继链是否被攻击。
+
+整体结构如下: 
+
+![架构图](./frame3.jpg) 
+
 
 ### 丰富比特币生态，提升 BRC-20 资产的价值流动性
 
