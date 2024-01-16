@@ -19,7 +19,9 @@ lang: zh
 | Explorer      | [https://maposcan.io](https://maposcan.io) |
 | RPC           | https://rpc.maplabs.io                     |
 | RPC Websocket | wss://wss-rpc.maplabs.io                   |
-| Graph Node    | https://graph.mapprotocol.io  <br> network: mapo  <br> ipfs: https://ipfs.mapprotocol.io |
+| IPFS          | https://graph-ipfs.maplabs.io              |
+| Graph         | https://graph.maplabs.io                   |
+| Graph API     | https://graph-api.maplabs.io               |
 
 ## Testnet - Makalu
 
@@ -27,6 +29,7 @@ lang: zh
 |---------------|----------------------------------------------------------------|
 | Explorer      | [https://testnet.maposcan.io](https://testnet.maposcan.io)     |
 | RPC           | https://testnet-rpc.maplabs.io                                 |
+| RPC Websocket | wss://testnet-rpc.maplabs.io                                   |
 | Faucet        | [https://faucet.mapprotocol.io](https://faucet.mapprotocol.io) |
 
 ## Devnet

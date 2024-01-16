@@ -64,7 +64,7 @@ Step one is an additional calculation introduced to accommodate the construction
 
 The process of the light client verifying the legitimacy of the synchronization submission is basically consistent with the above process, with the only difference being that the operation of verifying the legality of the MPT root in the third step is replaced with recalculating the commit according to the new validator set information and updating its own storage.
 
-##@ Conclusion
+### Conclusion
 According to the foregoing discussion, after the MAP Relay Chain light client is upgraded based on zkSNARK, the corresponding adjustments that the maintainer/messenger needs to make are as follows:
 1. Before the maintainer wants to update the light client state, they need to obtain zk-proof from the prover and construct a tx with the block header and zk-proof.
 2. Before the messenger wants to initiate a cross-chain request, they also need to obtain zk-proof from the prover and construct a tx with the block header, zk-proof, and mpt-proof.

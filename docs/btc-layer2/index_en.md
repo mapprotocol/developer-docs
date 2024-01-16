@@ -24,6 +24,96 @@ A PoS chain can enhance its security and address the [long-range attack](https:/
 ![架构图](./frame1.png) 
 
 
+### MAP Relay Chain with Bitcoin Network Checkpoints
+
+The `MAP relay chain` features an independent set of validators responsible for maintaining the security and stability of the `MAP relay chain`. Each validator verifies and signs each newly generated block to ensure its correctness and legitimacy. Blocks with signatures from at least 2/3 of the validators are considered valid and will be finally confirmed and stored on the chain.
+
+The validators will sign the following data:
+
+**hash**: The hash of the block header without additional signature information.
+
+**round**: The sequence number at which the validators reach consensus.
+
+**commit**: Constant data.
+
+The `signature data (Msg)` includes the `hash` of the block header, the sequence number at which validators reach consensus (`round`), and a `MsgCommit`, as follows:
+
+```golang
+// hash: header.Hash()
+func PrepareCommittedSeal(hash common.Hash, round *big.Int) []byte {
+	var buf bytes.Buffer
+	buf.Write(hash.Bytes())
+	buf.Write(round.Bytes())
+	buf.Write([]byte{byte(istanbul.MsgCommit)})
+	return buf.Bytes()
+}
+```
+
+After signing the data and collecting signatures from other validators, the signature data is aggregated and used to construct an `IstanbulExtra` structure with relevant data, as follows:
+
+```golang
+type IstanbulExtra struct {
+	// AddedValidators are the validators that have been added in the block
+	AddedValidators []common.Address
+	// AddedValidatorsPublicKeys are the BLS public keys for the validators added in the block
+	AddedValidatorsPublicKeys []blscrypto.SerializedPublicKey
+	// AddedValidatorsG1PublicKeys are the BLS public keys for the validators added in the block
+	AddedValidatorsG1PublicKeys []blscrypto.SerializedG1PublicKey
+	// RemovedValidators is a bitmap having an active bit for each removed validator in the block
+	RemovedValidators *big.Int
+	// Seal is an ECDSA signature by the proposer
+	Seal []byte
+	// AggregatedSeal contains the aggregated BLS signature created via IBFT consensus.
+	AggregatedSeal IstanbulAggregatedSeal
+	// ParentAggregatedSeal contains and aggregated BLS signature for the previous block.
+	ParentAggregatedSeal IstanbulAggregatedSeal
+}
+
+type IstanbulAggregatedSeal struct {
+	// Bitmap is a bitmap having an active bit for each validator that signed this block
+	Bitmap *big.Int
+	// Signature is an aggregated BLS signature resulting from signatures by each validator that signed this block
+	Signature []byte
+	// Round is the round in which the signature was created.
+	Round *big.Int
+}
+```
+
+The data from the `IstanbulExtra` structure is encoded using RLP and stored in the `header's Extra` field. This field includes the consensus `round` data, the BLS signature data (`AggregatedSeal.Signature`), and the changing set of validators.[more](https://docs.mapprotocol.io/develop/map-relay-chain/consensus/aggregatedseal)
+
+#### CheckPoint
+
+The MAP Protocol periodically constructs blocks on the relay chain into a `checkpoint` and submits it to the Bitcoin network to ensure the determinism of the entire relay chain, preventing it from being forged or overturned. The `checkpoint` needs to include:：
+
++ PreCheckPointHash: The hash of the previous checkpoint.
+
++ Root: The root hash used to ensure the state of the relay chain at that time.
+  
++ Height: The block height on the relay chain corresponding to the `checkpoint`.
+
+**Publishing the relay chain block hash to the Bitcoin network**：
+
++ Make Checkpoint: The relay chain periodically generates `checkpoint` information for the chain. It constructs a `root hash` that includes the `aggregated signatures` of validators at a specified `height` and the hash of the previous checkpoint confirmed over time.
+
++ OP_RETURN Tx: The relay chain will construct the generated checkpoint information into an OP_RETURN transaction.
+
+
+**Checkpoint Time Sequence**：
+  
++ The relay chain, based on its `btc-light-client`, will ensure the chronological order of checkpoint transactions and guarantee that the timestamp of Bitcoin checkpoints is increasing during checkpoint verification. This can be achieved by checking whether the timestamp of a newly received checkpoint is greater than the timestamp of the previously received checkpoint. If the timestamp is decreasing or equal, the checkpoint is rejected.
+  
+
+**Verify Checkpoint**：
+
++ The relay chain client checks the `OP_RETURN outputs` in Bitcoin transactions, extracts checkpoint information, including hash, height, and so on.
+  
++ Based on the checkpoint information at the corresponding height, the relay chain verifies whether the local data information is consistent. The relay chain obtains the corresponding validator set for the respective height and verifies whether the signature corresponding to the hash in the checkpoint is consistent. This process helps determine whether the relay chain has been attacked.
+
+
+overall structure: 
+
+![架构图](./frame3.jpg) 
+
 ### Enriching the Bitcoin ecosystem and enhancing the liquidity of BRC-20 assets.
 
 The `MAPO` platform supports the cross-chain transfer of [inscription](https://docs.ordinals.com/inscriptions.html) assets (BRC-20) from the Bitcoin network to the `MAPO` platform in a peer-to-peer manner. This enables other cryptocurrencies on different blockchains to be traded with `BRC-20` assets through a more convenient and cost-effective route, enhancing the liquidity of [inscription](https://docs.ordinals.com/inscriptions.html)  assets. This interoperability helps expand the use cases of Bitcoin and integrates the Bitcoin ecosystem into a broader crypto financial ecosystem, bringing new contributions to the Bitcoin community.

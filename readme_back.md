@@ -1,5 +1,4 @@
 # MAPO Protocol Development documentation
-> Also available in [Chinese](https://mapo.gitbook.io/docs-zh/).
 
 This document aims to help you understand MAPO, how to use it to build decentralized applications, and how to interconnect a blockchain with MAPO. The document introduces the concept of MAPO, explains the MAPO technology stack, and provides use cases for MAPO applications.
 
@@ -66,8 +65,6 @@ If this is your first time diving into MAPO development, it is recommended that 
     + public service   
       + [public network](docs/base/mapo-relay-chain/public-service_en.md)
     + example
-      + [how-to-vote](docs/base/mapo-relay-chain/example/how-to-vote_en.md)
-      + [how-to-withdraw](docs/base/mapo-relay-chain/example/how-to-withdraw_en.md)
       + [how-to-become-a-new-validator](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator_en.md)
       + [how-to-become-a-new-validator(advanced)](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator-advanced_en.md)
 + [Compass(maintainer，messenger)](docs/base/Compass/index_en.md)
@@ -121,7 +118,8 @@ If this is your first time diving into MAPO development, it is recommended that 
 
 ## Zero-Knowledge Proof
 
-* [zk proof](docs/zk/index_en.md)
++ [zk proof](docs/zk/index_en.md)
+
 
 
 
