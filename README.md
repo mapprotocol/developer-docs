@@ -1,12 +1,10 @@
-# MAPO Protocol Development documentation
+# MAPO Protocol开发文档
 
-This document aims to help you understand MAPO, how to use it to build decentralized applications, and how to interconnect a blockchain with MAPO. The document introduces the concept of MAPO, explains the MAPO technology stack, and provides use cases for MAPO applications.
+本文档旨在帮助你认识MAPO，或使用它构建你想构建的去中心化应用，或将一条区块链接入MAPO实现与其他区块链的互通。该文档介绍了MAPO的概念，解释了MAPO技术堆栈，以及MAPO应用的使用案例。
 
-Based on open-source community guidelines, you can propose new topics, add new content, and provide examples where you think it would be helpful. All documents can be edited through GitHub and are stored on decentralized storage facilities like `Arweave`. If you are unsure about how to proceed, please follow the [instructions](docs/editing-markdown.md).
+基于开源的社区准则，你可以随时提出新的主题，添加新的内容，并在认为可能有用的地方提供示例。所有文档都可以通过github编辑，并会存储到去中心化存储设施`Arweave`。如果不确定如何操作，请遵循[说明进行](docs/editing-markdown.md)。
 
-If this is your first time diving into MAPO development, it is recommended that you start from the beginning. This will not only familiarize you with MAPO but also delve into the underlying blockchain technologies and concepts like ZK, providing you with a new understanding of peer-to-peer code trust.
+如果这是你第一次尝试MAPO开发，建议你从头开始阅读，这不仅可以让你更好的熟悉MAPO，其中涉及区块链底层的技术以及ZK等内容，也会让你对点对点的代码信任有一个全新的认识。
 
-Also available in [Chinese](https://mapo.gitbook.io/docs-zh/).
-
-
+还可阅读[英文版](https://mapo.gitbook.io/docs-en/)
 

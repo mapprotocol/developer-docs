@@ -65,6 +65,8 @@ If this is your first time diving into MAPO development, it is recommended that 
     + public service   
       + [public network](docs/base/mapo-relay-chain/public-service_en.md)
     + example
+      + [how-to-vote](docs/base/mapo-relay-chain/example/how-to-vote_en.md)
+      + [how-to-withdraw](docs/base/mapo-relay-chain/example/how-to-withdraw_en.md)
       + [how-to-become-a-new-validator](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator_en.md)
       + [how-to-become-a-new-validator(advanced)](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator-advanced_en.md)
 + [Compass(maintainer，messenger)](docs/base/Compass/index_en.md)
