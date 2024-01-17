@@ -1,11 +1,10 @@
 # MAPO Protocol开发文档
-> 还可阅读[英文版](https://mapo.gitbook.io/docs-en/)
 
 本文档旨在帮助你认识MAPO，或使用它构建你想构建的去中心化应用，或将一条区块链接入MAPO实现与其他区块链的互通。该文档介绍了MAPO的概念，解释了MAPO技术堆栈，以及MAPO应用的使用案例。
 
 基于开源的社区准则，你可以随时提出新的主题，添加新的内容，并在认为可能有用的地方提供示例。所有文档都可以通过github编辑，并会存储到去中心化存储设施`Arweave`。如果不确定如何操作，请遵循[说明进行](docs/editing-markdown.md)。
 
-如果这是你第一次尝试MAPO开发，建议你从头开始阅读，这不仅可以让你更好的熟悉MAPO，其中涉及区块链底层的技术以及ZK等内容，也会让你对点对点的代码信任有一个全新的认识。
+如果这是你第一次尝试MAPO开发，建议你从头开始阅读，这不仅可以让你更好的熟悉MAPO，其中涉及区块链底层的技术以及ZK等内容，也会让你对点对点的代码信任有一个全新的认识。[english](./readme_en.md)
 
 
 ## 基础主題
@@ -15,8 +14,6 @@
 + [全链去中心化应用](docs/base/omnichain-dapp/index.md)------覆盖各种区块链的去中心化应用介绍
 + [全链应用与单链或多链应用的区别](docs/base/omnichain-dapp/different.md)----基于跨链技术带来的差异
 + [第三方信任跨链与点对点跨链方案区别](docs/base/omnichain-dapp/the-other.md)----基于技术方案带来的差异
-+ [比特币二层](docs/btc-layer2/index.md)
-  + [brc-201](docs/btc-layer2/brc201.md)
 + [帐户](docs/base/accounts/index.md) – 网络中能够持有余额和发送交易的实体
 + [交易](docs/base/transactions/index.md) – 转账和其他导致MAPO状态变化的行为
 + [区块](docs/base/block/index.md) – 交易分批进行，以确保状态在所有行为者之间同步
@@ -58,7 +55,7 @@
       + [验证节点 （中继链）](docs/base/mapo-relay-chain/nodes/validator-nodes.md)
       + [RPC节点（中继链）](docs/base/mapo-relay-chain/nodes/rpc-nodes.md)
     + [Marker工具 - atlas的简易客户端工具](docs/base/mapo-relay-chain/marker/overview.md)
-      + [Genesis](docs/base/mapo-relay-chain/nodes/genesis-config.md) 
+      + [Genesis](docs/base/mapo-relay-chain/marker/genesis.md) 
       + [Validator](docs/base/mapo-relay-chain/marker/validator.md) 
       + [Vote](docs/base/mapo-relay-chain/marker/vote.md) 
       + [Common](docs/base/mapo-relay-chain/marker/common.md)
@@ -66,8 +63,6 @@
     + 公共网络服务信息    
       + [公共网络](docs/base/mapo-relay-chain/public-service.md) - 公共网络服务信息，包括主网，测试网，测试网水龙头,区块浏览器，公共RPC服务地址
     + 示例
-      + [如何投票](docs/base/mapo-relay-chain/example/how-to-vote.md)
-      + [如何赎回](docs/base/mapo-relay-chain/example/how-to-withdraw.md)
       + [如何成为一个 Validator 并加入到 Atlas 网络中](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator.md)
       + [如何成为一个 Validator 并加入到 Atlas 网络中[高级]](docs/base/mapo-relay-chain/example/how-to-become-a-new-validator-advanced.md)
 + [Compass(maintainer，messenger)](docs/base/Compass/index.md) - 消息跨链的重要组件，用于更新轻客户端状态及消息路由
@@ -121,6 +116,6 @@
 
 ## 零知识证明(zk)
 
-* [零知识证明](docs/zk/index.md)
+
 
 

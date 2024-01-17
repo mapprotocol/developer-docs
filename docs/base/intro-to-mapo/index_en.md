@@ -27,7 +27,7 @@ Moreover, the security of MAP Protocol is further strengthened by the Bitcoin ne
 
 There are three layers structured in MAP Protocol — the Protocol Layer, MAP Omnichain Service Layer (MOS), and the Application Layer. 
 ### Protocol Layer
-The Protocol layer consists of **MAP Relay Chain**, **light clients **deployed on each chain, and inter-chain **Maintainer** Program to update and maintain Light-Client status.
+The Protocol layer consists of **MAP Relay Chain**, **light clients** deployed on each chain, and inter-chain **Maintainer** Program to update and maintain Light-Client status.
 
 Similar to Ethereum, MAP Protocol also has a canonical computer called Virtual Machine (VM), which also makes MAP Protocol EVM-compatible. MAP Relay Chain at the Protocol layer proactively extends and supports heterogeneous blockchains’ features by incorporating different signatures, hash algorithms, and Merkle proofs of target chains as pre-compiled contracts. This enables the relay chain to be isomorphic with various types of blockchains and allows light clients to be deployed across different chains while functioning effectively.
 
@@ -52,7 +52,24 @@ MAP Protocol has many unique characteristics that set it apart in the blockchain
 - **Flexibility**: The protocol allows the integration of different types of blockchains, including those with different signature schemes, hash algorithms, and Merkle proofs.
 
 In summary, MAP Protocol is an innovative omnichain interoperability network designed to facilitate seamless communication and interaction between different blockchains. With its secure infrastructure, omnichain interoperability, and distributed trust, it provides developers and users with powerful tools for implementing complex blockchain interactions. As more dApps and services leverage MAP Protocol, we can expect a more interconnected and efficient blockchain ecosystem.
-
+## Roadmap
+### 2024 Q4
+* Launch and open-source Omnichain Development SDK V2.
+### 2024 Q3
+* Launch the "Refactored Light Client Verification with ZK-Proof" module.
+* Launch Omnichain Development SDK V1.
+### 2024 Q2
+* Test the "Refactored Light Client Verification with ZK-Proof" module.
+* Release BRC201 protocol version 2.0, supporting BRC20 assets for cross-chain functionality.
+### 2024 Q1
+* Officially release the extended cross-chain connections to Tron and Conflux.
+* Test and open the MRC20 Omnichain issuance tool.
+### 2023 Q4
+* Extend cross-chain connections to Tron and Conflux and conduct testing.
+* Officially upgrade to become a Bitcoin layer 2 for peer-to-peer cross-chain interoperability.
+* Release the upgraded official website and technical documentation.
+* Launch a support plan for the BRC20 ecosystem.
+> [View MAP Protocol history](https://docs.mapprotocol.io/learn/roadmap) to learn about the roadmap from 2019 Q3 to 2023 Q3.
 ## Essential concepts
 ### Blockchain
 A blockchain is a distributed, decentralized ledger that records transactions across multiple computers in a way that ensures each transaction can only be added once and is irreversible, enhancing the security and integrity of the data.
