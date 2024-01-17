@@ -100,7 +100,9 @@ The MAP Protocol periodically constructs blocks on the relay chain into a `check
 
 **Checkpoint Time Sequence**：
   
-+ The relay chain, based on its `btc-light-client`, will ensure the chronological order of checkpoint transactions and guarantee that the timestamp of Bitcoin checkpoints is increasing during checkpoint verification. This can be achieved by checking whether the timestamp of a newly received checkpoint is greater than the timestamp of the previously received checkpoint. If the timestamp is decreasing or equal, the checkpoint is rejected.
++ The relay chain will utilize its `btc-light-client` to ensure the time ordering of checkpoint transactions. It will guarantee that the timestamps of Bitcoin checkpoints are incremental during checkpoint verification. This can be achieved by checking if the timestamp of a newly received checkpoint is greater than the timestamp of the previously received checkpoint, while also satisfying a specified `checkpoint-threshold`. If the timestamp is decreasing or equal, the checkpoint is rejected.
+
++ The relay chain also needs to perform checks based on the time of the generated checkpoints on itself and the time range of checkpoints on the Bitcoin Layer 1. This is crucial for maintaining consistent security practices and preventing potential long-range attacks.
   
 
 **Verify Checkpoint**：
@@ -112,7 +114,7 @@ The MAP Protocol periodically constructs blocks on the relay chain into a `check
 
 overall structure: 
 
-![架构图](./frame3.jpg) 
+![架构图](./frame4.jpg) 
 
 ### Enriching the Bitcoin ecosystem and enhancing the liquidity of BRC-20 assets.
 
