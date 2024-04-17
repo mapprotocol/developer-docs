@@ -100,6 +100,7 @@
     * [MOS](docs/mapo-stack/chains-connect/non-evm-chain/index_en.md#mos) 
       * [Messenger](docs/mapo-stack/chains-connect/non-evm-chain/index_en.md#messeager)
 * [How to develop cross-chain applications](docs/mapo-stack/omni-dapp/index.md)
+* [light client address](/docs/mapo-stack/stack/index.md)
 * SDK/API 
   *  [MOS interface](docs/sdk/mos/index_en.md)
   *  [Light client interface](docs/sdk/light-client/index_en.md)
