@@ -93,6 +93,7 @@
     * [轻客户端状态更新](docs/mapo-stack/chains-connect/non-evm-chain/index.md#maintainer开发)
     * [MOS层](docs/mapo-stack/chains-connect/non-evm-chain/index.md#mos层)
 * [如何开发全链应用](docs/mapo-stack/omni-dapp/index.md)
+* [轻客户端信息](/docs/mapo-stack/stack/index.md)
 * SDK/API - mapo支持的API
   * [MOS接口](docs/sdk/mos/index.md)
   * [轻客户端接口](docs/sdk/light-client/index.md)
