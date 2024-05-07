@@ -11,6 +11,8 @@
 * [第三方信任跨链与点对点跨链方案区别](docs/base/omnichain-dapp/the-other.md)
 * [比特币二层](docs/btc-layer2/index.md)
   * [brc-201](docs/btc-layer2/brc201.md)
+* [预言机 Oracle](docs/base/oracle/index.md)
+  * [Supra: MAP Protocol 上的去中心化预言机](docs/base/oracle/index.md)
 * [帐户](docs/base/accounts/index.md)
 * [交易](docs/base/transactions/index.md)
 * [区块](docs/base/block/index.md)
