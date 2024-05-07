@@ -11,6 +11,8 @@
 * [Differences Between Third-Party Trusted Cross-Chain and Peer-to-Peer Cross-Chain Solutions](docs/base/omnichain-dapp/the-other_en.md)
 * [BTC layer2](docs/btc-layer2/index_en.md)
   * [brc-201](docs/btc-layer2/brc201.md)
+* [Oracle](docs/base/oracle/index.md)
+  * [Supra: Decentralized Oracle on MAP Protocol](docs/base/oracle/Supra_en.md)
 * [Account](docs/base/accounts/index_en.md) 
 * [Transactions](docs/base/transactions/index_en.md) 
 * [block](docs/base/block/index_en.md)
