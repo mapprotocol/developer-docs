@@ -207,7 +207,7 @@ Mos层定义了mapo protocol通用消息跨链的框架结构及实现逻辑，M
 ```
 
 
-### Messeager程序开发
+### Messenger程序开发
 
 Messenger服务是一个独立的程序，旨在监控并路由源链和目标链上`mos`的特定事件。这些事件包括常见的消息事件，如`mapMessageOut`和`mapMessageIn`。Messenger服务为这些事件构建相应的证明数据，并最终将跨链消息以及证明数据提交到目标链。由于Messenger服务已经支持`map-relay-chain`，集成链的开发者只需要在Messenger服务中添加对自己链的支持。开发者可以fork一个Mapo Protoco提供的[Messenger服务](https://github.com/mapprotocol/compass)，并自定义以添加对自己链的支持。
 

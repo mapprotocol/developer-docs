@@ -217,7 +217,7 @@ Main data structure and [interface](https://github.com/mapprotocol/mapo-service-
 ```
 
 
-### Messeager
+### Messenger
 
 The `Messenger` service is an independent program designed to monitor and route specific events on the source and target chains involving the `Mos` module. These events include common message events like `mapMessageOut` and `mapMessageIn`. The Messenger service constructs corresponding proof data for these events and ultimately submits cross-chain messages along with proof data to the target chain. Since the Messenger service already supports `map-relay-chain`, developers of the integrating chain only need to add support for their own chain within the Messenger service. Developers can fork a [Messenger service](https://github.com/mapprotocol/compass) provided by Mapo Protocol and customize it to add support for their own chain.
 
