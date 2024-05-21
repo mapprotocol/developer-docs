@@ -94,12 +94,12 @@
       + [部署maintainer](docs/base/Compass/index.md#compass环境与部署) 
     + [MOS层](docs/mapo-stack/chains-connect/evm-chain/index.md#mos层) - 支持全链应用开发的基础服务层
       + [MOS层的部署与升级](docs/mapo-stack/chains-connect/evm-chain/index.md#mos合约部署)
-      + [MOS层的Messenger](docs/mapo-stack/chains-connect/evm-chain/index.md#messeager程序开发) - messenger开发
+      + [MOS层的Messenger](docs/mapo-stack/chains-connect/evm-chain/index.md#messenger程序开发) - messenger开发
   + [非EVM兼容链的跨链互通](docs/mapo-stack/chains-connect/non-evm-chain/index.md)
     + [轻客户端验证](docs/mapo-stack/chains-connect/non-evm-chain/index.md#light-client层) - 根据源链和目标链共识机制实现轻客户端功能
     + [轻客户端状态更新](docs/mapo-stack/chains-connect/non-evm-chain/index.md#maintainer开发) - 使用链下服务程序实现源链和目标链上的轻客户端状态更新
     + [MOS层](docs/mapo-stack/chains-connect/non-evm-chain/index.md#mos层) 
-      + [MOS层的Messenger](docs/mapo-stack/chains-connect/non-evm-chain/index.md#messeager程序开发)  - messenger开发
+      + [MOS层的Messenger](docs/mapo-stack/chains-connect/non-evm-chain/index.md#messenger程序开发)  - messenger开发
 + [如何开发全链应用](docs/mapo-stack/omni-dapp/index.md) - 如何开发一个基于mapo跨链网络的全链dapp
 + SDK/API - mapo支持的API
   +  [MOS接口](docs/sdk/mos/index.md)
