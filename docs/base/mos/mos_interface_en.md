@@ -70,6 +70,6 @@ interface IMOSV3 {
 
 ## The differences between MOS on other EVM chains and Relay
 
-Our message cross-chain process follows a fixed path from source chain -> Mapo Relay chain -> destination chain. So we call the MOS contract deployed on the Mapo Relay chain MosRelay.
+Our message cross-chain process follows a fixed path from source chain -> Map Relay chain -> destination chain. So we call the MOS contract deployed on the Map Relay chain MosRelay.
 
 The biggest difference between MosRelay and MOS on other EVMs is the transferIn method. If MosRelay is not the destination chain, the transferIn method will continue to emit a cross-chain log to facilitate the messenger listening to the destination chain for verification and execution of the message.

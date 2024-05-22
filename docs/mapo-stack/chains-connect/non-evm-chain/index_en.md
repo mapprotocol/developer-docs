@@ -47,7 +47,7 @@ type Header struct {
 }
 ```
 
-In the `Mapo Relay Chain`'s mainnet, validators sign every block, and this signature is stored in the `block header`'s "Extra" field. The `light client` can verify this signature. Additionally, changes in the validator set are not included in the `block header`'s "Extra" field. Therefore, the `light client` can verify the `block header` based on the updated validator set.
+In the `Map Relay Chain`'s mainnet, validators sign every block, and this signature is stored in the `block header`'s "Extra" field. The `light client` can verify this signature. Additionally, changes in the validator set are not included in the `block header`'s "Extra" field. Therefore, the `light client` can verify the `block header` based on the updated validator set.
 
 The signature data (`Msg`) includes the `hash` of the block header, the consensus `round` that has been reached, and a `MsgCommit` component:
 
@@ -150,9 +150,9 @@ func getTxProve() []byte {
 
 ### Maintainer
 
-The Maintainer service is a separate program designed to update and synchronize the `light client`'s state. It submits block header data to the `light client` on both the source and target chains. As the Maintainer service already supports the `Mapo Relay Chain`, developers of the target chain only need to add support for their chain within the Maintainer service.
+The Maintainer service is a separate program designed to update and synchronize the `light client`'s state. It submits block header data to the `light client` on both the source and target chains. As the Maintainer service already supports the `Map Relay Chain`, developers of the target chain only need to add support for their chain within the Maintainer service.
 
-Developers of the connecting chain can fork the Mapo Protocol's provided [Maintainer service](https://github.com/mapprotocol/compass) and make modifications to add support for their own chain. This allows them to tailor the Maintainer service to work seamlessly with their specific blockchain.
+Developers of the connecting chain can fork the Map Protocol's provided [Maintainer service](https://github.com/mapprotocol/compass) and make modifications to add support for their own chain. This allows them to tailor the Maintainer service to work seamlessly with their specific blockchain.
 
 + get the `light-client`'state
 + Retrieve block header data for the corresponding chain based on the current state of the `light client` and submit it to the `light client`

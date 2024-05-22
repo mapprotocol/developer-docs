@@ -4,14 +4,14 @@
 
 MAPO轻客户端是由大量部分组成
 
-1. 部署在Mapo Relay chain上的轻客户端,用来同步其他链信息的轻客户端
+1. 部署在Map Relay chain上的轻客户端,用来同步其他链信息的轻客户端
 2. 部署在其他链上用来同步MAPO 链信息的轻客户端
 
 
 
 ## MAPO链的轻客户
 
-MAPO链的轻客户端是在其他链上部署的轻客户端合约,用来同步Mapo relay chain的信息和proof的验证,轻客户端有如下功能方法
+MAPO链的轻客户端是在其他链上部署的轻客户端合约,用来同步Map relay chain的信息和proof的验证,轻客户端有如下功能方法
 
 ```
 interface ILightNode{
@@ -57,7 +57,7 @@ interface ILightNode{
 
 ## 其他链的轻客户端
 
-其他链的轻客户端是在Mapo Relay chain上部署的轻客户端合约,用来同步相对应链的信息和proof验证,轻客户端需要实现如下功能方法
+其他链的轻客户端是在Map Relay chain上部署的轻客户端合约,用来同步相对应链的信息和proof验证,轻客户端需要实现如下功能方法
 
 ```
 interface ILightNode {
@@ -83,7 +83,7 @@ interface ILightNode {
 }
 ```
 
-在Mapo Relay chain上的轻客户端合约都会注册到LightClientManager合约上,由LightClientManager统一管理,LightClientManager是一个管理合约,依赖于所有者在 MAPO  Relay chain上注册其他轻客户端的合约地址。详细的验证逻辑和区块数据仍在各自轻客户端合约上更新。 LightClientManager只是为了提供更方便的更新区块和Proof验证,下面我来看看LightClientManager的方法接口,有了这些通用方法,我们在Mapo Relay chain上进行区块的同步和交易的验证就会更加的方便快捷
+在Map Relay chain上的轻客户端合约都会注册到LightClientManager合约上,由LightClientManager统一管理,LightClientManager是一个管理合约,依赖于所有者在 Map  Relay chain上注册其他轻客户端的合约地址。详细的验证逻辑和区块数据仍在各自轻客户端合约上更新。 LightClientManager只是为了提供更方便的更新区块和Proof验证,下面我来看看LightClientManager的方法接口,有了这些通用方法,我们在Map Relay chain上进行区块的同步和交易的验证就会更加的方便快捷
 
 ```
 interface ILightClientManager {

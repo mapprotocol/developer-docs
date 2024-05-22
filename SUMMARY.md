@@ -70,9 +70,11 @@
   * [Compass环境与部署](docs/base/Compass/index.md#compass环境与部署)
   * [Compass二次开发 - 基于compass定义自己的路由服务](docs/base/Compass/index.md#compass二次开发---基于compass定义自己的路由服务)
 
+
 ## MAPO技术堆栈
 
 * [堆栈](docs/mapo-stack/stack/index.md)
+  * [接入的链](docs/mapo-stack/stack/chains-connect.md)
 * [EVM兼容](docs/mapo-stack/compatible-evm/index.md)
   * [智能合约语言](docs/mapo-stack/compatible-evm/solidity.md)
   * [智能合约结构](docs/mapo-stack/compatible-evm/anatomy.md)

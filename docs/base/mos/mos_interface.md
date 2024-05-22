@@ -70,4 +70,4 @@ interface IMOSV3 {
 
 ## MOS 在其他EVM链 和 Relay的区别
 
-我们消息跨链流程从来源链 -> Mapo Relay chain-> 目标链这样一个固定的路径,所以 我们把部署再 Mapo Relay chain的MOS 合约称为 MosRelay,MosRelay与其他EVM的MOS最大的区别在于transferIn方法,如果MosRelay不是目标链 transferIn方法会继续弹出跨链日志,以方便messenger监听到目标链进行验证和消息的执行
+我们消息跨链流程从来源链 -> Map Relay chain-> 目标链这样一个固定的路径,所以 我们把部署再 Map Relay chain的MOS 合约称为 MosRelay,MosRelay与其他EVM的MOS最大的区别在于transferIn方法,如果MosRelay不是目标链 transferIn方法会继续弹出跨链日志,以方便messenger监听到目标链进行验证和消息的执行
