@@ -91,7 +91,7 @@ Please execute the following command on EVM compatible chains
 npx hardhat deploy --tags MapoServiceV3Up --network <network>
 ```
 
-Please execute the following command on the Mapo Relay chain mainnet or Makalu testnet
+Please execute the following command on the Map Relay chain mainnet or Makalu testnet
 
 ```
 npx hardhat deploy --tags MapoServiceRelayV3Up --network <network>

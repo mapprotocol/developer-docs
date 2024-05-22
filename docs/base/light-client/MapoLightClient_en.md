@@ -1,13 +1,13 @@
 # The MAPO light client consists of multiple parts
 
-1. The light client deployed on the Mapo Relay chain synchronizes information from other chains.
+1. The light client deployed on the Map Relay chain synchronizes information from other chains.
 2. The light client deployed on other chains synchronizes information from the MAPO chain.
 
 
 
 ## MAPO Chain's Light Client
 
-The MAPO chain's light client is a light client contract deployed on other chains, used to synchronize information and verify proofs from the Mapo relay chain. The light client has the following functions
+The MAPO chain's light client is a light client contract deployed on other chains, used to synchronize information and verify proofs from the Map relay chain. The light client has the following functions
 
 ```
 interface ILightNode{
@@ -52,7 +52,7 @@ For specific verification details, refer to [MAPO EVM Chain Light Client](https:
 
 ## Other Chains' Light Clients
 
-Other chains' light clients are light client contracts deployed on the Mapo Relay chain to synchronize information and verify proofs from the corresponding chain. The light clients need to implement the following functions
+Other chains' light clients are light client contracts deployed on the Map Relay chain to synchronize information and verify proofs from the corresponding chain. The light clients need to implement the following functions
 ```
 interface ILightNode {
 
@@ -77,7 +77,7 @@ interface ILightNode {
 }
 ```
 
-All light client contracts on the Mapo Relay chain are registered with the LightClientManager contract, which is responsible for their unified management. The LightClientManager is a managing contract that depends on the contract addresses of other light clients registered by the owner on the MAPO Relay chain. Detailed verification logic and block data updates still reside within their respective light client contracts. The LightClientManager is primarily designed to provide a more convenient way to update blocks and perform proof verification. Now, let's take a look at the method interfaces of the LightClientManager. With these common methods, synchronizing blocks and verifying transactions on the Mapo Relay chain will become more convenient and efficient.
+All light client contracts on the Map Relay chain are registered with the LightClientManager contract, which is responsible for their unified management. The LightClientManager is a managing contract that depends on the contract addresses of other light clients registered by the owner on the Map Relay chain. Detailed verification logic and block data updates still reside within their respective light client contracts. The LightClientManager is primarily designed to provide a more convenient way to update blocks and perform proof verification. Now, let's take a look at the method interfaces of the LightClientManager. With these common methods, synchronizing blocks and verifying transactions on the Map Relay chain will become more convenient and efficient.
 ```
 interface ILightClientManager {
     function updateBlockHeader(uint256 _chainId, bytes memory _blockHeader) external;

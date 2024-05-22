@@ -75,6 +75,7 @@
 ## MAPO Stack
 
 * [stack](docs/mapo-stack/stack/index.md)
+  * [Connected Chains and Corresponding Addresses](docs/mapo-stack/stack/chains-connect.md)
 * [Compatible-EVM](docs/mapo-stack/compatible-evm/index_en.md)
   * [Smart Contracts Language](docs/mapo-stack/compatible-evm/solidity_en.md)
   * [Smart Contracts Anatomy](docs/mapo-stack/compatible-evm/anatomy_en.md)

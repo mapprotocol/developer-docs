@@ -90,7 +90,7 @@ npx hardhat setFeeService  --address <feeService address> --network <network>
 npx hardhat deploy --tags MapoServiceV3Up --network <network>
 ```
 
-请在Mapo Relay chain主网或Makalu测试网上执行以下命令
+请在Map Relay chain主网或Makalu测试网上执行以下命令
 
 ```
 npx hardhat deploy --tags MapoServiceRelayV3Up --network <network>
