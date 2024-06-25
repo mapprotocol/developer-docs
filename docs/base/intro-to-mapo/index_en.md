@@ -58,7 +58,7 @@ In summary, MAP Protocol is an innovative omnichain interoperability network des
 ### 2024 Q3
 * The release of the ‘Refactored Light Client Verification with ZK-Proof’ module as open source.
 * Launch Omnichain Development SDK V1.
-* Implement cross-chain interoperability support for Linea, Scroll, Solona, and Ton.
+* Implement cross-chain interoperability support for Linea, Scroll, Solana, and Ton.
 ### 2024 Q2
 * Test the “Refactored Light Client Verification with ZK-Proof” module.
 * Officially release cross-chain interoperability with Tron, Optimism, Mantle, Arbitrum, and zkSync Era.
