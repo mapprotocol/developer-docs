@@ -44,7 +44,7 @@ DApp开发者只需在MAP中继链上部署他们的DApp，并完成MOS模块的
 ### 2024 Q3
 * 通过ZK-proof重构 Lightclient技术模块发布开源
 * 全链开发SDK V1正式推出并测试
-* 实现Linea、Scroll、Solona 、Ton的跨链互操作支持
+* 实现Linea、Scroll、Solana 、Ton的跨链互操作支持
 ### 2024 Q2
 * 通过ZK-proof重构Lightclient技术模块测试
 * 正式发布 Tron,Optimism,Mantle,Arbitrum, zkSync Era的跨链互操作
