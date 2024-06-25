@@ -135,10 +135,9 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `OracleNode on MAPO`
   	\
 	`Address`:[0x17ecd177019CDD72125659af33446758d7390A42](https://maposcan.io/address/0x17ecd177019CDD72125659af33446758d7390A42)
-* `MOS`
+* `OracleNode on Chain`
 	\
-	`Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/mapo-service-contracts/blob/main/evm/README.md)	\
-	`Address`: [TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU](https://tronscan.org/#/contract/TAR515UoMxTa2ruua6KqnXDwPJQEu66RVU/code)
+	`Address`: [TCgts2dcdEszFdHnp3D9iKqxGqNrpTYSjQ](https://tronscan.org/#/contract/TCgts2dcdEszFdHnp3D9iKqxGqNrpTYSjQ/code)
 * `Chain ID`: `728126428`
 * `Status`:  `MAP Protocol` <--> `Tron`
 
