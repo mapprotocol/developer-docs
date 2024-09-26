@@ -1,7 +1,7 @@
 ---
-title: 如何开发跨链应用
-description: 基于mapo-protocol开发一个全链dapp
-lang: zh
+title: How to develop cross-chain dapp
+description: Develop a full-chain dapp based on mapo-protocol
+lang: en
 ---
 
 ### How to Build a DAPP Contract Using Mapprotocol:
