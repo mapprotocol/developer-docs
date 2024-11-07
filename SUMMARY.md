@@ -97,6 +97,7 @@
     * [MOS](docs/mapo-stack/chains-connect/evm-chain/index_en.md#mos)
       * [MOS development](docs/mapo-stack/chains-connect/evm-chain/index_en.md#mos-contract-development)
       * [Messenger Development](docs/mapo-stack/chains-connect/evm-chain/index_en.md#messenger-development) 
+  * [integration of MAP with TON Network](docs/mapo-stack/chains-connect/ton-network/index_en.md)
   * [integration of MAP with Non-EVM-Compatible Chains](docs/mapo-stack/chains-connect/non-evm-chain/index_en.md)
     * [light client verify](docs/mapo-stack/chains-connect/non-evm-chain/index_en.md#light-client)
     * [light client update state](docs/mapo-stack/chains-connect/non-evm-chain/index_en.md#maintainer)
