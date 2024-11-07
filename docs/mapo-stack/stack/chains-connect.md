@@ -252,7 +252,7 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Chain ID`: `534352`
 * `Status`: `MAP Protocol` <--> `Scroll`
 
-## AINN
+## AILayer
 * `OracleNode on MAPO`
 	\
 	`Address`:[0xB8560Ed626De95Bad25CcD34264F29682FE677AB](https://maposcan.io/address/0xB8560Ed626De95Bad25CcD34264F29682FE677AB)
@@ -262,18 +262,6 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 
 * `Chain ID`: `2649`
 * `Status`: `MAP Protocol` <--> `AINN`
-
-
-## B² network
-* `OracleNode on MAPO`
-	\
-	`Address`:[0xab897386F696eA34D6968A4058547F726Eb245Aa](https://maposcan.io/address/0xab897386F696eA34D6968A4058547F726Eb245Aa)
-* `OracleNode on Chain`
-	\
-	`Address`: [0x6951B909A71cd4189aA21aEfD38dFc3dCee90001](https://explorer.bsquared.network/address/0x6951B909A71cd4189aA21aEfD38dFc3dCee90001)
-
-* `Chain ID`: `223`
-* `Status`: `MAP Protocol` <--> `B²`
 
 
 ## Mantle
@@ -287,16 +275,14 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 * `Chain ID`: `5000`
 * `Status`: `MAP Protocol` <--> `Mantle`
 
-## zkLink
-* `OracleNode on MAPO`
-	\
-	`Address`:[0xD017252b2933Ec3723BdEdfDF1C891e4583955bd](https://maposcan.io/address/0xD017252b2933Ec3723BdEdfDF1C891e4583955bd)
-* `OracleNode on Chain`
-	\
-	`Address`: `0x1ceB1E03E9a23f5ACee598c42521EF87f24d6fCB`
+## Ton Testnet
 
-* `Chain ID`: `810180`
-* `Status`: `MAP Protocol` <--> `zkLink`
+* `MOS`
+  \
+  `Source Code`: [MOS Message Contracts](https://github.com/mapprotocol/ton-router-contracts)\
+  `Address`: [EQDyD3ICi9YkGdIf19dJHoq-70Ng9lWY9lCbIVM-tfi_yp1v](https://testnet.tonscan.org/address/EQDyD3ICi9YkGdIf19dJHoq-70Ng9lWY9lCbIVM-tfi_yp1v)
+* `Chain ID`: `1360104473493506`
+* `Status`: `Completed` `MAP Protocol` <->  `Ton`
 
 ## Solana
 * `Planning`
@@ -305,6 +291,10 @@ Below is MAP Protocol's latest chain connectivity progress and the corresponding
 
 # How to integrate MAP Protocol with EVM-Compatible Chains
 If your chain is EVM-compatible, you can easily connect and integrate with MAP Protocol to achieve omnichain. Read more on [Integration of MAP with EVM-Compatible Chains](/docs/mapo-stack/chains-connect/evm-chain/index_en.md).
+
+# How to integrate MAP Protocol with Ton Network
+Now you can easily connect Ton Network and integrate with MAP Protocol to achieve omnichain. Read more on [Integration of MAP with TON](/docs/mapo-stack/chains-connect/ton-network/index_en.md).
+
 
 # How to build a dApp with MAP Protocol
 You can easily build your omnichain dApps by connecting to MAP Protocol. Read more on [OmniApp](/docs/mapo-stack/omni-dapp/index.md).
