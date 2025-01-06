@@ -53,6 +53,19 @@ MAP Protocol has many unique characteristics that set it apart in the blockchain
 
 In summary, MAP Protocol is an innovative omnichain interoperability network designed to facilitate seamless communication and interaction between different blockchains. With its secure infrastructure, omnichain interoperability, and distributed trust, it provides developers and users with powerful tools for implementing complex blockchain interactions. As more dApps and services leverage MAP Protocol, we can expect a more interconnected and efficient blockchain ecosystem.
 ## Roadmap
+### 2025 Q4
+* Launch a universal cross-chain standard specification Mstack based on heterogeneous chains
+### 2025 Q3
+* M-Star Plan: MAP Protocol mainnet mechanism upgrade is officially launched and open source
+* launch Multi-Party Engagement Mechanism of Liquidity Provider launch
+* Liquidity Provider incentive model upgrade
+### 2025 Q2
+* M-Star Plan: MAP Protocol mainnet mechanism upgrade test release
+* Introduce a new cross-chain verification node crossX to participate in the mainnet cross-chain multi-party security verification
+* Introduce a new incentive mechanism based on transaction fees
+### 2025 Q1
+* Officially launch cross-chain services for BTC, Dogecoin, and XRP
+* Officially launch cross-chain interoperability support for Solana and Ton
 ### 2024 Q4
 * Launch and open-source Omnichain Development SDK V2.
 ### 2024 Q3
