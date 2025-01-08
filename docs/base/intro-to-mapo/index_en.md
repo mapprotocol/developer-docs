@@ -83,7 +83,47 @@ In summary, MAP Protocol is an innovative omnichain interoperability network des
 * Officially upgrade to become a Bitcoin layer 2 for peer-to-peer cross-chain interoperability.
 * Release the upgraded official website and technical documentation.
 * Launch a support plan for the BRC20 ecosystem.
-> [View MAP Protocol history](https://docs.mapprotocol.io/learn/roadmap) to learn about the roadmap from 2019 Q3 to 2023 Q3.
+
+### 2023.Q3
+* Extend cross-chain connectivity to more EVM-compatible and non-EVM-compatible chains
+* Release a variety of SDKs, from chain development to cross-chain components. Developers can easily deploy dedicated chains with targeted application directions and embed cross-chain functionality from the start.
+
+### 2023.Q1
+* Extend cross-chain connectivity to popular EVM-compatible chains.
+* Extend MOS chain-wide services to support cross-chain data and NFT.
+* Provide Omnichain scanning to show all cross-chain transactions and DApps.
+
+### 2022.Q4
+* Extend cross-chain connectivity to  Ethereum(PoS).
+* Extend cross-chain connectivity to mainstream EVM-compatible chains: BNB Chain, Polygon, etc.
+* Provide MOS SDK for developing personal MOS.
+* Support cross-chain bridges and swap DApps.
+
+
+### 2022.Q3
+* Extend cross-chain connectivity to Ethereum (EVM PoW) and Near (non-EVM PoS), which represents a technical mechanism in  blockchain.
+* Launch  MAP OmniChain Service, which supports cross-chain fungible tokens and provides a shared vault.
+
+
+### 2022.Q2
+* Launch MAP relay chain with support for more signatures, hashing, mining and Merkle proof-of-computation precompiled contracts.
+* Launch maposcan and PoS DApp.
+* Provide SDK for interacting with the MAP relay chain.
+* Provide a beta version of the MOS SDK.
+
+### 2022.Q1
+* Support decentralised cross-chain for more chains.
+* MOS supports cross-chain between Ethereum, Polygon, BNB chain and MAP Makalu.
+* Invite more DeFi projects to join the Makalu test network.
+
+### 2021.Q3
+* Launch MAP Relay Chain Makalu Test Network to start light client verification cross-chain between MAP Makalu and Ethereum
+* Start MAP Omnichain Service (MOS) for the test network.
+* Start maintainer mining and invite users to participate in maintainer testing.
+
+### 2019.Q3 - 2020.Q4
+* Release MAP Protocol version 1.0, enabling a cross-chain solution using light-client authentication
+
 ## Essential concepts
 ### Blockchain
 A blockchain is a distributed, decentralized ledger that records transactions across multiple computers in a way that ensures each transaction can only be added once and is irreversible, enhancing the security and integrity of the data.
