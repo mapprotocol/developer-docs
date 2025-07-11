@@ -1,6 +1,6 @@
 ---
 title: Intro to MAP Protocol
-description: MAP Protocol is a Bitcoin layer-2 as well as a peer-to-peer omnichain network focused on cross-chain interoperability.
+description: MAP Protocol is an omnichain infrastructure for BTC, stablecoin, and tokenized asset swap.
 lang: en
 ---
 
