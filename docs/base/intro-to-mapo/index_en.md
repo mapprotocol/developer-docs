@@ -19,7 +19,7 @@ Beyond cryptocurrency, blockchain has numerous potential applications. It can be
 A blockchain is run by a network of computers, often referred to as nodes. Each node in the network must agree upon each new block and the chain as a whole.  Nodes ensure that everyone interacting with the blockchain has the same data. To add a new block to the blockchain, nodes must reach a consensus. This is achieved through a consensus mechanism. The two most common mechanisms are Proof of Work (PoW) and Proof of Stake (Pos).
 
 ## What is MAP Protocol?
-MAP Protocol is a Bitcoin layer-2 as well as a peer-to-peer omnichain network focused on cross-chain interoperability. It provides the essential omnichain infrastructure for achieving interoperability among blockchain-based assets, storage, and computing across EVM and non-EVM chains.
+MAP Protocol is an omnichain infrastructure for BTC, stablecoins, and tokenized assets swap. It provides the essential omnichain infrastructure for achieving interoperability among blockchain-based assets, storage, and computing across EVM and non-EVM chains.
 
 As an omnichain infrastructure, there are no single entities trusted for cross-chain communication on MAP Protocol. The only trust is put in code that leverages light clients’ self-verifying nature, thus ensuring cross-chain is done in a purely peer-to-peer way. When a cross-chain request occurs on the source chain, it will be transmitted by off-chain roles to the target chain. Light clients deployed on the source chain will then verify the validity of the cross-chain requests sent by the off-chain role in a peer-to-peer way.
 
@@ -35,17 +35,17 @@ Light clients deployed on each chain are independent, self-verifying in nature, 
 
 Maintainer is an independent inter-chain program responsible for updating light clients’ status. Since submitting transactions to blockchains would consume gas, Maintainers are rewarded with MAP tokens according to the useful work they have accomplished, e.g., the number of effective block headers submitted.
 ### MAP Omnichain Service Layer (MOS)
-Similar to Google Mobile Services to Android developers, MOS empowers dApp developers to build applications with ease. It is the execution layer for omnichain assets and data.DApp developers can independently run MOS or use services provided by MOS. MOS consists of Vaults & Data deployed on each chain, and the Messenger program to transmit messages between chains.
+Similar to Google Mobile Services to Android developers, MOS empowers dApp developers to build applications with ease. It is the execution layer for omnichain assets and data. dApp developers can independently run MOS or use services provided by MOS. MOS consists of Vaults & Data deployed on each chain, and the Messenger program to transmit messages between chains.
 
-On the source chain, **Vaults & Data** are responsible for receiving assets or data and triggering an event for Messengers to listen to. On the relay chain or target chain, Vault & Data are responsible for receiving cross-chain messages transmitted by Messengers and then through an internal component conducting cross-chain transaction verification. DApp developers can utilize Vaults & Data in MOS and share Vaults & Data liquidity with other applications.
+On the source chain, **Vaults & Data** are responsible for receiving assets or data and triggering an event for Messengers to listen to. On the relay chain or target chain, Vault & Data are responsible for receiving cross-chain messages transmitted by Messengers and then through an internal component conducting cross-chain transaction verification. dApp developers can utilize Vaults & Data in MOS and share Vaults & Data liquidity with other applications.
 
-**Messenger** is an independent inter-chain program. It is an SDK, deployed, operated, and maintained by dApp developers. DApp developers can also independently and flexibly incentivize messenger contributors to transmit omnichain messages for the dApp.
+**Messenger** is an independent inter-chain program. It is an SDK, deployed, operated, and maintained by dApp developers. dApp developers can also independently and flexibly incentivize messenger contributors to transmit omnichain messages for the dApp.
 ### Application Layer
 The Application layer consists of specific use cases of MAP Protocol’s omnichain infrastructure. This can be omnichain and fully on-chain GameFi, omnichain lending, omnichain DAO, etc. 
 
-DApp developers only need to deploy their dApps on MAP Relay Chain with the completed MOS  module to enjoy the privilege of connecting the entire blockchain world’s liquidity. 
+dApp developers only need to deploy their dApps on MAP Relay Chain with the completed MOS  module to enjoy the privilege of connecting the entire blockchain world’s liquidity. 
 ## Characteristics of MAP Protocol
-MAP Protocol has many unique characteristics that set it apart in the blockchain ecosystem. These features include:
+MAP Protocol has several unique characteristics that set it apart within the blockchain ecosystem. These features include:
 - **Omnichain Interoperability**: MAP Protocol allows point-to-point cross-chain interoperability between EVM and non-EVM chains.
 - **Security Further Enhanced by the Bitcoin Network**: The MAP Protocol leverages the security mechanisms of the Bitcoin network to protect the relay chain, using light client self-verification features to secure cross-chain transactions.
 - **Distributed Trust**: MAP Protocol is decentralized, with no single entity in control, and all participants rely on the code for operations.
