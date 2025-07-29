@@ -1,16 +1,16 @@
 ---
-title: Bitcoin layer2 for Map Protocol
-description: The implementation logic of MAP Protocol as a Bitcoin Layer 2。
+title: Bitcoin Interoperability
+description: MAP Protocol’s Role in the Bitcoin Ecosystem.
 lang: en
 ---
 
 
 
-## BTC layer2
+## Bitcoin Interoperability
 
-Similar to Layer 2 solutions within the Ethereum ecosystem, Bitcoin Layer 2 also focuses on bringing more use cases to the ecosystem and reducing transaction fees. Common Bitcoin Layer 2 solutions such as off-chain networks, centralized sidechains, and federated sidechains provide improved scalability and privacy protection for the Bitcoin network, although they are still somewhat behind compared to the Ethereum ecosystem. In May 2023, an innovative experiment called BRC-20 was implemented based on the [Ordinals protocol](https://docs.ordinals.com/), aimed at testing whether the Ordinals protocol could enhance the fungibility of Bitcoin, similar to the effect of issuing ERC-20 tokens on the Ethereum network. This experiment showcased the potential for Bitcoin interoperability.
+While the Ethereum ecosystem has matured with Layer 2 solutions that reduce fees and expand use cases, the Bitcoin ecosystem is beginning to explore similar possibilities. Common approaches such as off-chain networks, centralized sidechains, and federated sidechains provide improved scalability and privacy protection for the Bitcoin network, although they are still somewhat behind compared to the Ethereum ecosystem. In May 2023, an innovative experiment called BRC-20 was implemented based on the [Ordinals protocol](https://docs.ordinals.com/), aimed at testing whether the Ordinals protocol could enhance the fungibility of Bitcoin, similar to the effect of issuing ERC-20 tokens on the Ethereum network. This experiment showcased the potential for Bitcoin interoperability.
 
-As a peer-to-peer, cross-chain interoperability infrastructure, MAP Protocol has always been focused on cross-chain interoperability. Now, MAP Protocol is also serving as a Bitcoin Layer 2. On one hand, it leverages the Bitcoin network to enhance the security of its MAP Protocol network. On the other hand, it uses its cross-chain technology to further enrich the Bitcoin ecosystem, providing a new trading experience for the BRC-20 community.
+As a peer-to-peer, cross-chain interoperability infrastructure, MAP Protocol has always been focused on enabling interoperability between blockchains. Now, MAP Protocol plays a critical role in supporting the Bitcoin ecosystem. On one hand, it leverages the Bitcoin network to enhance the security of its MAP Protocol network. On the other hand, it uses its cross-chain technology to further enrich the Bitcoin ecosystem, providing a new trading experience for the BRC-20 community.
 
 
 ### Ensuring the security of MAP Protocol through the Bitcoin network further
