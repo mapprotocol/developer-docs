@@ -10,7 +10,7 @@
 * [Differences Between Omnichain Applications and Single or Multi-Chain Applications](docs/base/omnichain-dapp/different_en.md)
 * [Differences Between Third-Party Trusted Cross-Chain and Peer-to-Peer Cross-Chain Solutions](docs/base/omnichain-dapp/the-other_en.md)
 * [Bitcoin Interoperability](docs/btc-layer2/index_en.md)
-  * [brc-201](docs/btc-layer2/brc201.md)
+  * [BRC-201](docs/btc-layer2/brc201.md)
 * [Oracle](docs/base/oracle/index.md)
   * [Supra: Decentralized Oracle on MAP Protocol](docs/base/oracle/Supra_en.md)
 * [Account](docs/base/accounts/index_en.md) 
