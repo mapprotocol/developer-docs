@@ -110,6 +110,7 @@
   * 后端API
     * [浏览器API](docs/sdk/backend/index.md)
     * 数据统计与分析API
+  *[跨链交易](docs/sdk/cross-chain/index.md)
 
 ## 零知识证明(zk)
 
