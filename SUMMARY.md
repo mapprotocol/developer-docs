@@ -116,7 +116,7 @@
      *  [go-sdk](/docs/sdk/mapo-relay-chain/go-sdk_en.md)
   * Backend API
     * [SCAN API](docs/sdk/backend/index.md)
-
+  *[Cross Chain](docs/sdk/cross-chain/index.md)
 
 ## Zero-Knowledge Proof
 

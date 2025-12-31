@@ -112,7 +112,7 @@
      +  [go-sdk](docs/sdk/mapo-relay-chain/go-sdk.md)
   + 后端API
     + [浏览器API](docs/sdk/backend/index.md)
-
+  +  [跨链交易](docs/sdk/cross-chain/index.md)
 
 ## 零知识证明(zk)
 
