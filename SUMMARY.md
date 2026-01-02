@@ -40,7 +40,7 @@
               * [Validators](docs/base/mapo-relay-chain/genesis-contract/validators_en.md)
             * [address](docs/base/mapo-relay-chain/genesis-contract/address_en.md)
             * [deploy](docs/base/mapo-relay-chain/genesis-contract/deploy_en.md)
-        * [precompile-contract](docs/base/mapo-relay-chain/precompile-contract_.md)
+        * [precompile-contract](docs/base/mapo-relay-chain/precompile-contract_en.md)
         * protocol
           * [Proof of Stake](docs/base/mapo-relay-chain/protocol/pos_en.md)
           * [consensus](docs/base/mapo-relay-chain/protocol/consensus_en.md)
