@@ -104,7 +104,8 @@
     * [MOS](docs/mapo-stack/chains-connect/non-evm-chain/index_en.md#mos) 
       * [Messenger](docs/mapo-stack/chains-connect/non-evm-chain/index_en.md#messenger)
 * [How to develop cross-chain applications](docs/mapo-stack/omni-dapp/index.md)
-* [light client address](/docs/mapo-stack/stack/index.md)
+* [light client address](docs/mapo-stack/stack/index.md)
+* [Mstack](docs/mapo-stack/mstack.md)
 * SDK/API 
   *  [MOS interface](docs/sdk/mos/index_en.md)
   *  [Light client interface](docs/sdk/light-client/index_en.md)
@@ -116,7 +117,7 @@
      *  [go-sdk](/docs/sdk/mapo-relay-chain/go-sdk_en.md)
   * Backend API
     * [SCAN API](docs/sdk/backend/index.md)
-  *[Cross Chain](docs/sdk/cross-chain/index.md)
+  * [Cross Chain](docs/sdk/cross-chain/index.md)
 
 ## Zero-Knowledge Proof
 
