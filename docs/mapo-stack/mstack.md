@@ -1,6 +1,6 @@
 # MStack: Universal Cross-Chain Standard for Heterogeneous Blockchains
 
-**Version**: 1.0-draft  
+**Version**: 1.0.1  
 **Status**: Draft  
 **Author**: MAP Protocol Team
 
@@ -553,54 +553,112 @@ When memo space is tight, address compression can be used:
 
 ### 8.1 Basic Format
 
-Amounts are represented as integers in the token's smallest unit.
+Amounts are represented as **integers with unified decimal = 6**, supporting scientific notation.
 
 ```
-// USDT (6 decimal places)
-1000000 = 1 USDT
-1500000 = 1.5 USDT
+Format: <integer> or <significant_figures>e<exponent>
 
-// ETH (18 decimal places)
-1000000000000000000 = 1 ETH
+Actual amount = stored value / 1e6
 ```
+
+**Examples:**
+
+| Stored Value | Actual Amount |
+|--------------|---------------|
+| 1000000 | 1.0 |
+| 1500000 | 1.5 |
+| 1e6 | 1.0 |
+| 15e5 | 1.5 |
+| 123456 | 0.123456 |
 
 ### 8.2 Scientific Notation
 
 To save space, scientific notation is supported:
 
 ```
-Format: <mantissa>e<exponent>
+Format: <significant_figures>e<exponent>
 
 Examples:
-1e6     = 1,000,000
-15e5    = 1,500,000
-1e18    = 1,000,000,000,000,000,000
-123e4   = 1,230,000
+1e6       = 1,000,000
+15e5      = 1,500,000
+123e4     = 1,230,000
+123456e6  = 123,456,000,000
 ```
 
-### 8.3 Simplified Representation
+### 8.3 Token Representation
 
-For common amounts, simplified representation is supported:
+Since unified decimal = 6 is used, different tokens need conversion:
 
-```
-// Using k, m, b suffixes (optional extension)
-1k = 1,000
-1m = 1,000,000
-1b = 1,000,000,000
+| Token | Native Decimal | Conversion Formula | Example |
+|-------|----------------|-------------------|---------|
+| USDC/USDT | 6 | Original value | 1 USDC = 1 |
+| BTC | 8 | value / 100 | 1 BTC = 1e6 |
+| ETH | 18 | value / 1e12 | 1 ETH = 1e6 |
 
-Examples:
-1.5m = 1,500,000
-```
+**Typical Amount Representations:**
 
-### 8.4 Precision Handling
+| Token | Amount | Stored Value | Scientific Notation |
+|-------|--------|--------------|---------------------|
+| USDC | 100 | 100 | 100 or 1e2 |
+| USDC | 1000 | 1000 | 1e3 |
+| USDC | 10000 | 10000 | 1e4 |
+| BTC | 0.1 | 100000 | 1e5 |
+| BTC | 1 | 1000000 | 1e6 |
+| BTC | 10 | 10000000 | 1e7 |
+| ETH | 0.1 | 100000 | 1e5 |
+| ETH | 1 | 1000000 | 1e6 |
+| ETH | 100 | 100000000 | 1e8 |
+
+### 8.4 Compression Strategy for 80-Byte Limit
+
+For chains with 80-byte limits like Bitcoin, when memo space is tight, it is recommended to limit **significant figures + exponent digits <= 6** (excluding `e`).
+
+**Compression Rules:**
+
+| Rule | Description |
+|------|-------------|
+| Significant Figures (SF) | Maximum 5 digits |
+| Exponent | Maximum 1-2 digits |
+| Total Length | SF digits + exponent digits <= 6 |
+| Maximum Bytes | 7 bytes (including `e`) |
+
+**Compression Examples:**
+
+| Amount | Stored Value | Compressed | Length | Restored Value | Precision Loss |
+|--------|--------------|------------|--------|----------------|----------------|
+| 1 USDC | 1 | 1 | 1 | 1 | 0 |
+| 1000 USDC | 1000 | 1e3 | 3 | 1000 | 0 |
+| 99999 USDC | 99999 | 99999 | 5 | 99999 | 0 |
+| 1 BTC | 1000000 | 1e6 | 3 | 1000000 | 0 |
+| 1.5 BTC | 1500000 | 15e5 | 4 | 1500000 | 0 |
+| 99.9 BTC | 99900000 | 999e5 | 5 | 99900000 | 0 |
+| 99.999 BTC | 99999000 | 99999e3 | 7 | 99999000 | 0 |
+| 99.123456 BTC | 99123456 | 99123e3 | 7 | 99123000 | 0.000456 BTC ≈ $27 |
+| 1 ETH | 1000000 | 1e6 | 3 | 1000000 | 0 |
+| 99.9 ETH | 99900000 | 999e5 | 5 | 99900000 | 0 |
+| 99.123456 ETH | 99123456 | 99123e3 | 7 | 99123000 | 0.000456 ETH ≈ $1.4 |
+
+### 8.5 Precision Loss Analysis
+
+Under SF + exponent digits <= 6 compression mode, maximum precision loss is approximately **0.001%**:
+
+| Token | Max Amount | Max Loss | Loss Rate |
+|-------|------------|----------|-----------|
+| BTC | < 100 | ~0.001 BTC ≈ $60 | 0.001% |
+| ETH | < 100 | ~0.001 ETH ≈ $3 | 0.001% |
+| USDC | < 100000 | ~9 USDC | 0.01% |
+
+**Note:** Compression mode is only used when memo space is tight. For chains without length limits (e.g., EVM), full precision can be used.
+
+### 8.6 Precision Handling
 
 ```
 Precision handling during cross-chain:
 
-1. Source chain amount uses source chain token's precision
-2. Target chain amount uses target chain token's precision
-3. If precisions differ, protocol layer handles conversion
-4. Amount field represents minimum receiving amount in target chain precision
+1. Unified storage using decimal = 6
+2. Each token converts according to native decimal
+3. Amount field represents minimum receiving amount
+4. Protocol layer handles decimal conversion
 ```
 
 ---
@@ -609,39 +667,81 @@ Precision handling during cross-chain:
 
 ### 9.1 Affiliate Field
 
-Used to identify affiliates and fee sharing.
+Used to identify affiliates and fee sharing, supporting both full name mode and compressed mode.
 
-**Format:**
+#### 9.1.1 Format Definition
+
+| Format | Rule | Example |
+|--------|------|---------|
+| Full Name Mode | `<name>:<fee_bps>` | `flashx:15`, `butter:20` |
+| Compressed Mode | `<id><fee_bps>` | `fx15`, `b20` |
+| Multiple Affiliates (Full) | Separated by `,` | `flashx:15,butter:20` |
+| Multiple Affiliates (Compressed) | Direct concatenation | `fx15b20` |
+
+#### 9.1.2 Parsing Rules
+
+**Full Name Mode:**
 ```
-<partner_id>:<fee_bps>/<partner_id>:<fee_bps>/...
+1. Split multiple affiliates by `,`
+2. Split each part by `:`, before is name, after is fee
 ```
 
-**Rules:**
+**Compressed Mode:**
+```
+1. Letters start a new affiliate
+2. Digits are the current affiliate's fee
+3. Direct concatenation, no separator needed
+
+Example: fx15b20
+  ↓ Parse
+fx + 15 + b + 20
+  ↓
+[{id: "fx", fee: 15}, {id: "b", fee: 20}]
+```
+
+#### 9.1.3 Compressed ID Rules
 
 | Rule | Description |
 |------|-------------|
-| partner_id | 1-4 character affiliate identifier |
-| fee_bps | Fee in basis points (1 bps = 0.01%) |
-| Separator | Multiple affiliates separated by `/` |
+| Characters | `a-z`, `-`, `_` |
+| Length | 1-2 characters |
+| Case | All lowercase |
+| Not Allowed | Starting with digits, `<`, `>` |
 
-**Examples:**
-```
-// Single affiliate, charging 0.15%
-fx:15
+#### 9.1.4 Examples
 
-// Single affiliate, identifier only, no fee
-tp
+**Single Affiliate:**
 
-// Multiple affiliates
-okx:10/b:10    // OKX and Butter each charge 0.1%
-```
+| Format | Mode | Partner | Fee |
+|--------|------|---------|-----|
+| `flashx:15` | Full | flashx | 0.15% |
+| `fx15` | Compressed | fx → flashx | 0.15% |
+| `butter:20` | Full | butter | 0.20% |
+| `b20` | Compressed | b → butter | 0.20% |
+
+**Multiple Affiliates:**
+
+| Format | Mode | Length |
+|--------|------|--------|
+| `flashx:15,butter:20` | Full | 20 bytes |
+| `fx15b20` | Compressed | 7 bytes |
+| `flashx:15,b20` | Mixed | 14 bytes |
+
+#### 9.1.5 Compressed ID Registry
+
+| Compressed ID | Full Name | Description |
+|---------------|-----------|-------------|
+| `fx` | flashx | FlashX |
+| `b` | butter | Butter |
+| ... | ... | ... |
 
 ### 9.2 Affiliate Registration
 
 ```solidity
 struct AffiliateRegistry {
-    string partnerId;      // Affiliate ID
-    string name;           // Affiliate name
+    string partnerId;      // Affiliate full name
+    string shortId;        // Compressed ID (1-2 characters)
+    string name;           // Affiliate display name
     address feeReceiver;   // Fee receiving address
     uint256 maxFeeBps;     // Maximum fee rate
     bool enabled;          // Whether enabled
@@ -657,7 +757,7 @@ MStack supports passing custom data through `extra` field:
 Mx|Chain|Token|Receiver|Amount|Affiliate|Extra
 
 // Extra uses key:value format
-Mx|Eth|USDT|0x...|1000000|fx:15|slippage:50,deadline:1234567890
+Mx|Eth|USDT|0x...|1e6|ok15|slippage:50,deadline:1234567890
 ```
 
 ---
@@ -826,9 +926,10 @@ Parsed:
 
 ### 11.5 Version History
 
-| Version | Date | Description |
-|---------|------|-------------|
-| 1.0-draft | 2024-XX | Initial draft |
+| Version | Date    | Description |
+|---------|---------|-------------|
+| 1.0-draft | 2025-12 | Initial draft |
+| 1.0.1 | 2026-01 | Added Amount and Affiliate compression specification |
 
 ---
 
