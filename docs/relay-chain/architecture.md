@@ -29,12 +29,12 @@ the entire blockchain data.
 + `Blocks` are the basic units of data in the Atlas blockchain. Each block contains a certain number of transactions,
   timestamps, and the hash of the parent block, among other information. These blocks are linked together in
   chronological order to form the blockchain. For more information, please refer
-  to [/docs/base/block/index.md](../fundamentals/blockchain/blocks.md).
+  to [Blocks](../fundamentals/blockchain/blocks.md).
 
 + `Transactions` are a series of transactions included in a block. These transactions include value transfers and smart
   contract invocations in the Atlas network. Each transaction has information such as the sender, receiver, amount, and
   smart contract invocation data. For more information, please refer
-  to [/docs/base/transactions/index.md](../fundamentals/blockchain/transactions.md).
+  to [Transactions](../fundamentals/blockchain/transactions.md).
 
 + `State Storage` is a critical data structure that tracks the state of each account in the Atlas blockchain. This
   includes the balance of accounts, smart contract code, storage data, etc. State storage is implemented based on the
@@ -45,7 +45,7 @@ the entire blockchain data.
 
 + `Accounts`: The blockchain database stores information about all Atlas accounts. This includes external accounts (
   controlled by private keys) and smart contract accounts (controlled by smart contract code). For more information,
-  please refer to [/docs/base/accounts/index.md](../fundamentals/blockchain/accounts.md).
+  please refer to [Accounts](../fundamentals/blockchain/accounts.md).
 
 + `Account State` is the current state of an account, including balance, smart contract code, storage data, and other
   relevant information. Account states are part of the state storage.
