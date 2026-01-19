@@ -60,6 +60,6 @@ MAPO light clients are mainly designed to verify the validity and legality of tr
 
 - Genesis block: MAPO light clients can support a custom height as `genesis block`, instead of syncing from genesis height like normal light clients.
 
-- Block header verification: MAPO light clients sync block header data, and verify block headers based on MAPO-Relay-Chain's [consensus mechanism](/docs/base/mapo-relay-chain/consensus/index.md).
+- Block header verification: MAPO light clients sync block header data, and verify block headers based on MAPO-Relay-Chain's [consensus mechanism](../../relay-chain/consensus/istanbul-bft.md).
 
-- MPT verification: MAPO light client [MPT](/docs/base/mpt/index.md) verification is mainly used to verify transaction validity and legality. This is done primarily by verifying the `Receipt` corresponding to the transaction and the proof data of the `Receipt` MPT tree containing that `Receipt` in the block containing the transaction. This allows calculating a `ReceiptRoot` consistent with the `ReceiptRoot` in the block header.
+- MPT verification: MAPO light client [MPT](../../fundamentals/blockchain/mpt.md) verification is mainly used to verify transaction validity and legality. This is done primarily by verifying the `Receipt` corresponding to the transaction and the proof data of the `Receipt` MPT tree containing that `Receipt` in the block containing the transaction. This allows calculating a `ReceiptRoot` consistent with the `ReceiptRoot` in the block header.

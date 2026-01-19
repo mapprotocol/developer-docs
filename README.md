@@ -23,11 +23,13 @@ Light client-based cross-chain solution: light client design, MOS layer, and cha
 ### [Relay Chain](docs/relay-chain/architecture.md)
 MAP Relay Chain (Atlas) technical details: architecture, consensus mechanism, genesis contracts, and precompile contracts.
 
-### [Fundamentals](docs/fundamentals/blockchain/accounts.md)
-Core blockchain concepts: accounts, transactions, blocks, gas, MPT, RLP, and smart contract development.
+### Fundamentals
+Core blockchain and smart contract concepts:
+- [Blockchain](docs/fundamentals/blockchain/accounts.md): accounts, transactions, blocks, gas, MPT, RLP, oracle
+- [Smart Contracts](docs/fundamentals/smart-contracts/evm.md): EVM, development, testing, security
 
-### [Appendix](docs/appendix/glossary.md)
-Glossary, references, and BTC Layer2 documentation.
+### Appendix
+- [BTC Layer2](docs/appendix/btc-layer2/overview.md): BTC Layer2 and BRC-201
 
 ## Quick Links
 

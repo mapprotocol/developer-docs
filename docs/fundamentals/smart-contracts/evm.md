@@ -26,13 +26,13 @@ Given an old valid state `(S)` and a new set of valid transactions `(T)`, the Et
 
 ### state
 
-In the context of MAPO, the state is an enormous data structure called a [modified Merkle Patricia Trie](/docs/base/mpt/index_en.md), which keeps all [accounts](/docs/base/accounts/index_en.md) linked by hashes and reducible to a single root hash stored on the blockchain.
+In the context of MAPO, the state is an enormous data structure called a [modified Merkle Patricia Trie](../blockchain/mpt.md), which keeps all [accounts](../blockchain/accounts.md) linked by hashes and reducible to a single root hash stored on the blockchain.
 
 ### transactions
 
 Transactions are cryptographically signed instructions from accounts. There are two types of transactions: those which result in message calls and those which result in contract creation.
 
-Contract creation results in the creation of a new contract account containing compiled [smart contract](/docs/mapo-stack/compatible-evm/index_en.md#smart-contracts) bytecode. Whenever another account makes a message call to that contract, it executes its bytecode.
+Contract creation results in the creation of a new contract account containing compiled [smart contract](#smart-contracts) bytecode. Whenever another account makes a message call to that contract, it executes its bytecode.
 
 ## evm-instructions
 
@@ -51,13 +51,13 @@ Compiled smart contract bytecode executes as a number of EVM opcodes, which perf
 
 Smart contracts are the foundation of MAPO applications. They are computer programs stored on the blockchain that enable us to transform traditional contracts into digital contracts. Smart contracts adhere to logical rules, following the "if this then that" (IFTTT) structure. This means they execute exactly as programmed and are immutable.
 
-Make sure you have a solid understanding of [accounts](/docs/base/accounts/index_en.md), [transactions](/docs/base/transactions/index_en.md), and the `EVM` discussed above before diving into smart contract learning.
+Make sure you have a solid understanding of [accounts](../blockchain/accounts.md), [transactions](../blockchain/transactions.md), and the `EVM` discussed above before diving into smart contract learning.
 
 ### what-is-a-smart-contract
 
 A smart contract is essentially a program that runs on the MAPO chain. It consists of a series of code (functions) and data (state) located at a specific address on the MAPO blockchain.
 
-Smart contracts also function as [MAPO accounts](/docs/base/accounts/index_en.md), referred to as contract accounts. This means they have a balance and can be the target of transactions. However, they are not controlled by individuals; they are deployed on the network and run as autonomous programs. Individual users can interact with smart contracts by submitting transactions to execute specific functions within the contract. Smart contracts can define rules like traditional contracts and automatically enforce them through code. By default, smart contracts cannot be deleted, and interactions with them are irreversible.
+Smart contracts also function as [MAPO accounts](../blockchain/accounts.md), referred to as contract accounts. This means they have a balance and can be the target of transactions. However, they are not controlled by individuals; they are deployed on the network and run as autonomous programs. Individual users can interact with smart contracts by submitting transactions to execute specific functions within the contract. Smart contracts can define rules like traditional contracts and automatically enforce them through code. By default, smart contracts cannot be deleted, and interactions with them are irreversible.
 
 ### automation
 
@@ -84,19 +84,19 @@ The final point is that, just like contracts, you can review the contents of a s
 
 ### permissionless
 
-Anyone can write a smart contract and deploy it to the blockchain network. All you need to do is learn how to code in a [smart contract language](/docs/mapo-stack/compatible-evm/solidity_en.md) and have enough MAPO coins to deploy your contract. Deploying a smart contract is technically a transaction, so just like you need to pay a gas fee for a simple MAPO coin transfer, you also need to pay a [gas fee](/docs/base/gas/index_en.md) for deploying a smart contract. However, the gas cost for contract deployment is much higher.
+Anyone can write a smart contract and deploy it to the blockchain network. All you need to do is learn how to code in a [smart contract language](./basics.md) and have enough MAPO coins to deploy your contract. Deploying a smart contract is technically a transaction, so just like you need to pay a gas fee for a simple MAPO coin transfer, you also need to pay a [gas fee](../blockchain/gas.md) for deploying a smart contract. However, the gas cost for contract deployment is much higher.
 
 MAPO provides a developer-friendly smart contract programming language:
 
 - Solidity
 
-However, smart contracts must be compiled before they can be deployed so that the EVM virtual machine can interpret and store them. [more about compile](/docs/mapo-stack/compatible-evm/compile_en.md)
+However, smart contracts must be compiled before they can be deployed so that the EVM virtual machine can interpret and store them. [More about development](./development.md).
 
 ### composability
 
 Smart contracts on MAPO are public and can be thought of as open APIs. This means you can call other smart contracts within your own, greatly extending the range of possible functionality. Contracts can even deploy other contracts.
 
-Learn more about the [composability of smart contracts](/docs/mapo-stack/compatible-evm/composability_en.md).
+Learn more about the [composability of smart contracts](./basics.md).
 
 ### limitations
 
@@ -116,4 +116,4 @@ This can be mitigated by using an `oracle`.
 
 ## related-topics
 
-- [Gas](/docs/base/gas/index.md)
+- [Gas](../blockchain/gas.md)

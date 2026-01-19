@@ -10,7 +10,7 @@ The cross-chain process of the MAP Protocol involves multiple steps, from lockin
 
 ## Light-client
 
-Both chains integrating with the MAP Protocol need to deploy each other's [light-client](/docs/base/light-client/index_en.md). Since both chains are EVM-compatible, both `light-clients` will be implemented in Solidity to reduce the upgrade and maintenance efforts on the mainnets of both chains. To deploy the `light-client` contract of the `mapo-relay-chain` on the integrating chain, the chain should support precompiled instructions such as bls, bn254.
+Both chains integrating with the MAP Protocol need to deploy each other's [light-client](../protocol-v1/light-client/overview.md). Since both chains are EVM-compatible, both `light-clients` will be implemented in Solidity to reduce the upgrade and maintenance efforts on the mainnets of both chains. To deploy the `light-client` contract of the `mapo-relay-chain` on the integrating chain, the chain should support precompiled instructions such as bls, bn254.
 
 As the cross-chain messages between the integrating chain and other chains on the MAP Protocol are relayed through the `map-relay-chain`, the integrating chain only needs to deploy the `light-client` of the `map-relay-chain` to verify cross-chain messages from the `map-relay-chain`. Since `map-relay-chain` has already implemented the Solidity version of the `light-client`, the integrating chain only needs to focus on implementing its own Solidity `light-client`. The integrating chain's `light-client` should at least fulfill two functions:
 

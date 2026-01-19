@@ -4,7 +4,7 @@ description: An overview of techniques and considerations for testing smart cont
 lang: en
 ---
 
-Testing smart contracts before [deploying](/docs/mapo-stack/compatible-evm/deploying_en.md) to Mainnet is a minimum requirement for [security](/docs/mapo-stack/compatible-evm/security_en.md). There are many techniques for testing contracts and evaluating code correctness; what you choose depends on your needs. Nevertheless, a test suite made up of different tools and approaches is ideal for catching both minor and major security flaws in contract code.
+Testing smart contracts before [deploying](./development.md) to Mainnet is a minimum requirement for [security](./security.md). There are many techniques for testing contracts and evaluating code correctness; what you choose depends on your needs. Nevertheless, a test suite made up of different tools and approaches is ideal for catching both minor and major security flaws in contract code.
 
 The following `MAPO-Relay-Chain` is collectively referred to as MAPO.
 
@@ -39,7 +39,7 @@ Smart contracts often handle high-value financial assets, especially in industri
 
 ### 2. #smart-contracts-are-immutable
 
-Smart contracts deployed in the [EVM](/docs/mapo-stack/compatible-evm/index_en.md) are, by default, immutable. While traditional developers might be accustomed to fixing software bugs after deployment, smart contracts have very little room for patching security vulnerabilities once they are running on the blockchain.
+Smart contracts deployed in the [EVM](./evm.md) are, by default, immutable. While traditional developers might be accustomed to fixing software bugs after deployment, smart contracts have very little room for patching security vulnerabilities once they are running on the blockchain.
 
 Although smart contracts can have upgrade mechanisms, such as proxy patterns, implementing these can be challenging. Upgrades, apart from reducing immutability and introducing complexity, often require complex governance processes.
 

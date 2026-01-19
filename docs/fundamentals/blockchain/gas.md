@@ -8,7 +8,7 @@ Gas is crucial for the `MAPO-Relay-Chain` network. It's what makes it run, much 
 
 ## prerequisites
 
-To better understand this page, it is recommended to read about [transactions](/docs/base/transactions/index_en.md) and the [EVM](/docs/mapo-stack/compatible-evm/index_en.md) first.
+To better understand this page, it is recommended to read about [transactions](./transactions.md) and the [EVM](../smart-contracts/evm.md) first.
 
 ## what-is-gas
 
@@ -38,7 +38,7 @@ Additionally, Jordan can set a maximum fee (`maxFeePerGas`) for the transaction.
 
 MAPO has introduced variable-sized blocks. The target size for each block is 13 million units of gas, but the block's size can increase or decrease based on network demand, with the limitation that it cannot exceed 20 million units of gas.
 
-This means that if the block size exceeds the target block size, the protocol will increase the base fee for the next block. Similarly, if the block size is smaller than the target block size, the protocol will reduce the base fee. The adjustment of the base fee is proportional to the difference between the current block size and the target block size.[more about block](/docs/base/block/index_en.md)。
+This means that if the block size exceeds the target block size, the protocol will increase the base fee for the next block. Similarly, if the block size is smaller than the target block size, the protocol will reduce the base fee. The adjustment of the base fee is proportional to the difference between the current block size and the target block size. [More about blocks](./blocks.md).
 
 ### base-fee
 
@@ -63,7 +63,7 @@ While there are fee limits specified in transactions, any unused gas in a transa
 
 ## what-is-gas-limit
 
-Gas limit refers to the maximum amount of gas you are willing to consume in a transaction. More complex transactions involving [smart contracts](/docs/mapo-stack/compatible-evm/index_en.md) require more computational work, and therefore, they need a higher gas limit compared to simple transfers. A standard MAPO coin transfer typically requires a gas limit of 21,000 units.
+Gas limit refers to the maximum amount of gas you are willing to consume in a transaction. More complex transactions involving [smart contracts](../smart-contracts/evm.md) require more computational work, and therefore, they need a higher gas limit compared to simple transfers. A standard MAPO coin transfer typically requires a gas limit of 21,000 units.
 
 For example, if you set a gas limit of 50,000 units for a simple MAPO coin transfer, the EVM virtual machine will consume 21,000 units, and you will receive the remaining 29,000 units as a refund. However, if you set too little gas, such as a 20,000 unit gas limit for a simple MAPO coin transfer, the EVM virtual machine will consume 20,000 units of gas and attempt to complete the transaction but will fail. The EVM virtual machine will then roll back all changes, but because the miner has already done work worth 20k gas units, those units of gas are consumed.
 

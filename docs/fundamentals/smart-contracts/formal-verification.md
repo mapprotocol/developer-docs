@@ -4,9 +4,9 @@ description: An overview of formal verification for Ethereum smart contracts
 lang: en
 ---
 
-[Smart contracts](/docs/mapo-stack/compatible-evm/security_en.md) are making it possible to create decentralized, trustless, and robust applications that introduce new use-cases and unlock value for users. Because smart contracts handle large amounts of value, security is a critical consideration for developers.
+[Smart contracts](./security.md) are making it possible to create decentralized, trustless, and robust applications that introduce new use-cases and unlock value for users. Because smart contracts handle large amounts of value, security is a critical consideration for developers.
 
-Formal verification is one of the recommended techniques for improving [smart contract security](/docs/mapo-stack/compatible-evm/security_en.md). Formal verification, which uses [formal methods](https://www.brookings.edu/techstream/formal-methods-as-a-path-toward-better-cybersecurity/) for specifying, designing, and verifying programs, has been used for years to ensure correctness of critical hardware and software systems.
+Formal verification is one of the recommended techniques for improving [smart contract security](./security.md). Formal verification, which uses [formal methods](https://www.brookings.edu/techstream/formal-methods-as-a-path-toward-better-cybersecurity/) for specifying, designing, and verifying programs, has been used for years to ensure correctness of critical hardware and software systems.
 
 When implemented in smart contracts, formal verification can prove that a contract's business logic meets a predefined specification. Compared to other methods for assessing the correctness of contract code, such as testing, formal verification gives stronger guarantees that a smart contract is functionally correct.
 
@@ -30,7 +30,7 @@ High-level models focus on the relationship between smart contracts and external
 
 Conversely, other formal models focus on the low-level behavior of a smart contract. While high-level models can help with reasoning about a contract's functionality, they may fail capture details about the internal workings of the implementation. Low-level models apply a white-box view to program analysis and rely on lower-level representations of smart contract applications, such as program traces and [control flow graphs](https://en.wikipedia.org/wiki/Control-flow_graph), to reason about properties relevant to a contract's execution.
 
-Low-level models are considered ideal since they represent the actual execution of a smart contract in MAPO's execution environment (i.e., the [EVM](/docs/mapo-stack/compatible-evm/index_en.md)). Low-level modeling techniques are especially useful in establishing critical safety properties in smart contracts and detecting potential vulnerabilities.
+Low-level models are considered ideal since they represent the actual execution of a smart contract in MAPO's execution environment (i.e., the [EVM](./evm.md)). Low-level modeling techniques are especially useful in establishing critical safety properties in smart contracts and detecting potential vulnerabilities.
 
 ### what-is-a-formal-specification
 

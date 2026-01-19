@@ -15,7 +15,7 @@ The following `MAPO-Relay-Chain` is collectively referred to as MAPO.
 
 ## prerequisites
 
-Make sure you’re familiar with the [fundamentals of smart contract development](/docs/mapo-stack/compatible-evm/index_en.md#smart-contracts) before tackling security.
+Make sure you’re familiar with the [fundamentals of smart contract development](./evm.md#smart-contracts) before tackling security.
 
 ## smart-contract-security-guidelines
 
@@ -73,15 +73,15 @@ contract VendingMachine {
 
 ### 3. 测试智能合约并验证代码正确性 {#test-smart-contracts-and-verify-code-correctness}
 
-The immutability of code running in the [EVM](/docs/mapo-stack/compatible-evm/index_en.md) means smart contracts demand a higher level of quality assessment during the development phase. Testing your contract extensively and observing it for any unexpected results will improve security a great deal and protect your users in the long run.
+The immutability of code running in the [EVM](./evm.md) means smart contracts demand a higher level of quality assessment during the development phase. Testing your contract extensively and observing it for any unexpected results will improve security a great deal and protect your users in the long run.
 
-The usual method is to write small unit tests using mock data that the contract is expected to receive from users. [Unit testing](/docs/mapo-stack/compatible-evm/testing_en.md#unit-testing) is good for testing the functionality of certain functions and ensuring a smart contract works as expected.
+The usual method is to write small unit tests using mock data that the contract is expected to receive from users. [Unit testing](./testing.md#unit-testing) is good for testing the functionality of certain functions and ensuring a smart contract works as expected.
 
 Unfortunately, unit testing is minimally effective for improving smart contract security when used in isolation. A unit test might prove a function executes properly for mock data, but unit tests are only as effective as the tests that are written. This makes it difficult to detect missed edge cases and vulnerabilities that could break the safety of your smart contract.
 
-A better approach is to combine unit testing with property-based testing performed using [static and dynamic analysis](/docs/mapo-stack/compatible-evm/testing_en.md#2-static-dynamic-analysis). Static analysis relies on low-level representations, such as [control flow graphs](https://en.wikipedia.org/wiki/Control-flow_graph) and [abstract syntax trees](https://deepsource.io/glossary/ast/) to analyze reachable program states and execution paths. Meanwhile, dynamic analysis techniques, such as fuzzing, execute contract code with random input values to detect operations that violate security properties.
+A better approach is to combine unit testing with property-based testing performed using [static and dynamic analysis](./testing.md#2-static-dynamic-analysis). Static analysis relies on low-level representations, such as [control flow graphs](https://en.wikipedia.org/wiki/Control-flow_graph) and [abstract syntax trees](https://deepsource.io/glossary/ast/) to analyze reachable program states and execution paths. Meanwhile, dynamic analysis techniques, such as fuzzing, execute contract code with random input values to detect operations that violate security properties.
 
-[Formal verification](/docs/mapo-stack/compatible-evm/formal-verification_en.md) is another technique for verifying security properties in smart contracts. Unlike regular testing, formal verification can conclusively prove the absence of errors in a smart contract. This is achieved by creating a formal specification that captures desired security properties and proving that a formal model of the contracts adheres to this specification.
+[Formal verification](./formal-verification.md) is another technique for verifying security properties in smart contracts. Unlike regular testing, formal verification can conclusively prove the absence of errors in a smart contract. This is achieved by creating a formal specification that captures desired security properties and proving that a formal model of the contracts adheres to this specification.
 
 ### get-independent-code-reviews
 

@@ -10,7 +10,7 @@ Transactions are instructions issued by accounts and cryptographically signed. A
 
 ## prerequisites
 
-To help you better understand this page, we recommend that you read about [accounts](/docs/base/accounts/index_en.md) and our [MAPO introduction](/docs/base/intro-to-mapo/index_en.md) first.
+To help you better understand this page, we recommend that you read about [accounts](./accounts.md) and our [MAPO introduction](../../overview/introduction.md) first.
 
 
 ## whats-a-transaction
@@ -36,7 +36,7 @@ The submitted transaction includes the following information:
 - `maxFeePerGas`: The highest cost per unit of gas that the sender is willing to pay for the transaction (including the `baseFeePerGas` and `maxPriorityFeePerGas`).
 
 `Gas` refers to the computation required by validators to process the transaction. Users must pay for this computation. The gasLimit and maxPriorityFeePerGas determine the maximum transaction fee paid to validators.
-[about more Gas](/docs/base/gas/index_en.md)。
+[More about Gas](./gas.md).
 
 
 ### the-data-field
@@ -55,7 +55,7 @@ MAPO has several different types of transactions:
 
 ### on-gas
 
-As mentioned, executing a transaction consumes [Gas](/docs/base/gas/index_en.md). A simple transfer transaction requires 21,000 gas units.
+As mentioned, executing a transaction consumes [Gas](./gas.md). A simple transfer transaction requires 21,000 gas units.
 
 So, if Bob wants to send 1 MAPO coin to Alice with a `baseFeePerGas` of 100 Gwei and a `maxPriorityFeePerGas` of 10 Gwei, Bob needs to pay the following fees:
 
@@ -85,6 +85,6 @@ After a transaction is submitted, the following happens:
 
 ## related-topics
 
-- [accounts](/docs/base/accounts/index_en.md)
-- [EVM](/docs/mapo-stack/compatible-evm/index_en.md)
-- [Gas](/docs/base/gas/index_en.md)
+- [Accounts](./accounts.md)
+- [EVM](../smart-contracts/evm.md)
+- [Gas](./gas.md)

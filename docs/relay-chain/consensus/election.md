@@ -1,41 +1,40 @@
-介绍 Atlas 链 validator 选举以及投票的管理。
+# Election
 
-## 质押
+This document describes the validator election and voting management on the Atlas chain.
 
-Atlas 采用权益证明共识机制，如果想参与 atlas 网络的区块生成需要注册成 validator。目前想要成为一个 validator
-需要[锁定](/docs/base/mapo-relay-chain/marker/common_en.md#lockedmap)
-1,000,000 个 MAPO。并对其进行[投票](/docs/base/mapo-relay-chain/marker/vote_en.md#vote)。每次选举会按照 validator 收到的票数排序，选出前
-N 名 validator。
+## Staking
 
-## 更新活动验证器集
+Atlas uses a proof-of-stake consensus mechanism. To participate in block generation on the Atlas network, you need to register as a validator. Currently, to become a validator, you need to lock 1,000,000 MAPO and vote for yourself. Each election sorts validators by the number of votes received and selects the top N validators.
 
-在处理交易和 Epoch 奖励之后，通过在每个 epoch 的最后一个区块中运行选举来更新活动验证器集。
+## Updating Active Validator Set
 
-## 选举验证器
+After processing transactions and epoch rewards, the active validator set is updated by running an election in the last block of each epoch.
 
-验证者必须至少拥有总票数的 0.001 比例才能考虑参加选举。所以验证者不能没有选票。
-这样做的好处是避免烧毁 MAPO 并将投票人数限制在1000人以内。
-可选择的活跃验证器数量有最小目标 (1) 和最大上限 (100)。如果未达到最低目标，则选举将中止，并且不会对该 epoch 的验证器集进行任何更改。
-示例：现在链上有四个验证者，他们是：
+## Electing Validators
+
+Validators must have at least a 0.001 proportion of total votes to be considered for election. Therefore, validators cannot have zero votes. This approach helps avoid burning MAPO and limits the number of voters to within 1000.
+
+The number of active validators that can be selected has a minimum target (1) and a maximum cap (100). If the minimum target is not met, the election will be aborted, and no changes will be made to the validator set for that epoch.
+
+**Example:** Currently there are four validators on the chain:
 
 - 0x5d643dfb9ae372ce4fdbc80890156e2cd8290846
 - 0xa53516d49a72019692ac69cb42641942597654f6
 - 0x6acdc02223100189d82a958d888f54fa27d60e8a
 - 0xea9efaa232a4567eac21c8c096f8bff84595a244
 
-如果由于某些原因我们不选举验证器（有效验证器数量小于1），我们将继续使用上述验证器。如果我们选择最新的一组验证器（这意味着新验证器的数量大于
-1 且小于 100），我们将用新验证器替换上述验证器。
+If for some reason we don't elect validators (number of valid validators is less than 1), we will continue using the above validators. If we select the latest set of validators (meaning the number of new validators is greater than 1 and less than 100), we will replace the above validators with the new validators.
 
-## 解除质押
+## Unstaking
 
-在质押(锁定)成功后如果你有需求可以解除质押(解锁)，解除质押 15
-天后你可以通过[赎回](/docs/base/mapo-relay-chain/example/how-to-withdraw_en.md)操作将 MAPO 赎回到你的账户余额。
+After successful staking (locking), you can unstake (unlock) if needed. 15 days after unstaking, you can redeem your MAPO to your account balance through the withdrawal operation.
 
-## 执行
+## Implementation
 
-[Election](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Election.sol) 合约管理锁定 MAPO
-投票和纪元奖励并运行验证者选举。
+The [Election](https://github.com/mapprotocol/atlas-contracts/blob/main/contracts/governance/Election.sol) contract manages locked MAPO voting and epoch rewards, and runs validator elections.
 
-## 相关主题
+## Related Topics
 
-- [奖励](/docs/base/mapo-relay-chain/protocol/rewards_en.md)
+- [Rewards](./rewards.md)
+- [Epoch](./epoch.md)
+- [Proof of Stake](./pos.md)

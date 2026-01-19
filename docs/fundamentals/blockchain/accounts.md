@@ -5,12 +5,12 @@ lang: en
 ---
 
 
-A `MAPO` account is an entity with a balance of `MAPO`, the main network coin of the [MAPO-Relay-Chain](/docs/base/mapo-relay-chain/index_en.md). These accounts can send transactions on the [MAPO-Relay-Chain](/docs/base/mapo-relay-chain/index_en.md). Accounts can be controlled by users or deployed as smart contracts. It's important to note that in this context, `MAPO` specifically refers to the native cryptocurrency of the `MAPO-Relay-Chain`.
+A `MAPO` account is an entity with a balance of `MAPO`, the main network coin of the [MAPO-Relay-Chain](../../relay-chain/architecture.md). These accounts can send transactions on the [MAPO-Relay-Chain](../../relay-chain/architecture.md). Accounts can be controlled by users or deployed as smart contracts. It's important to note that in this context, `MAPO` specifically refers to the native cryptocurrency of the `MAPO-Relay-Chain`.
 
 
 ## prerequisites
 
-The topic of accounts is quite suitable for beginners. However, to help you better understand this page, we recommend that you first read our Introduction to [MAPO](/docs/base/intro-to-mapo/index_en.md).
+The topic of accounts is quite suitable for beginners. However, to help you better understand this page, we recommend that you first read our Introduction to [MAPO](../../overview/introduction.md).
 
 
 ## #types-of-account
@@ -19,7 +19,7 @@ The topic of accounts is quite suitable for beginners. However, to help you bett
 
 - Externally Owned Accounts (EOA): These accounts are controlled by anyone who possesses the private key. They are typical user accounts.
 
-- Contract Accounts: These are accounts created by deploying smart contracts onto the network. They are controlled by the code of the smart contract. You can learn more about smart contracts [here](/docs/mapo-stack/compatible-evm/index_en.md).
+- Contract Accounts: These are accounts created by deploying smart contracts onto the network. They are controlled by the code of the smart contract. You can learn more about smart contracts [here](../smart-contracts/evm.md).
 
 Both of these account types can:
 
@@ -90,7 +90,7 @@ The contract address is typically provided when deploying a contract to the `map
 
 MAPO also has another type of key known as `BLS` keys, which are used to identify validators and achieve consensus on the state of new blocks during the consensus process. These keys can be efficiently aggregated, reducing the bandwidth required to reach consensus on the network. Without this key aggregation, the minimum stake required for validators would be significantly higher.
 
-[More information about validator keys](/docs/base/mapo-relay-chain/protocol/pos_en.md)。
+[More information about validator keys](../../relay-chain/consensus/pos.md).
 
 ## a-note-on-wallets
 
@@ -99,5 +99,5 @@ Accounts and wallets are different. An account refers to the key pair of the `MA
 
 ## related-topics
 
-- [smart contract](/docs/mapo-stack/compatible-evm/index_en.md)
-- [Transaction](/docs/base/transactions/index_en.md)
+- [Smart Contract](../smart-contracts/evm.md)
+- [Transaction](./transactions.md)

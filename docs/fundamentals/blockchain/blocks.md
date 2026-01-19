@@ -9,7 +9,7 @@ A block refers to a combination of transactions and contains the hash of the pre
 
 ## prerequisites
 
-The concept of blocks is very beginner-friendly. To better understand this page, we recommend reading about [accounts](/docs/base/accounts/index_en.md), [transactions](/docs/base/transactions/index_en.md), and our [MAPO introduction](/docs/base/intro-to-mapo/index_en.md) first.
+The concept of blocks is very beginner-friendly. To better understand this page, we recommend reading about [accounts](./accounts.md), [transactions](./transactions.md), and our [MAPO introduction](../../overview/introduction.md) first.
 
 ## why-blocks
 
@@ -31,7 +31,7 @@ Proof of Stake (PoS):
 - Other validators who receive the new block then re-execute the transactions included in the block to ensure they agree on the proposed changes to the global state. Assuming the block is valid, validators sign it and broadcast it to other validators. Once it collects signatures from more than 2/3 of the validators, the block is confirmed.
 
 
-[more about PoS](/docs/base/mapo-relay-chain/protocol/pos_en.md)
+[More about PoS](../../relay-chain/consensus/pos.md)
 
 ## block-anatomy
 
@@ -101,6 +101,6 @@ The last important note is that the size of blocks is bounded. Each block has a 
 
 ## related-topics
 
-- [Transactions](/docs/base/transactions/index_en.md)
-- [Gas](/docs/base/gas/index_en.md)
-- [Pos](/docs/base/mapo-relay-chain/protocol/pos_en.md)
+- [Transactions](./transactions.md)
+- [Gas](./gas.md)
+- [PoS](../../relay-chain/consensus/pos.md)

@@ -86,7 +86,7 @@ Per voter's reward will be obtained according to the voting proportion of voter 
 Currently, rewards are calculated and distributed at the end of each epoch, and the rewards are directly added to your
 active voting count for a particular validator.
 If you want to withdraw the distributed rewards to your account, you need to withdraw. Please refer
-to [here](/docs/base/mapo-relay-chain/example/how-to-withdraw_en.md) for specific redemption steps.
+to [here]() for specific redemption steps.
 
 ## Extensions
 
@@ -109,4 +109,4 @@ contract manages the calculation of epoch rewards.
 
 ## Related Topics
 
-- [Election](/docs/base/mapo-relay-chain/protocol/election_en.md)
+- [Election](./election.md)

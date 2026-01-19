@@ -27,10 +27,8 @@
 * [Overview](docs/protocol-v1/overview.md)
 * Light Client
   * [Overview](docs/protocol-v1/light-client/overview.md)
-  * [Verification](docs/protocol-v1/light-client/verification.md)
   * MAPO Light Client
     * [On EVM Chains](docs/protocol-v1/light-client/mapo-light-client/on-evm.md)
-    * [On Near](docs/protocol-v1/light-client/mapo-light-client/on-near.md)
   * Other Chain Clients
     * [Ethereum 2.0](docs/protocol-v1/light-client/other-chain-clients/ethereum2.md)
     * [BSC](docs/protocol-v1/light-client/other-chain-clients/bsc.md)
@@ -90,8 +88,6 @@
 
 ## Appendix
 
-* [Glossary](docs/appendix/glossary.md)
-* [References](docs/appendix/references.md)
 * BTC Layer2
   * [Overview](docs/appendix/btc-layer2/overview.md)
   * [BRC-201](docs/appendix/btc-layer2/brc201.md)
