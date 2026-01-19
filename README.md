@@ -1,10 +1,62 @@
-# MAPO Protocol开发文档
+# MAP Protocol Developer Documentation
 
-本文档旨在帮助你认识MAPO，或使用它构建你想构建的去中心化应用，或将一条区块链接入MAPO实现与其他区块链的互通。该文档介绍了MAPO的概念，解释了MAPO技术堆栈，以及MAPO应用的使用案例。
+Welcome to the MAP Protocol developer documentation. This documentation is designed for advanced developers who want to understand the technical details of MAP Protocol's cross-chain infrastructure.
 
-基于开源的社区准则，你可以随时提出新的主题，添加新的内容，并在认为可能有用的地方提供示例。所有文档都可以通过github编辑，并会存储到去中心化存储设施`Arweave`。如果不确定如何操作，请遵循[说明进行](docs/editing-markdown.md)。
+## What is MAP Protocol?
 
-如果这是你第一次尝试MAPO开发，建议你从头开始阅读，这不仅可以让你更好的熟悉MAPO，其中涉及区块链底层的技术以及ZK等内容，也会让你对点对点的代码信任有一个全新的认识。
+MAP Protocol is a peer-to-peer cross-chain infrastructure that enables secure and decentralized interoperability between heterogeneous blockchains. It provides two complementary cross-chain solutions:
 
-还可阅读[英文版](https://mapo.gitbook.io/docs-en/)
+- **Protocol 2.0**: TSS (Threshold Signature Scheme) based decentralized custody
+- **Protocol 1.0**: Light client-based trustless verification
 
+## Documentation Structure
+
+### [Overview](docs/overview/introduction.md)
+Introduction to MAP Protocol, architecture overview, and comparison between v1 and v2.
+
+### [Protocol 2.0](docs/protocol-v2/overview.md)
+TSS-based cross-chain solution: architecture, maintainer roles, TSS mechanism, MStack, cross-chain flow, gas mechanism, security, and slashing.
+
+### [Protocol 1.0](docs/protocol-v1/overview.md)
+Light client-based cross-chain solution: light client design, MOS layer, and chain integration guides.
+
+### [Relay Chain](docs/relay-chain/architecture.md)
+MAP Relay Chain (Atlas) technical details: architecture, consensus mechanism, genesis contracts, and precompile contracts.
+
+### Fundamentals
+Core blockchain and smart contract concepts:
+- [Blockchain](docs/fundamentals/blockchain/accounts.md): accounts, transactions, blocks, gas, MPT, RLP, oracle
+- [Smart Contracts](docs/fundamentals/smart-contracts/evm.md): EVM, development, testing, security
+
+### Appendix
+- [BTC Layer2](docs/appendix/btc-layer2/overview.md): BTC Layer2 and BRC-201
+
+## Quick Links
+
+| Topic | Description |
+|-------|-------------|
+| [Architecture](docs/overview/architecture.md) | Overall system architecture |
+| [v1 vs v2](docs/overview/v1-vs-v2.md) | Comparison of two solutions |
+| [TSS](docs/protocol-v2/tss.md) | Threshold signature scheme |
+| [Light Client](docs/protocol-v1/light-client/overview.md) | Light client design |
+| [Consensus](docs/relay-chain/consensus/pos.md) | Proof of Stake consensus |
+| [Genesis Contracts](docs/relay-chain/genesis-contracts/overview.md) | Genesis contract design |
+
+## For Users and Operators
+
+If you're looking for:
+- Node operation guides
+- API/SDK usage
+- Running Compass-TSS
+
+Please visit the [User Documentation](../docs/README.md) instead.
+
+## Contributing
+
+We welcome contributions to improve this documentation. Please submit issues or pull requests to our GitHub repository.
+
+## Resources
+
+- [GitHub](https://github.com/mapprotocol)
+- [Website](https://mapprotocol.io)
+- [Discord](https://discord.gg/mapprotocol)
